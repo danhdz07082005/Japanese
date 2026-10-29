@@ -107,7 +107,8 @@ E:\8\Sever\
 │   ├── bin/                        # cloudflared executable (Zero-Config)
 │   └── start.bat                   # Script khởi chạy riêng của Tunnel
 │
-├── start_all.bat                   # 🚀 1-CLICK KHỞI ĐỘNG TOÀN BỘ HỆ THỐNG
+├── start_all.bat                   # 🚀 1-CLICK KHỞI ĐỘNG TOÀN BỘ HỆ THỐNG (.NET 8 + PyTunnel Dashboard)
+├── run_tunnel_standalone.bat       # ⚡ 1-CLICK MỞ TUNNEL ĐỘC LẬP (Không cần cài Python, tự tải cloudflared)
 ├── .gitignore                      # Loại trừ file rác, bin/obj, db cache
 └── README.md                       # Tài liệu hướng dẫn chi tiết
 ```
@@ -116,11 +117,19 @@ E:\8\Sever\
 
 ## 🚀 Hướng Dẫn Vận Hành Từng Bước (Quick Start)
 
-### 🟢 Bước 1: Khởi động hệ thống (1-Click)
-Nhấp đúp chuột vào file: **`start_all.bat`** tại thư mục gốc `E:\8\Sever\`.
-1. Hệ thống tự động khởi chạy **GameServer (.NET 8)** trên cổng `http://127.0.0.1:8080`.
-2. Hệ thống tự động tạo cơ sở dữ liệu SQLite `japanesemastery.db` và seed sẵn các tài khoản demo.
-3. Hệ thống tự động mở **PyTunnel Dashboard** tại: `http://127.0.0.1:8787` trên trình duyệt.
+### 🟢 Cách 1: Khởi động đầy đủ có Web Dashboard (Khuyên dùng khi máy có Python)
+Nhấp đúp chuột vào file: **`start_all.bat`** tại thư mục gốc.
+1. Khởi chạy **GameServer (.NET 8)** tại `http://127.0.0.1:8080`.
+2. Khởi chạy **PyTunnel Web Dashboard** tại `http://127.0.0.1:8787` (có Đài Quan Sát Live Log Neon, theo dõi FPS, ghép trận).
+3. Trên web `127.0.0.1:8787`, nhập cổng `8080`, chọn chế độ **Public (Công khai)** và bấm **Bắt đầu đường hầm**.
+
+### 🟢 Cách 2: Khởi động siêu tốc không cần cài Python (Dành cho máy bạn bè chưa có Python)
+Nếu máy bạn bè của bạn chỉ có .NET mà **chưa cài đặt Python**:
+1. Nhấp đúp vào file: **`run_tunnel_standalone.bat`**.
+2. Script sẽ tự động dùng PowerShell/Windows Curl tải động cơ `cloudflared` (chỉ 1 lần duy nhất, ~10s) và mở ngay đường hầm Cloudflare ra Internet cho cổng 8080.
+3. Nhìn trên màn hình CMD sẽ xuất hiện dòng:
+   `https://xxxx.trycloudflare.com`
+4. Copy link đó gửi cho bạn bè hoặc dán vào game là chơi ngay lập tức 100%!
 
 ### 🟢 Bước 2: Bật Tunnel chia sẻ cho bạn bè ở xa
 1. Trên giao diện Web PyTunnel (`http://127.0.0.1:8787`):

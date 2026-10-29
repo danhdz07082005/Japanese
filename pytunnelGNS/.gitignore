@@ -1,0 +1,27 @@
+# Python & Bytecode
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Test & Coverage
+.coverage
+.coverage.*
+coverage/
+htmlcov/
+.pytest_cache/
+
+# Agent Rules & Configs
+.agents/
+.agent/
+_agents/
+_agent/
+rules/
+GEMINI.md
+AGENTS.md
+
+# Local runtime & binaries (never ship)
+.venv/
+bin/
+*.tmp
+*.log
+.env

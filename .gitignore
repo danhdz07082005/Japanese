@@ -1,0 +1,39 @@
+# .NET build artifacts
+**/bin/
+**/obj/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# Database & local secrets
+*.db
+*.db-shm
+*.db-wal
+*.sqlite
+*.sqlite3
+
+# Godot engine cache
+**/.godot/
+.import/
+export_presets.cfg
+
+# Python cache & virtualenv
+**/__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.coverage
+htmlcov/
+venv/
+.venv/
+ENV/
+
+# Node modules
+node_modules/
+
+# OS and IDE files
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/

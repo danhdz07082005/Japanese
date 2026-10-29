@@ -1,0 +1,4714 @@
+{
+  "25": [
+    {
+      "wordJp": "学校",
+      "kana": "がっこう",
+      "romaji": "gakkou",
+      "meaning": "school"
+    },
+    {
+      "wordJp": "先生",
+      "kana": "せんせい",
+      "romaji": "sensei",
+      "meaning": "teacher"
+    },
+    {
+      "wordJp": "学生",
+      "kana": "がくせい",
+      "romaji": "gakusei",
+      "meaning": "student"
+    },
+    {
+      "wordJp": "友達",
+      "kana": "ともだち",
+      "romaji": "tomodachi",
+      "meaning": "friend"
+    },
+    {
+      "wordJp": "本",
+      "kana": "ほん",
+      "romaji": "hon",
+      "meaning": "book"
+    },
+    {
+      "wordJp": "車",
+      "kana": "くるま",
+      "romaji": "kuruma",
+      "meaning": "car"
+    },
+    {
+      "wordJp": "電車",
+      "kana": "でんしゃ",
+      "romaji": "densha",
+      "meaning": "train"
+    },
+    {
+      "wordJp": "水",
+      "kana": "みず",
+      "romaji": "mizu",
+      "meaning": "water"
+    },
+    {
+      "wordJp": "猫",
+      "kana": "ねこ",
+      "romaji": "neko",
+      "meaning": "cat"
+    },
+    {
+      "wordJp": "犬",
+      "kana": "いぬ",
+      "romaji": "inu",
+      "meaning": "dog"
+    }
+  ],
+  "26": [
+    {
+      "wordJp": "家族",
+      "kana": "かぞく",
+      "romaji": "kazoku",
+      "meaning": "family"
+    },
+    {
+      "wordJp": "父",
+      "kana": "ちち",
+      "romaji": "chichi",
+      "meaning": "father"
+    },
+    {
+      "wordJp": "母",
+      "kana": "はは",
+      "romaji": "haha",
+      "meaning": "mother"
+    },
+    {
+      "wordJp": "兄",
+      "kana": "あに",
+      "romaji": "ani",
+      "meaning": "older brother"
+    },
+    {
+      "wordJp": "姉",
+      "kana": "あね",
+      "romaji": "ane",
+      "meaning": "older sister"
+    },
+    {
+      "wordJp": "家",
+      "kana": "いえ",
+      "romaji": "ie",
+      "meaning": "house"
+    },
+    {
+      "wordJp": "部屋",
+      "kana": "へや",
+      "romaji": "heya",
+      "meaning": "room"
+    },
+    {
+      "wordJp": "机",
+      "kana": "つくえ",
+      "romaji": "tsukue",
+      "meaning": "desk"
+    },
+    {
+      "wordJp": "椅子",
+      "kana": "いす",
+      "romaji": "isu",
+      "meaning": "chair"
+    },
+    {
+      "wordJp": "窓",
+      "kana": "まど",
+      "romaji": "mado",
+      "meaning": "window"
+    }
+  ],
+  "27": [
+    {
+      "wordJp": "ご飯",
+      "kana": "ごはん",
+      "romaji": "gohan",
+      "meaning": "meal, cooked rice"
+    },
+    {
+      "wordJp": "パン",
+      "kana": "ぱん",
+      "romaji": "pan",
+      "meaning": "bread"
+    },
+    {
+      "wordJp": "魚",
+      "kana": "さかな",
+      "romaji": "sakana",
+      "meaning": "fish"
+    },
+    {
+      "wordJp": "肉",
+      "kana": "にく",
+      "romaji": "niku",
+      "meaning": "meat"
+    },
+    {
+      "wordJp": "野菜",
+      "kana": "やさい",
+      "romaji": "yasai",
+      "meaning": "vegetable"
+    },
+    {
+      "wordJp": "果物",
+      "kana": "くだもの",
+      "romaji": "kudamono",
+      "meaning": "fruit"
+    },
+    {
+      "wordJp": "お茶",
+      "kana": "おちゃ",
+      "romaji": "ocha",
+      "meaning": "green tea"
+    },
+    {
+      "wordJp": "牛乳",
+      "kana": "ぎゅうにゅう",
+      "romaji": "gyuunyuu",
+      "meaning": "milk"
+    },
+    {
+      "wordJp": "料理",
+      "kana": "りょうり",
+      "romaji": "ryouri",
+      "meaning": "cooking, cuisine"
+    },
+    {
+      "wordJp": "朝食",
+      "kana": "ちょうしょく",
+      "romaji": "choushoku",
+      "meaning": "breakfast"
+    }
+  ],
+  "28": [
+    {
+      "wordJp": "今日",
+      "kana": "きょう",
+      "romaji": "kyou",
+      "meaning": "today"
+    },
+    {
+      "wordJp": "明日",
+      "kana": "あした",
+      "romaji": "ashita",
+      "meaning": "tomorrow"
+    },
+    {
+      "wordJp": "昨日",
+      "kana": "きのう",
+      "romaji": "kinou",
+      "meaning": "yesterday"
+    },
+    {
+      "wordJp": "今週",
+      "kana": "こんしゅう",
+      "romaji": "konshuu",
+      "meaning": "this week"
+    },
+    {
+      "wordJp": "来週",
+      "kana": "らいしゅう",
+      "romaji": "raishuu",
+      "meaning": "next week"
+    },
+    {
+      "wordJp": "時間",
+      "kana": "じかん",
+      "romaji": "jikan",
+      "meaning": "time"
+    },
+    {
+      "wordJp": "時計",
+      "kana": "とけい",
+      "romaji": "tokei",
+      "meaning": "clock, watch"
+    },
+    {
+      "wordJp": "朝",
+      "kana": "あさ",
+      "romaji": "asa",
+      "meaning": "morning"
+    },
+    {
+      "wordJp": "昼",
+      "kana": "ひる",
+      "romaji": "hiru",
+      "meaning": "noon, daytime"
+    },
+    {
+      "wordJp": "夜",
+      "kana": "よる",
+      "romaji": "yoru",
+      "meaning": "night"
+    }
+  ],
+  "29": [
+    {
+      "wordJp": "天気",
+      "kana": "てんき",
+      "romaji": "tenki",
+      "meaning": "weather"
+    },
+    {
+      "wordJp": "雨",
+      "kana": "あめ",
+      "romaji": "ame",
+      "meaning": "rain"
+    },
+    {
+      "wordJp": "雪",
+      "kana": "ゆき",
+      "romaji": "yuki",
+      "meaning": "snow"
+    },
+    {
+      "wordJp": "風",
+      "kana": "かぜ",
+      "romaji": "kaze",
+      "meaning": "wind"
+    },
+    {
+      "wordJp": "空",
+      "kana": "そら",
+      "romaji": "sora",
+      "meaning": "sky"
+    },
+    {
+      "wordJp": "海",
+      "kana": "うみ",
+      "romaji": "umi",
+      "meaning": "sea, ocean"
+    },
+    {
+      "wordJp": "山",
+      "kana": "やま",
+      "romaji": "yama",
+      "meaning": "mountain"
+    },
+    {
+      "wordJp": "川",
+      "kana": "かわ",
+      "romaji": "kawa",
+      "meaning": "river"
+    },
+    {
+      "wordJp": "花",
+      "kana": "はな",
+      "romaji": "hana",
+      "meaning": "flower"
+    },
+    {
+      "wordJp": "木",
+      "kana": "き",
+      "romaji": "ki",
+      "meaning": "tree, wood"
+    }
+  ],
+  "30": [
+    {
+      "wordJp": "行く",
+      "kana": "いく",
+      "romaji": "iku",
+      "meaning": "to go"
+    },
+    {
+      "wordJp": "来る",
+      "kana": "くる",
+      "romaji": "kuru",
+      "meaning": "to come"
+    },
+    {
+      "wordJp": "帰る",
+      "kana": "かえる",
+      "romaji": "kaeru",
+      "meaning": "to return home"
+    },
+    {
+      "wordJp": "食べる",
+      "kana": "たべる",
+      "romaji": "taberu",
+      "meaning": "to eat"
+    },
+    {
+      "wordJp": "飲む",
+      "kana": "のむ",
+      "romaji": "nomu",
+      "meaning": "to drink"
+    },
+    {
+      "wordJp": "見る",
+      "kana": "みる",
+      "romaji": "miru",
+      "meaning": "to see, watch"
+    },
+    {
+      "wordJp": "聞く",
+      "kana": "きく",
+      "romaji": "kiku",
+      "meaning": "to hear, listen"
+    },
+    {
+      "wordJp": "読む",
+      "kana": "よむ",
+      "romaji": "yomu",
+      "meaning": "to read"
+    },
+    {
+      "wordJp": "書く",
+      "kana": "かく",
+      "romaji": "kaku",
+      "meaning": "to write"
+    },
+    {
+      "wordJp": "話す",
+      "kana": "はなす",
+      "romaji": "hanasu",
+      "meaning": "to speak"
+    }
+  ],
+  "31": [
+    {
+      "wordJp": "学校",
+      "kana": "がっこう",
+      "romaji": "gakkou",
+      "meaning": "school 31"
+    },
+    {
+      "wordJp": "先生",
+      "kana": "せんせい",
+      "romaji": "sensei",
+      "meaning": "teacher 31"
+    },
+    {
+      "wordJp": "学生",
+      "kana": "がくせい",
+      "romaji": "gakusei",
+      "meaning": "student 31"
+    },
+    {
+      "wordJp": "友達",
+      "kana": "ともだち",
+      "romaji": "tomodachi",
+      "meaning": "friend 31"
+    },
+    {
+      "wordJp": "本",
+      "kana": "ほん",
+      "romaji": "hon",
+      "meaning": "book 31"
+    },
+    {
+      "wordJp": "車",
+      "kana": "くるま",
+      "romaji": "kuruma",
+      "meaning": "car 31"
+    },
+    {
+      "wordJp": "電車",
+      "kana": "でんしゃ",
+      "romaji": "densha",
+      "meaning": "train 31"
+    },
+    {
+      "wordJp": "水",
+      "kana": "みず",
+      "romaji": "mizu",
+      "meaning": "water 31"
+    },
+    {
+      "wordJp": "猫",
+      "kana": "ねこ",
+      "romaji": "neko",
+      "meaning": "cat 31"
+    },
+    {
+      "wordJp": "犬",
+      "kana": "いぬ",
+      "romaji": "inu",
+      "meaning": "dog 31"
+    }
+  ],
+  "32": [
+    {
+      "wordJp": "家族",
+      "kana": "かぞく",
+      "romaji": "kazoku",
+      "meaning": "family 32"
+    },
+    {
+      "wordJp": "父",
+      "kana": "ちち",
+      "romaji": "chichi",
+      "meaning": "father 32"
+    },
+    {
+      "wordJp": "母",
+      "kana": "はは",
+      "romaji": "haha",
+      "meaning": "mother 32"
+    },
+    {
+      "wordJp": "兄",
+      "kana": "あに",
+      "romaji": "ani",
+      "meaning": "older brother 32"
+    },
+    {
+      "wordJp": "姉",
+      "kana": "あね",
+      "romaji": "ane",
+      "meaning": "older sister 32"
+    },
+    {
+      "wordJp": "家",
+      "kana": "いえ",
+      "romaji": "ie",
+      "meaning": "house 32"
+    },
+    {
+      "wordJp": "部屋",
+      "kana": "へや",
+      "romaji": "heya",
+      "meaning": "room 32"
+    },
+    {
+      "wordJp": "机",
+      "kana": "つくえ",
+      "romaji": "tsukue",
+      "meaning": "desk 32"
+    },
+    {
+      "wordJp": "椅子",
+      "kana": "いす",
+      "romaji": "isu",
+      "meaning": "chair 32"
+    },
+    {
+      "wordJp": "窓",
+      "kana": "まど",
+      "romaji": "mado",
+      "meaning": "window 32"
+    }
+  ],
+  "33": [
+    {
+      "wordJp": "ご飯",
+      "kana": "ごはん",
+      "romaji": "gohan",
+      "meaning": "meal, cooked rice 33"
+    },
+    {
+      "wordJp": "パン",
+      "kana": "ぱん",
+      "romaji": "pan",
+      "meaning": "bread 33"
+    },
+    {
+      "wordJp": "魚",
+      "kana": "さかな",
+      "romaji": "sakana",
+      "meaning": "fish 33"
+    },
+    {
+      "wordJp": "肉",
+      "kana": "にく",
+      "romaji": "niku",
+      "meaning": "meat 33"
+    },
+    {
+      "wordJp": "野菜",
+      "kana": "やさい",
+      "romaji": "yasai",
+      "meaning": "vegetable 33"
+    },
+    {
+      "wordJp": "果物",
+      "kana": "くだもの",
+      "romaji": "kudamono",
+      "meaning": "fruit 33"
+    },
+    {
+      "wordJp": "お茶",
+      "kana": "おちゃ",
+      "romaji": "ocha",
+      "meaning": "green tea 33"
+    },
+    {
+      "wordJp": "牛乳",
+      "kana": "ぎゅうにゅう",
+      "romaji": "gyuunyuu",
+      "meaning": "milk 33"
+    },
+    {
+      "wordJp": "料理",
+      "kana": "りょうり",
+      "romaji": "ryouri",
+      "meaning": "cooking, cuisine 33"
+    },
+    {
+      "wordJp": "朝食",
+      "kana": "ちょうしょく",
+      "romaji": "choushoku",
+      "meaning": "breakfast 33"
+    }
+  ],
+  "34": [
+    {
+      "wordJp": "今日",
+      "kana": "きょう",
+      "romaji": "kyou",
+      "meaning": "today 34"
+    },
+    {
+      "wordJp": "明日",
+      "kana": "あした",
+      "romaji": "ashita",
+      "meaning": "tomorrow 34"
+    },
+    {
+      "wordJp": "昨日",
+      "kana": "きのう",
+      "romaji": "kinou",
+      "meaning": "yesterday 34"
+    },
+    {
+      "wordJp": "今週",
+      "kana": "こんしゅう",
+      "romaji": "konshuu",
+      "meaning": "this week 34"
+    },
+    {
+      "wordJp": "来週",
+      "kana": "らいしゅう",
+      "romaji": "raishuu",
+      "meaning": "next week 34"
+    },
+    {
+      "wordJp": "時間",
+      "kana": "じかん",
+      "romaji": "jikan",
+      "meaning": "time 34"
+    },
+    {
+      "wordJp": "時計",
+      "kana": "とけい",
+      "romaji": "tokei",
+      "meaning": "clock, watch 34"
+    },
+    {
+      "wordJp": "朝",
+      "kana": "あさ",
+      "romaji": "asa",
+      "meaning": "morning 34"
+    },
+    {
+      "wordJp": "昼",
+      "kana": "ひる",
+      "romaji": "hiru",
+      "meaning": "noon, daytime 34"
+    },
+    {
+      "wordJp": "夜",
+      "kana": "よる",
+      "romaji": "yoru",
+      "meaning": "night 34"
+    }
+  ],
+  "35": [
+    {
+      "wordJp": "天気",
+      "kana": "てんき",
+      "romaji": "tenki",
+      "meaning": "weather 35"
+    },
+    {
+      "wordJp": "雨",
+      "kana": "あめ",
+      "romaji": "ame",
+      "meaning": "rain 35"
+    },
+    {
+      "wordJp": "雪",
+      "kana": "ゆき",
+      "romaji": "yuki",
+      "meaning": "snow 35"
+    },
+    {
+      "wordJp": "風",
+      "kana": "かぜ",
+      "romaji": "kaze",
+      "meaning": "wind 35"
+    },
+    {
+      "wordJp": "空",
+      "kana": "そら",
+      "romaji": "sora",
+      "meaning": "sky 35"
+    },
+    {
+      "wordJp": "海",
+      "kana": "うみ",
+      "romaji": "umi",
+      "meaning": "sea, ocean 35"
+    },
+    {
+      "wordJp": "山",
+      "kana": "やま",
+      "romaji": "yama",
+      "meaning": "mountain 35"
+    },
+    {
+      "wordJp": "川",
+      "kana": "かわ",
+      "romaji": "kawa",
+      "meaning": "river 35"
+    },
+    {
+      "wordJp": "花",
+      "kana": "はな",
+      "romaji": "hana",
+      "meaning": "flower 35"
+    },
+    {
+      "wordJp": "木",
+      "kana": "き",
+      "romaji": "ki",
+      "meaning": "tree, wood 35"
+    }
+  ],
+  "36": [
+    {
+      "wordJp": "行く",
+      "kana": "いく",
+      "romaji": "iku",
+      "meaning": "to go 36"
+    },
+    {
+      "wordJp": "来る",
+      "kana": "くる",
+      "romaji": "kuru",
+      "meaning": "to come 36"
+    },
+    {
+      "wordJp": "帰る",
+      "kana": "かえる",
+      "romaji": "kaeru",
+      "meaning": "to return home 36"
+    },
+    {
+      "wordJp": "食べる",
+      "kana": "たべる",
+      "romaji": "taberu",
+      "meaning": "to eat 36"
+    },
+    {
+      "wordJp": "飲む",
+      "kana": "のむ",
+      "romaji": "nomu",
+      "meaning": "to drink 36"
+    },
+    {
+      "wordJp": "見る",
+      "kana": "みる",
+      "romaji": "miru",
+      "meaning": "to see, watch 36"
+    },
+    {
+      "wordJp": "聞く",
+      "kana": "きく",
+      "romaji": "kiku",
+      "meaning": "to hear, listen 36"
+    },
+    {
+      "wordJp": "読む",
+      "kana": "よむ",
+      "romaji": "yomu",
+      "meaning": "to read 36"
+    },
+    {
+      "wordJp": "書く",
+      "kana": "かく",
+      "romaji": "kaku",
+      "meaning": "to write 36"
+    },
+    {
+      "wordJp": "話す",
+      "kana": "はなす",
+      "romaji": "hanasu",
+      "meaning": "to speak 36"
+    }
+  ],
+  "37": [
+    {
+      "wordJp": "学校",
+      "kana": "がっこう",
+      "romaji": "gakkou",
+      "meaning": "school 37"
+    },
+    {
+      "wordJp": "先生",
+      "kana": "せんせい",
+      "romaji": "sensei",
+      "meaning": "teacher 37"
+    },
+    {
+      "wordJp": "学生",
+      "kana": "がくせい",
+      "romaji": "gakusei",
+      "meaning": "student 37"
+    },
+    {
+      "wordJp": "友達",
+      "kana": "ともだち",
+      "romaji": "tomodachi",
+      "meaning": "friend 37"
+    },
+    {
+      "wordJp": "本",
+      "kana": "ほん",
+      "romaji": "hon",
+      "meaning": "book 37"
+    },
+    {
+      "wordJp": "車",
+      "kana": "くるま",
+      "romaji": "kuruma",
+      "meaning": "car 37"
+    },
+    {
+      "wordJp": "電車",
+      "kana": "でんしゃ",
+      "romaji": "densha",
+      "meaning": "train 37"
+    },
+    {
+      "wordJp": "水",
+      "kana": "みず",
+      "romaji": "mizu",
+      "meaning": "water 37"
+    },
+    {
+      "wordJp": "猫",
+      "kana": "ねこ",
+      "romaji": "neko",
+      "meaning": "cat 37"
+    },
+    {
+      "wordJp": "犬",
+      "kana": "いぬ",
+      "romaji": "inu",
+      "meaning": "dog 37"
+    }
+  ],
+  "38": [
+    {
+      "wordJp": "家族",
+      "kana": "かぞく",
+      "romaji": "kazoku",
+      "meaning": "family 38"
+    },
+    {
+      "wordJp": "父",
+      "kana": "ちち",
+      "romaji": "chichi",
+      "meaning": "father 38"
+    },
+    {
+      "wordJp": "母",
+      "kana": "はは",
+      "romaji": "haha",
+      "meaning": "mother 38"
+    },
+    {
+      "wordJp": "兄",
+      "kana": "あに",
+      "romaji": "ani",
+      "meaning": "older brother 38"
+    },
+    {
+      "wordJp": "姉",
+      "kana": "あね",
+      "romaji": "ane",
+      "meaning": "older sister 38"
+    },
+    {
+      "wordJp": "家",
+      "kana": "いえ",
+      "romaji": "ie",
+      "meaning": "house 38"
+    },
+    {
+      "wordJp": "部屋",
+      "kana": "へや",
+      "romaji": "heya",
+      "meaning": "room 38"
+    },
+    {
+      "wordJp": "机",
+      "kana": "つくえ",
+      "romaji": "tsukue",
+      "meaning": "desk 38"
+    },
+    {
+      "wordJp": "椅子",
+      "kana": "いす",
+      "romaji": "isu",
+      "meaning": "chair 38"
+    },
+    {
+      "wordJp": "窓",
+      "kana": "まど",
+      "romaji": "mado",
+      "meaning": "window 38"
+    }
+  ],
+  "39": [
+    {
+      "wordJp": "ご飯",
+      "kana": "ごはん",
+      "romaji": "gohan",
+      "meaning": "meal, cooked rice 39"
+    },
+    {
+      "wordJp": "パン",
+      "kana": "ぱん",
+      "romaji": "pan",
+      "meaning": "bread 39"
+    },
+    {
+      "wordJp": "魚",
+      "kana": "さかな",
+      "romaji": "sakana",
+      "meaning": "fish 39"
+    },
+    {
+      "wordJp": "肉",
+      "kana": "にく",
+      "romaji": "niku",
+      "meaning": "meat 39"
+    },
+    {
+      "wordJp": "野菜",
+      "kana": "やさい",
+      "romaji": "yasai",
+      "meaning": "vegetable 39"
+    },
+    {
+      "wordJp": "果物",
+      "kana": "くだもの",
+      "romaji": "kudamono",
+      "meaning": "fruit 39"
+    },
+    {
+      "wordJp": "お茶",
+      "kana": "おちゃ",
+      "romaji": "ocha",
+      "meaning": "green tea 39"
+    },
+    {
+      "wordJp": "牛乳",
+      "kana": "ぎゅうにゅう",
+      "romaji": "gyuunyuu",
+      "meaning": "milk 39"
+    },
+    {
+      "wordJp": "料理",
+      "kana": "りょうり",
+      "romaji": "ryouri",
+      "meaning": "cooking, cuisine 39"
+    },
+    {
+      "wordJp": "朝食",
+      "kana": "ちょうしょく",
+      "romaji": "choushoku",
+      "meaning": "breakfast 39"
+    }
+  ],
+  "40": [
+    {
+      "wordJp": "今日",
+      "kana": "きょう",
+      "romaji": "kyou",
+      "meaning": "today 40"
+    },
+    {
+      "wordJp": "明日",
+      "kana": "あした",
+      "romaji": "ashita",
+      "meaning": "tomorrow 40"
+    },
+    {
+      "wordJp": "昨日",
+      "kana": "きのう",
+      "romaji": "kinou",
+      "meaning": "yesterday 40"
+    },
+    {
+      "wordJp": "今週",
+      "kana": "こんしゅう",
+      "romaji": "konshuu",
+      "meaning": "this week 40"
+    },
+    {
+      "wordJp": "来週",
+      "kana": "らいしゅう",
+      "romaji": "raishuu",
+      "meaning": "next week 40"
+    },
+    {
+      "wordJp": "時間",
+      "kana": "じかん",
+      "romaji": "jikan",
+      "meaning": "time 40"
+    },
+    {
+      "wordJp": "時計",
+      "kana": "とけい",
+      "romaji": "tokei",
+      "meaning": "clock, watch 40"
+    },
+    {
+      "wordJp": "朝",
+      "kana": "あさ",
+      "romaji": "asa",
+      "meaning": "morning 40"
+    },
+    {
+      "wordJp": "昼",
+      "kana": "ひる",
+      "romaji": "hiru",
+      "meaning": "noon, daytime 40"
+    },
+    {
+      "wordJp": "夜",
+      "kana": "よる",
+      "romaji": "yoru",
+      "meaning": "night 40"
+    }
+  ],
+  "41": [
+    {
+      "wordJp": "天気",
+      "kana": "てんき",
+      "romaji": "tenki",
+      "meaning": "weather 41"
+    },
+    {
+      "wordJp": "雨",
+      "kana": "あめ",
+      "romaji": "ame",
+      "meaning": "rain 41"
+    },
+    {
+      "wordJp": "雪",
+      "kana": "ゆき",
+      "romaji": "yuki",
+      "meaning": "snow 41"
+    },
+    {
+      "wordJp": "風",
+      "kana": "かぜ",
+      "romaji": "kaze",
+      "meaning": "wind 41"
+    },
+    {
+      "wordJp": "空",
+      "kana": "そら",
+      "romaji": "sora",
+      "meaning": "sky 41"
+    },
+    {
+      "wordJp": "海",
+      "kana": "うみ",
+      "romaji": "umi",
+      "meaning": "sea, ocean 41"
+    },
+    {
+      "wordJp": "山",
+      "kana": "やま",
+      "romaji": "yama",
+      "meaning": "mountain 41"
+    },
+    {
+      "wordJp": "川",
+      "kana": "かわ",
+      "romaji": "kawa",
+      "meaning": "river 41"
+    },
+    {
+      "wordJp": "花",
+      "kana": "はな",
+      "romaji": "hana",
+      "meaning": "flower 41"
+    },
+    {
+      "wordJp": "木",
+      "kana": "き",
+      "romaji": "ki",
+      "meaning": "tree, wood 41"
+    }
+  ],
+  "42": [
+    {
+      "wordJp": "行く",
+      "kana": "いく",
+      "romaji": "iku",
+      "meaning": "to go 42"
+    },
+    {
+      "wordJp": "来る",
+      "kana": "くる",
+      "romaji": "kuru",
+      "meaning": "to come 42"
+    },
+    {
+      "wordJp": "帰る",
+      "kana": "かえる",
+      "romaji": "kaeru",
+      "meaning": "to return home 42"
+    },
+    {
+      "wordJp": "食べる",
+      "kana": "たべる",
+      "romaji": "taberu",
+      "meaning": "to eat 42"
+    },
+    {
+      "wordJp": "飲む",
+      "kana": "のむ",
+      "romaji": "nomu",
+      "meaning": "to drink 42"
+    },
+    {
+      "wordJp": "見る",
+      "kana": "みる",
+      "romaji": "miru",
+      "meaning": "to see, watch 42"
+    },
+    {
+      "wordJp": "聞く",
+      "kana": "きく",
+      "romaji": "kiku",
+      "meaning": "to hear, listen 42"
+    },
+    {
+      "wordJp": "読む",
+      "kana": "よむ",
+      "romaji": "yomu",
+      "meaning": "to read 42"
+    },
+    {
+      "wordJp": "書く",
+      "kana": "かく",
+      "romaji": "kaku",
+      "meaning": "to write 42"
+    },
+    {
+      "wordJp": "話す",
+      "kana": "はなす",
+      "romaji": "hanasu",
+      "meaning": "to speak 42"
+    }
+  ],
+  "43": [
+    {
+      "wordJp": "学校",
+      "kana": "がっこう",
+      "romaji": "gakkou",
+      "meaning": "school 43"
+    },
+    {
+      "wordJp": "先生",
+      "kana": "せんせい",
+      "romaji": "sensei",
+      "meaning": "teacher 43"
+    },
+    {
+      "wordJp": "学生",
+      "kana": "がくせい",
+      "romaji": "gakusei",
+      "meaning": "student 43"
+    },
+    {
+      "wordJp": "友達",
+      "kana": "ともだち",
+      "romaji": "tomodachi",
+      "meaning": "friend 43"
+    },
+    {
+      "wordJp": "本",
+      "kana": "ほん",
+      "romaji": "hon",
+      "meaning": "book 43"
+    },
+    {
+      "wordJp": "車",
+      "kana": "くるま",
+      "romaji": "kuruma",
+      "meaning": "car 43"
+    },
+    {
+      "wordJp": "電車",
+      "kana": "でんしゃ",
+      "romaji": "densha",
+      "meaning": "train 43"
+    },
+    {
+      "wordJp": "水",
+      "kana": "みず",
+      "romaji": "mizu",
+      "meaning": "water 43"
+    },
+    {
+      "wordJp": "猫",
+      "kana": "ねこ",
+      "romaji": "neko",
+      "meaning": "cat 43"
+    },
+    {
+      "wordJp": "犬",
+      "kana": "いぬ",
+      "romaji": "inu",
+      "meaning": "dog 43"
+    }
+  ],
+  "44": [
+    {
+      "wordJp": "家族",
+      "kana": "かぞく",
+      "romaji": "kazoku",
+      "meaning": "family 44"
+    },
+    {
+      "wordJp": "父",
+      "kana": "ちち",
+      "romaji": "chichi",
+      "meaning": "father 44"
+    },
+    {
+      "wordJp": "母",
+      "kana": "はは",
+      "romaji": "haha",
+      "meaning": "mother 44"
+    },
+    {
+      "wordJp": "兄",
+      "kana": "あに",
+      "romaji": "ani",
+      "meaning": "older brother 44"
+    },
+    {
+      "wordJp": "姉",
+      "kana": "あね",
+      "romaji": "ane",
+      "meaning": "older sister 44"
+    },
+    {
+      "wordJp": "家",
+      "kana": "いえ",
+      "romaji": "ie",
+      "meaning": "house 44"
+    },
+    {
+      "wordJp": "部屋",
+      "kana": "へや",
+      "romaji": "heya",
+      "meaning": "room 44"
+    },
+    {
+      "wordJp": "机",
+      "kana": "つくえ",
+      "romaji": "tsukue",
+      "meaning": "desk 44"
+    },
+    {
+      "wordJp": "椅子",
+      "kana": "いす",
+      "romaji": "isu",
+      "meaning": "chair 44"
+    },
+    {
+      "wordJp": "窓",
+      "kana": "まど",
+      "romaji": "mado",
+      "meaning": "window 44"
+    }
+  ],
+  "45": [
+    {
+      "wordJp": "ご飯",
+      "kana": "ごはん",
+      "romaji": "gohan",
+      "meaning": "meal, cooked rice 45"
+    },
+    {
+      "wordJp": "パン",
+      "kana": "ぱん",
+      "romaji": "pan",
+      "meaning": "bread 45"
+    },
+    {
+      "wordJp": "魚",
+      "kana": "さかな",
+      "romaji": "sakana",
+      "meaning": "fish 45"
+    },
+    {
+      "wordJp": "肉",
+      "kana": "にく",
+      "romaji": "niku",
+      "meaning": "meat 45"
+    },
+    {
+      "wordJp": "野菜",
+      "kana": "やさい",
+      "romaji": "yasai",
+      "meaning": "vegetable 45"
+    },
+    {
+      "wordJp": "果物",
+      "kana": "くだもの",
+      "romaji": "kudamono",
+      "meaning": "fruit 45"
+    },
+    {
+      "wordJp": "お茶",
+      "kana": "おちゃ",
+      "romaji": "ocha",
+      "meaning": "green tea 45"
+    },
+    {
+      "wordJp": "牛乳",
+      "kana": "ぎゅうにゅう",
+      "romaji": "gyuunyuu",
+      "meaning": "milk 45"
+    },
+    {
+      "wordJp": "料理",
+      "kana": "りょうり",
+      "romaji": "ryouri",
+      "meaning": "cooking, cuisine 45"
+    },
+    {
+      "wordJp": "朝食",
+      "kana": "ちょうしょく",
+      "romaji": "choushoku",
+      "meaning": "breakfast 45"
+    }
+  ],
+  "46": [
+    {
+      "wordJp": "今日",
+      "kana": "きょう",
+      "romaji": "kyou",
+      "meaning": "today 46"
+    },
+    {
+      "wordJp": "明日",
+      "kana": "あした",
+      "romaji": "ashita",
+      "meaning": "tomorrow 46"
+    },
+    {
+      "wordJp": "昨日",
+      "kana": "きのう",
+      "romaji": "kinou",
+      "meaning": "yesterday 46"
+    },
+    {
+      "wordJp": "今週",
+      "kana": "こんしゅう",
+      "romaji": "konshuu",
+      "meaning": "this week 46"
+    },
+    {
+      "wordJp": "来週",
+      "kana": "らいしゅう",
+      "romaji": "raishuu",
+      "meaning": "next week 46"
+    },
+    {
+      "wordJp": "時間",
+      "kana": "じかん",
+      "romaji": "jikan",
+      "meaning": "time 46"
+    },
+    {
+      "wordJp": "時計",
+      "kana": "とけい",
+      "romaji": "tokei",
+      "meaning": "clock, watch 46"
+    },
+    {
+      "wordJp": "朝",
+      "kana": "あさ",
+      "romaji": "asa",
+      "meaning": "morning 46"
+    },
+    {
+      "wordJp": "昼",
+      "kana": "ひる",
+      "romaji": "hiru",
+      "meaning": "noon, daytime 46"
+    },
+    {
+      "wordJp": "夜",
+      "kana": "よる",
+      "romaji": "yoru",
+      "meaning": "night 46"
+    }
+  ],
+  "47": [
+    {
+      "wordJp": "天気",
+      "kana": "てんき",
+      "romaji": "tenki",
+      "meaning": "weather 47"
+    },
+    {
+      "wordJp": "雨",
+      "kana": "あめ",
+      "romaji": "ame",
+      "meaning": "rain 47"
+    },
+    {
+      "wordJp": "雪",
+      "kana": "ゆき",
+      "romaji": "yuki",
+      "meaning": "snow 47"
+    },
+    {
+      "wordJp": "風",
+      "kana": "かぜ",
+      "romaji": "kaze",
+      "meaning": "wind 47"
+    },
+    {
+      "wordJp": "空",
+      "kana": "そら",
+      "romaji": "sora",
+      "meaning": "sky 47"
+    },
+    {
+      "wordJp": "海",
+      "kana": "うみ",
+      "romaji": "umi",
+      "meaning": "sea, ocean 47"
+    },
+    {
+      "wordJp": "山",
+      "kana": "やま",
+      "romaji": "yama",
+      "meaning": "mountain 47"
+    },
+    {
+      "wordJp": "川",
+      "kana": "かわ",
+      "romaji": "kawa",
+      "meaning": "river 47"
+    },
+    {
+      "wordJp": "花",
+      "kana": "はな",
+      "romaji": "hana",
+      "meaning": "flower 47"
+    },
+    {
+      "wordJp": "木",
+      "kana": "き",
+      "romaji": "ki",
+      "meaning": "tree, wood 47"
+    }
+  ],
+  "48": [
+    {
+      "wordJp": "行く",
+      "kana": "いく",
+      "romaji": "iku",
+      "meaning": "to go 48"
+    },
+    {
+      "wordJp": "来る",
+      "kana": "くる",
+      "romaji": "kuru",
+      "meaning": "to come 48"
+    },
+    {
+      "wordJp": "帰る",
+      "kana": "かえる",
+      "romaji": "kaeru",
+      "meaning": "to return home 48"
+    },
+    {
+      "wordJp": "食べる",
+      "kana": "たべる",
+      "romaji": "taberu",
+      "meaning": "to eat 48"
+    },
+    {
+      "wordJp": "飲む",
+      "kana": "のむ",
+      "romaji": "nomu",
+      "meaning": "to drink 48"
+    },
+    {
+      "wordJp": "見る",
+      "kana": "みる",
+      "romaji": "miru",
+      "meaning": "to see, watch 48"
+    },
+    {
+      "wordJp": "聞く",
+      "kana": "きく",
+      "romaji": "kiku",
+      "meaning": "to hear, listen 48"
+    },
+    {
+      "wordJp": "読む",
+      "kana": "よむ",
+      "romaji": "yomu",
+      "meaning": "to read 48"
+    },
+    {
+      "wordJp": "書く",
+      "kana": "かく",
+      "romaji": "kaku",
+      "meaning": "to write 48"
+    },
+    {
+      "wordJp": "話す",
+      "kana": "はなす",
+      "romaji": "hanasu",
+      "meaning": "to speak 48"
+    }
+  ],
+  "49": [
+    {
+      "wordJp": "学校",
+      "kana": "がっこう",
+      "romaji": "gakkou",
+      "meaning": "school 49"
+    },
+    {
+      "wordJp": "先生",
+      "kana": "せんせい",
+      "romaji": "sensei",
+      "meaning": "teacher 49"
+    },
+    {
+      "wordJp": "学生",
+      "kana": "がくせい",
+      "romaji": "gakusei",
+      "meaning": "student 49"
+    },
+    {
+      "wordJp": "友達",
+      "kana": "ともだち",
+      "romaji": "tomodachi",
+      "meaning": "friend 49"
+    },
+    {
+      "wordJp": "本",
+      "kana": "ほん",
+      "romaji": "hon",
+      "meaning": "book 49"
+    },
+    {
+      "wordJp": "車",
+      "kana": "くるま",
+      "romaji": "kuruma",
+      "meaning": "car 49"
+    },
+    {
+      "wordJp": "電車",
+      "kana": "でんしゃ",
+      "romaji": "densha",
+      "meaning": "train 49"
+    },
+    {
+      "wordJp": "水",
+      "kana": "みず",
+      "romaji": "mizu",
+      "meaning": "water 49"
+    },
+    {
+      "wordJp": "猫",
+      "kana": "ねこ",
+      "romaji": "neko",
+      "meaning": "cat 49"
+    },
+    {
+      "wordJp": "犬",
+      "kana": "いぬ",
+      "romaji": "inu",
+      "meaning": "dog 49"
+    }
+  ],
+  "50": [
+    {
+      "wordJp": "家族",
+      "kana": "かぞく",
+      "romaji": "kazoku",
+      "meaning": "family 50"
+    },
+    {
+      "wordJp": "父",
+      "kana": "ちち",
+      "romaji": "chichi",
+      "meaning": "father 50"
+    },
+    {
+      "wordJp": "母",
+      "kana": "はは",
+      "romaji": "haha",
+      "meaning": "mother 50"
+    },
+    {
+      "wordJp": "兄",
+      "kana": "あに",
+      "romaji": "ani",
+      "meaning": "older brother 50"
+    },
+    {
+      "wordJp": "姉",
+      "kana": "あね",
+      "romaji": "ane",
+      "meaning": "older sister 50"
+    },
+    {
+      "wordJp": "家",
+      "kana": "いえ",
+      "romaji": "ie",
+      "meaning": "house 50"
+    },
+    {
+      "wordJp": "部屋",
+      "kana": "へや",
+      "romaji": "heya",
+      "meaning": "room 50"
+    },
+    {
+      "wordJp": "机",
+      "kana": "つくえ",
+      "romaji": "tsukue",
+      "meaning": "desk 50"
+    },
+    {
+      "wordJp": "椅子",
+      "kana": "いす",
+      "romaji": "isu",
+      "meaning": "chair 50"
+    },
+    {
+      "wordJp": "窓",
+      "kana": "まど",
+      "romaji": "mado",
+      "meaning": "window 50"
+    }
+  ],
+  "51": [
+    {
+      "wordJp": "ご飯",
+      "kana": "ごはん",
+      "romaji": "gohan",
+      "meaning": "meal, cooked rice 51"
+    },
+    {
+      "wordJp": "パン",
+      "kana": "ぱん",
+      "romaji": "pan",
+      "meaning": "bread 51"
+    },
+    {
+      "wordJp": "魚",
+      "kana": "さかな",
+      "romaji": "sakana",
+      "meaning": "fish 51"
+    },
+    {
+      "wordJp": "肉",
+      "kana": "にく",
+      "romaji": "niku",
+      "meaning": "meat 51"
+    },
+    {
+      "wordJp": "野菜",
+      "kana": "やさい",
+      "romaji": "yasai",
+      "meaning": "vegetable 51"
+    },
+    {
+      "wordJp": "果物",
+      "kana": "くだもの",
+      "romaji": "kudamono",
+      "meaning": "fruit 51"
+    },
+    {
+      "wordJp": "お茶",
+      "kana": "おちゃ",
+      "romaji": "ocha",
+      "meaning": "green tea 51"
+    },
+    {
+      "wordJp": "牛乳",
+      "kana": "ぎゅうにゅう",
+      "romaji": "gyuunyuu",
+      "meaning": "milk 51"
+    },
+    {
+      "wordJp": "料理",
+      "kana": "りょうり",
+      "romaji": "ryouri",
+      "meaning": "cooking, cuisine 51"
+    },
+    {
+      "wordJp": "朝食",
+      "kana": "ちょうしょく",
+      "romaji": "choushoku",
+      "meaning": "breakfast 51"
+    }
+  ],
+  "52": [
+    {
+      "wordJp": "今日",
+      "kana": "きょう",
+      "romaji": "kyou",
+      "meaning": "today 52"
+    },
+    {
+      "wordJp": "明日",
+      "kana": "あした",
+      "romaji": "ashita",
+      "meaning": "tomorrow 52"
+    },
+    {
+      "wordJp": "昨日",
+      "kana": "きのう",
+      "romaji": "kinou",
+      "meaning": "yesterday 52"
+    },
+    {
+      "wordJp": "今週",
+      "kana": "こんしゅう",
+      "romaji": "konshuu",
+      "meaning": "this week 52"
+    },
+    {
+      "wordJp": "来週",
+      "kana": "らいしゅう",
+      "romaji": "raishuu",
+      "meaning": "next week 52"
+    },
+    {
+      "wordJp": "時間",
+      "kana": "じかん",
+      "romaji": "jikan",
+      "meaning": "time 52"
+    },
+    {
+      "wordJp": "時計",
+      "kana": "とけい",
+      "romaji": "tokei",
+      "meaning": "clock, watch 52"
+    },
+    {
+      "wordJp": "朝",
+      "kana": "あさ",
+      "romaji": "asa",
+      "meaning": "morning 52"
+    },
+    {
+      "wordJp": "昼",
+      "kana": "ひる",
+      "romaji": "hiru",
+      "meaning": "noon, daytime 52"
+    },
+    {
+      "wordJp": "夜",
+      "kana": "よる",
+      "romaji": "yoru",
+      "meaning": "night 52"
+    }
+  ],
+  "53": [
+    {
+      "wordJp": "天気",
+      "kana": "てんき",
+      "romaji": "tenki",
+      "meaning": "weather 53"
+    },
+    {
+      "wordJp": "雨",
+      "kana": "あめ",
+      "romaji": "ame",
+      "meaning": "rain 53"
+    },
+    {
+      "wordJp": "雪",
+      "kana": "ゆき",
+      "romaji": "yuki",
+      "meaning": "snow 53"
+    },
+    {
+      "wordJp": "風",
+      "kana": "かぜ",
+      "romaji": "kaze",
+      "meaning": "wind 53"
+    },
+    {
+      "wordJp": "空",
+      "kana": "そら",
+      "romaji": "sora",
+      "meaning": "sky 53"
+    },
+    {
+      "wordJp": "海",
+      "kana": "うみ",
+      "romaji": "umi",
+      "meaning": "sea, ocean 53"
+    },
+    {
+      "wordJp": "山",
+      "kana": "やま",
+      "romaji": "yama",
+      "meaning": "mountain 53"
+    },
+    {
+      "wordJp": "川",
+      "kana": "かわ",
+      "romaji": "kawa",
+      "meaning": "river 53"
+    },
+    {
+      "wordJp": "花",
+      "kana": "はな",
+      "romaji": "hana",
+      "meaning": "flower 53"
+    },
+    {
+      "wordJp": "木",
+      "kana": "き",
+      "romaji": "ki",
+      "meaning": "tree, wood 53"
+    }
+  ],
+  "54": [
+    {
+      "wordJp": "行く",
+      "kana": "いく",
+      "romaji": "iku",
+      "meaning": "to go 54"
+    },
+    {
+      "wordJp": "来る",
+      "kana": "くる",
+      "romaji": "kuru",
+      "meaning": "to come 54"
+    },
+    {
+      "wordJp": "帰る",
+      "kana": "かえる",
+      "romaji": "kaeru",
+      "meaning": "to return home 54"
+    },
+    {
+      "wordJp": "食べる",
+      "kana": "たべる",
+      "romaji": "taberu",
+      "meaning": "to eat 54"
+    },
+    {
+      "wordJp": "飲む",
+      "kana": "のむ",
+      "romaji": "nomu",
+      "meaning": "to drink 54"
+    },
+    {
+      "wordJp": "見る",
+      "kana": "みる",
+      "romaji": "miru",
+      "meaning": "to see, watch 54"
+    },
+    {
+      "wordJp": "聞く",
+      "kana": "きく",
+      "romaji": "kiku",
+      "meaning": "to hear, listen 54"
+    },
+    {
+      "wordJp": "読む",
+      "kana": "よむ",
+      "romaji": "yomu",
+      "meaning": "to read 54"
+    },
+    {
+      "wordJp": "書く",
+      "kana": "かく",
+      "romaji": "kaku",
+      "meaning": "to write 54"
+    },
+    {
+      "wordJp": "話す",
+      "kana": "はなす",
+      "romaji": "hanasu",
+      "meaning": "to speak 54"
+    }
+  ],
+  "55": [
+    {
+      "wordJp": "学校",
+      "kana": "がっこう",
+      "romaji": "gakkou",
+      "meaning": "school 55"
+    },
+    {
+      "wordJp": "先生",
+      "kana": "せんせい",
+      "romaji": "sensei",
+      "meaning": "teacher 55"
+    },
+    {
+      "wordJp": "学生",
+      "kana": "がくせい",
+      "romaji": "gakusei",
+      "meaning": "student 55"
+    },
+    {
+      "wordJp": "友達",
+      "kana": "ともだち",
+      "romaji": "tomodachi",
+      "meaning": "friend 55"
+    },
+    {
+      "wordJp": "本",
+      "kana": "ほん",
+      "romaji": "hon",
+      "meaning": "book 55"
+    },
+    {
+      "wordJp": "車",
+      "kana": "くるま",
+      "romaji": "kuruma",
+      "meaning": "car 55"
+    },
+    {
+      "wordJp": "電車",
+      "kana": "でんしゃ",
+      "romaji": "densha",
+      "meaning": "train 55"
+    },
+    {
+      "wordJp": "水",
+      "kana": "みず",
+      "romaji": "mizu",
+      "meaning": "water 55"
+    },
+    {
+      "wordJp": "猫",
+      "kana": "ねこ",
+      "romaji": "neko",
+      "meaning": "cat 55"
+    },
+    {
+      "wordJp": "犬",
+      "kana": "いぬ",
+      "romaji": "inu",
+      "meaning": "dog 55"
+    }
+  ],
+  "56": [
+    {
+      "wordJp": "家族",
+      "kana": "かぞく",
+      "romaji": "kazoku",
+      "meaning": "family 56"
+    },
+    {
+      "wordJp": "父",
+      "kana": "ちち",
+      "romaji": "chichi",
+      "meaning": "father 56"
+    },
+    {
+      "wordJp": "母",
+      "kana": "はは",
+      "romaji": "haha",
+      "meaning": "mother 56"
+    },
+    {
+      "wordJp": "兄",
+      "kana": "あに",
+      "romaji": "ani",
+      "meaning": "older brother 56"
+    },
+    {
+      "wordJp": "姉",
+      "kana": "あね",
+      "romaji": "ane",
+      "meaning": "older sister 56"
+    },
+    {
+      "wordJp": "家",
+      "kana": "いえ",
+      "romaji": "ie",
+      "meaning": "house 56"
+    },
+    {
+      "wordJp": "部屋",
+      "kana": "へや",
+      "romaji": "heya",
+      "meaning": "room 56"
+    },
+    {
+      "wordJp": "机",
+      "kana": "つくえ",
+      "romaji": "tsukue",
+      "meaning": "desk 56"
+    },
+    {
+      "wordJp": "椅子",
+      "kana": "いす",
+      "romaji": "isu",
+      "meaning": "chair 56"
+    },
+    {
+      "wordJp": "窓",
+      "kana": "まど",
+      "romaji": "mado",
+      "meaning": "window 56"
+    }
+  ],
+  "57": [
+    {
+      "wordJp": "ご飯",
+      "kana": "ごはん",
+      "romaji": "gohan",
+      "meaning": "meal, cooked rice 57"
+    },
+    {
+      "wordJp": "パン",
+      "kana": "ぱん",
+      "romaji": "pan",
+      "meaning": "bread 57"
+    },
+    {
+      "wordJp": "魚",
+      "kana": "さかな",
+      "romaji": "sakana",
+      "meaning": "fish 57"
+    },
+    {
+      "wordJp": "肉",
+      "kana": "にく",
+      "romaji": "niku",
+      "meaning": "meat 57"
+    },
+    {
+      "wordJp": "野菜",
+      "kana": "やさい",
+      "romaji": "yasai",
+      "meaning": "vegetable 57"
+    },
+    {
+      "wordJp": "果物",
+      "kana": "くだもの",
+      "romaji": "kudamono",
+      "meaning": "fruit 57"
+    },
+    {
+      "wordJp": "お茶",
+      "kana": "おちゃ",
+      "romaji": "ocha",
+      "meaning": "green tea 57"
+    },
+    {
+      "wordJp": "牛乳",
+      "kana": "ぎゅうにゅう",
+      "romaji": "gyuunyuu",
+      "meaning": "milk 57"
+    },
+    {
+      "wordJp": "料理",
+      "kana": "りょうり",
+      "romaji": "ryouri",
+      "meaning": "cooking, cuisine 57"
+    },
+    {
+      "wordJp": "朝食",
+      "kana": "ちょうしょく",
+      "romaji": "choushoku",
+      "meaning": "breakfast 57"
+    }
+  ],
+  "58": [
+    {
+      "wordJp": "今日",
+      "kana": "きょう",
+      "romaji": "kyou",
+      "meaning": "today 58"
+    },
+    {
+      "wordJp": "明日",
+      "kana": "あした",
+      "romaji": "ashita",
+      "meaning": "tomorrow 58"
+    },
+    {
+      "wordJp": "昨日",
+      "kana": "きのう",
+      "romaji": "kinou",
+      "meaning": "yesterday 58"
+    },
+    {
+      "wordJp": "今週",
+      "kana": "こんしゅう",
+      "romaji": "konshuu",
+      "meaning": "this week 58"
+    },
+    {
+      "wordJp": "来週",
+      "kana": "らいしゅう",
+      "romaji": "raishuu",
+      "meaning": "next week 58"
+    },
+    {
+      "wordJp": "時間",
+      "kana": "じかん",
+      "romaji": "jikan",
+      "meaning": "time 58"
+    },
+    {
+      "wordJp": "時計",
+      "kana": "とけい",
+      "romaji": "tokei",
+      "meaning": "clock, watch 58"
+    },
+    {
+      "wordJp": "朝",
+      "kana": "あさ",
+      "romaji": "asa",
+      "meaning": "morning 58"
+    },
+    {
+      "wordJp": "昼",
+      "kana": "ひる",
+      "romaji": "hiru",
+      "meaning": "noon, daytime 58"
+    },
+    {
+      "wordJp": "夜",
+      "kana": "よる",
+      "romaji": "yoru",
+      "meaning": "night 58"
+    }
+  ],
+  "59": [
+    {
+      "wordJp": "天気",
+      "kana": "てんき",
+      "romaji": "tenki",
+      "meaning": "weather 59"
+    },
+    {
+      "wordJp": "雨",
+      "kana": "あめ",
+      "romaji": "ame",
+      "meaning": "rain 59"
+    },
+    {
+      "wordJp": "雪",
+      "kana": "ゆき",
+      "romaji": "yuki",
+      "meaning": "snow 59"
+    },
+    {
+      "wordJp": "風",
+      "kana": "かぜ",
+      "romaji": "kaze",
+      "meaning": "wind 59"
+    },
+    {
+      "wordJp": "空",
+      "kana": "そら",
+      "romaji": "sora",
+      "meaning": "sky 59"
+    },
+    {
+      "wordJp": "海",
+      "kana": "うみ",
+      "romaji": "umi",
+      "meaning": "sea, ocean 59"
+    },
+    {
+      "wordJp": "山",
+      "kana": "やま",
+      "romaji": "yama",
+      "meaning": "mountain 59"
+    },
+    {
+      "wordJp": "川",
+      "kana": "かわ",
+      "romaji": "kawa",
+      "meaning": "river 59"
+    },
+    {
+      "wordJp": "花",
+      "kana": "はな",
+      "romaji": "hana",
+      "meaning": "flower 59"
+    },
+    {
+      "wordJp": "木",
+      "kana": "き",
+      "romaji": "ki",
+      "meaning": "tree, wood 59"
+    }
+  ],
+  "60": [
+    {
+      "wordJp": "行く",
+      "kana": "いく",
+      "romaji": "iku",
+      "meaning": "to go 60"
+    },
+    {
+      "wordJp": "来る",
+      "kana": "くる",
+      "romaji": "kuru",
+      "meaning": "to come 60"
+    },
+    {
+      "wordJp": "帰る",
+      "kana": "かえる",
+      "romaji": "kaeru",
+      "meaning": "to return home 60"
+    },
+    {
+      "wordJp": "食べる",
+      "kana": "たべる",
+      "romaji": "taberu",
+      "meaning": "to eat 60"
+    },
+    {
+      "wordJp": "飲む",
+      "kana": "のむ",
+      "romaji": "nomu",
+      "meaning": "to drink 60"
+    },
+    {
+      "wordJp": "見る",
+      "kana": "みる",
+      "romaji": "miru",
+      "meaning": "to see, watch 60"
+    },
+    {
+      "wordJp": "聞く",
+      "kana": "きく",
+      "romaji": "kiku",
+      "meaning": "to hear, listen 60"
+    },
+    {
+      "wordJp": "読む",
+      "kana": "よむ",
+      "romaji": "yomu",
+      "meaning": "to read 60"
+    },
+    {
+      "wordJp": "書く",
+      "kana": "かく",
+      "romaji": "kaku",
+      "meaning": "to write 60"
+    },
+    {
+      "wordJp": "話す",
+      "kana": "はなす",
+      "romaji": "hanasu",
+      "meaning": "to speak 60"
+    }
+  ],
+  "61": [
+    {
+      "wordJp": "学校",
+      "kana": "がっこう",
+      "romaji": "gakkou",
+      "meaning": "school 61"
+    },
+    {
+      "wordJp": "先生",
+      "kana": "せんせい",
+      "romaji": "sensei",
+      "meaning": "teacher 61"
+    },
+    {
+      "wordJp": "学生",
+      "kana": "がくせい",
+      "romaji": "gakusei",
+      "meaning": "student 61"
+    },
+    {
+      "wordJp": "友達",
+      "kana": "ともだち",
+      "romaji": "tomodachi",
+      "meaning": "friend 61"
+    },
+    {
+      "wordJp": "本",
+      "kana": "ほん",
+      "romaji": "hon",
+      "meaning": "book 61"
+    },
+    {
+      "wordJp": "車",
+      "kana": "くるま",
+      "romaji": "kuruma",
+      "meaning": "car 61"
+    },
+    {
+      "wordJp": "電車",
+      "kana": "でんしゃ",
+      "romaji": "densha",
+      "meaning": "train 61"
+    },
+    {
+      "wordJp": "水",
+      "kana": "みず",
+      "romaji": "mizu",
+      "meaning": "water 61"
+    },
+    {
+      "wordJp": "猫",
+      "kana": "ねこ",
+      "romaji": "neko",
+      "meaning": "cat 61"
+    },
+    {
+      "wordJp": "犬",
+      "kana": "いぬ",
+      "romaji": "inu",
+      "meaning": "dog 61"
+    }
+  ],
+  "62": [
+    {
+      "wordJp": "家族",
+      "kana": "かぞく",
+      "romaji": "kazoku",
+      "meaning": "family 62"
+    },
+    {
+      "wordJp": "父",
+      "kana": "ちち",
+      "romaji": "chichi",
+      "meaning": "father 62"
+    },
+    {
+      "wordJp": "母",
+      "kana": "はは",
+      "romaji": "haha",
+      "meaning": "mother 62"
+    },
+    {
+      "wordJp": "兄",
+      "kana": "あに",
+      "romaji": "ani",
+      "meaning": "older brother 62"
+    },
+    {
+      "wordJp": "姉",
+      "kana": "あね",
+      "romaji": "ane",
+      "meaning": "older sister 62"
+    },
+    {
+      "wordJp": "家",
+      "kana": "いえ",
+      "romaji": "ie",
+      "meaning": "house 62"
+    },
+    {
+      "wordJp": "部屋",
+      "kana": "へや",
+      "romaji": "heya",
+      "meaning": "room 62"
+    },
+    {
+      "wordJp": "机",
+      "kana": "つくえ",
+      "romaji": "tsukue",
+      "meaning": "desk 62"
+    },
+    {
+      "wordJp": "椅子",
+      "kana": "いす",
+      "romaji": "isu",
+      "meaning": "chair 62"
+    },
+    {
+      "wordJp": "窓",
+      "kana": "まど",
+      "romaji": "mado",
+      "meaning": "window 62"
+    }
+  ],
+  "63": [
+    {
+      "wordJp": "ご飯",
+      "kana": "ごはん",
+      "romaji": "gohan",
+      "meaning": "meal, cooked rice 63"
+    },
+    {
+      "wordJp": "パン",
+      "kana": "ぱん",
+      "romaji": "pan",
+      "meaning": "bread 63"
+    },
+    {
+      "wordJp": "魚",
+      "kana": "さかな",
+      "romaji": "sakana",
+      "meaning": "fish 63"
+    },
+    {
+      "wordJp": "肉",
+      "kana": "にく",
+      "romaji": "niku",
+      "meaning": "meat 63"
+    },
+    {
+      "wordJp": "野菜",
+      "kana": "やさい",
+      "romaji": "yasai",
+      "meaning": "vegetable 63"
+    },
+    {
+      "wordJp": "果物",
+      "kana": "くだもの",
+      "romaji": "kudamono",
+      "meaning": "fruit 63"
+    },
+    {
+      "wordJp": "お茶",
+      "kana": "おちゃ",
+      "romaji": "ocha",
+      "meaning": "green tea 63"
+    },
+    {
+      "wordJp": "牛乳",
+      "kana": "ぎゅうにゅう",
+      "romaji": "gyuunyuu",
+      "meaning": "milk 63"
+    },
+    {
+      "wordJp": "料理",
+      "kana": "りょうり",
+      "romaji": "ryouri",
+      "meaning": "cooking, cuisine 63"
+    },
+    {
+      "wordJp": "朝食",
+      "kana": "ちょうしょく",
+      "romaji": "choushoku",
+      "meaning": "breakfast 63"
+    }
+  ],
+  "64": [
+    {
+      "wordJp": "今日",
+      "kana": "きょう",
+      "romaji": "kyou",
+      "meaning": "today 64"
+    },
+    {
+      "wordJp": "明日",
+      "kana": "あした",
+      "romaji": "ashita",
+      "meaning": "tomorrow 64"
+    },
+    {
+      "wordJp": "昨日",
+      "kana": "きのう",
+      "romaji": "kinou",
+      "meaning": "yesterday 64"
+    },
+    {
+      "wordJp": "今週",
+      "kana": "こんしゅう",
+      "romaji": "konshuu",
+      "meaning": "this week 64"
+    },
+    {
+      "wordJp": "来週",
+      "kana": "らいしゅう",
+      "romaji": "raishuu",
+      "meaning": "next week 64"
+    },
+    {
+      "wordJp": "時間",
+      "kana": "じかん",
+      "romaji": "jikan",
+      "meaning": "time 64"
+    },
+    {
+      "wordJp": "時計",
+      "kana": "とけい",
+      "romaji": "tokei",
+      "meaning": "clock, watch 64"
+    },
+    {
+      "wordJp": "朝",
+      "kana": "あさ",
+      "romaji": "asa",
+      "meaning": "morning 64"
+    },
+    {
+      "wordJp": "昼",
+      "kana": "ひる",
+      "romaji": "hiru",
+      "meaning": "noon, daytime 64"
+    },
+    {
+      "wordJp": "夜",
+      "kana": "よる",
+      "romaji": "yoru",
+      "meaning": "night 64"
+    }
+  ],
+  "65": [
+    {
+      "wordJp": "天気",
+      "kana": "てんき",
+      "romaji": "tenki",
+      "meaning": "weather 65"
+    },
+    {
+      "wordJp": "雨",
+      "kana": "あめ",
+      "romaji": "ame",
+      "meaning": "rain 65"
+    },
+    {
+      "wordJp": "雪",
+      "kana": "ゆき",
+      "romaji": "yuki",
+      "meaning": "snow 65"
+    },
+    {
+      "wordJp": "風",
+      "kana": "かぜ",
+      "romaji": "kaze",
+      "meaning": "wind 65"
+    },
+    {
+      "wordJp": "空",
+      "kana": "そら",
+      "romaji": "sora",
+      "meaning": "sky 65"
+    },
+    {
+      "wordJp": "海",
+      "kana": "うみ",
+      "romaji": "umi",
+      "meaning": "sea, ocean 65"
+    },
+    {
+      "wordJp": "山",
+      "kana": "やま",
+      "romaji": "yama",
+      "meaning": "mountain 65"
+    },
+    {
+      "wordJp": "川",
+      "kana": "かわ",
+      "romaji": "kawa",
+      "meaning": "river 65"
+    },
+    {
+      "wordJp": "花",
+      "kana": "はな",
+      "romaji": "hana",
+      "meaning": "flower 65"
+    },
+    {
+      "wordJp": "木",
+      "kana": "き",
+      "romaji": "ki",
+      "meaning": "tree, wood 65"
+    }
+  ],
+  "66": [
+    {
+      "wordJp": "行く",
+      "kana": "いく",
+      "romaji": "iku",
+      "meaning": "to go 66"
+    },
+    {
+      "wordJp": "来る",
+      "kana": "くる",
+      "romaji": "kuru",
+      "meaning": "to come 66"
+    },
+    {
+      "wordJp": "帰る",
+      "kana": "かえる",
+      "romaji": "kaeru",
+      "meaning": "to return home 66"
+    },
+    {
+      "wordJp": "食べる",
+      "kana": "たべる",
+      "romaji": "taberu",
+      "meaning": "to eat 66"
+    },
+    {
+      "wordJp": "飲む",
+      "kana": "のむ",
+      "romaji": "nomu",
+      "meaning": "to drink 66"
+    },
+    {
+      "wordJp": "見る",
+      "kana": "みる",
+      "romaji": "miru",
+      "meaning": "to see, watch 66"
+    },
+    {
+      "wordJp": "聞く",
+      "kana": "きく",
+      "romaji": "kiku",
+      "meaning": "to hear, listen 66"
+    },
+    {
+      "wordJp": "読む",
+      "kana": "よむ",
+      "romaji": "yomu",
+      "meaning": "to read 66"
+    },
+    {
+      "wordJp": "書く",
+      "kana": "かく",
+      "romaji": "kaku",
+      "meaning": "to write 66"
+    },
+    {
+      "wordJp": "話す",
+      "kana": "はなす",
+      "romaji": "hanasu",
+      "meaning": "to speak 66"
+    }
+  ],
+  "67": [
+    {
+      "wordJp": "学校",
+      "kana": "がっこう",
+      "romaji": "gakkou",
+      "meaning": "school 67"
+    },
+    {
+      "wordJp": "先生",
+      "kana": "せんせい",
+      "romaji": "sensei",
+      "meaning": "teacher 67"
+    },
+    {
+      "wordJp": "学生",
+      "kana": "がくせい",
+      "romaji": "gakusei",
+      "meaning": "student 67"
+    },
+    {
+      "wordJp": "友達",
+      "kana": "ともだち",
+      "romaji": "tomodachi",
+      "meaning": "friend 67"
+    },
+    {
+      "wordJp": "本",
+      "kana": "ほん",
+      "romaji": "hon",
+      "meaning": "book 67"
+    },
+    {
+      "wordJp": "車",
+      "kana": "くるま",
+      "romaji": "kuruma",
+      "meaning": "car 67"
+    },
+    {
+      "wordJp": "電車",
+      "kana": "でんしゃ",
+      "romaji": "densha",
+      "meaning": "train 67"
+    },
+    {
+      "wordJp": "水",
+      "kana": "みず",
+      "romaji": "mizu",
+      "meaning": "water 67"
+    },
+    {
+      "wordJp": "猫",
+      "kana": "ねこ",
+      "romaji": "neko",
+      "meaning": "cat 67"
+    },
+    {
+      "wordJp": "犬",
+      "kana": "いぬ",
+      "romaji": "inu",
+      "meaning": "dog 67"
+    }
+  ],
+  "68": [
+    {
+      "wordJp": "家族",
+      "kana": "かぞく",
+      "romaji": "kazoku",
+      "meaning": "family 68"
+    },
+    {
+      "wordJp": "父",
+      "kana": "ちち",
+      "romaji": "chichi",
+      "meaning": "father 68"
+    },
+    {
+      "wordJp": "母",
+      "kana": "はは",
+      "romaji": "haha",
+      "meaning": "mother 68"
+    },
+    {
+      "wordJp": "兄",
+      "kana": "あに",
+      "romaji": "ani",
+      "meaning": "older brother 68"
+    },
+    {
+      "wordJp": "姉",
+      "kana": "あね",
+      "romaji": "ane",
+      "meaning": "older sister 68"
+    },
+    {
+      "wordJp": "家",
+      "kana": "いえ",
+      "romaji": "ie",
+      "meaning": "house 68"
+    },
+    {
+      "wordJp": "部屋",
+      "kana": "へや",
+      "romaji": "heya",
+      "meaning": "room 68"
+    },
+    {
+      "wordJp": "机",
+      "kana": "つくえ",
+      "romaji": "tsukue",
+      "meaning": "desk 68"
+    },
+    {
+      "wordJp": "椅子",
+      "kana": "いす",
+      "romaji": "isu",
+      "meaning": "chair 68"
+    },
+    {
+      "wordJp": "窓",
+      "kana": "まど",
+      "romaji": "mado",
+      "meaning": "window 68"
+    }
+  ],
+  "69": [
+    {
+      "wordJp": "ご飯",
+      "kana": "ごはん",
+      "romaji": "gohan",
+      "meaning": "meal, cooked rice 69"
+    },
+    {
+      "wordJp": "パン",
+      "kana": "ぱん",
+      "romaji": "pan",
+      "meaning": "bread 69"
+    },
+    {
+      "wordJp": "魚",
+      "kana": "さかな",
+      "romaji": "sakana",
+      "meaning": "fish 69"
+    },
+    {
+      "wordJp": "肉",
+      "kana": "にく",
+      "romaji": "niku",
+      "meaning": "meat 69"
+    },
+    {
+      "wordJp": "野菜",
+      "kana": "やさい",
+      "romaji": "yasai",
+      "meaning": "vegetable 69"
+    },
+    {
+      "wordJp": "果物",
+      "kana": "くだもの",
+      "romaji": "kudamono",
+      "meaning": "fruit 69"
+    },
+    {
+      "wordJp": "お茶",
+      "kana": "おちゃ",
+      "romaji": "ocha",
+      "meaning": "green tea 69"
+    },
+    {
+      "wordJp": "牛乳",
+      "kana": "ぎゅうにゅう",
+      "romaji": "gyuunyuu",
+      "meaning": "milk 69"
+    },
+    {
+      "wordJp": "料理",
+      "kana": "りょうり",
+      "romaji": "ryouri",
+      "meaning": "cooking, cuisine 69"
+    },
+    {
+      "wordJp": "朝食",
+      "kana": "ちょうしょく",
+      "romaji": "choushoku",
+      "meaning": "breakfast 69"
+    }
+  ],
+  "70": [
+    {
+      "wordJp": "今日",
+      "kana": "きょう",
+      "romaji": "kyou",
+      "meaning": "today 70"
+    },
+    {
+      "wordJp": "明日",
+      "kana": "あした",
+      "romaji": "ashita",
+      "meaning": "tomorrow 70"
+    },
+    {
+      "wordJp": "昨日",
+      "kana": "きのう",
+      "romaji": "kinou",
+      "meaning": "yesterday 70"
+    },
+    {
+      "wordJp": "今週",
+      "kana": "こんしゅう",
+      "romaji": "konshuu",
+      "meaning": "this week 70"
+    },
+    {
+      "wordJp": "来週",
+      "kana": "らいしゅう",
+      "romaji": "raishuu",
+      "meaning": "next week 70"
+    },
+    {
+      "wordJp": "時間",
+      "kana": "じかん",
+      "romaji": "jikan",
+      "meaning": "time 70"
+    },
+    {
+      "wordJp": "時計",
+      "kana": "とけい",
+      "romaji": "tokei",
+      "meaning": "clock, watch 70"
+    },
+    {
+      "wordJp": "朝",
+      "kana": "あさ",
+      "romaji": "asa",
+      "meaning": "morning 70"
+    },
+    {
+      "wordJp": "昼",
+      "kana": "ひる",
+      "romaji": "hiru",
+      "meaning": "noon, daytime 70"
+    },
+    {
+      "wordJp": "夜",
+      "kana": "よる",
+      "romaji": "yoru",
+      "meaning": "night 70"
+    }
+  ],
+  "71": [
+    {
+      "wordJp": "天気",
+      "kana": "てんき",
+      "romaji": "tenki",
+      "meaning": "weather 71"
+    },
+    {
+      "wordJp": "雨",
+      "kana": "あめ",
+      "romaji": "ame",
+      "meaning": "rain 71"
+    },
+    {
+      "wordJp": "雪",
+      "kana": "ゆき",
+      "romaji": "yuki",
+      "meaning": "snow 71"
+    },
+    {
+      "wordJp": "風",
+      "kana": "かぜ",
+      "romaji": "kaze",
+      "meaning": "wind 71"
+    },
+    {
+      "wordJp": "空",
+      "kana": "そら",
+      "romaji": "sora",
+      "meaning": "sky 71"
+    },
+    {
+      "wordJp": "海",
+      "kana": "うみ",
+      "romaji": "umi",
+      "meaning": "sea, ocean 71"
+    },
+    {
+      "wordJp": "山",
+      "kana": "やま",
+      "romaji": "yama",
+      "meaning": "mountain 71"
+    },
+    {
+      "wordJp": "川",
+      "kana": "かわ",
+      "romaji": "kawa",
+      "meaning": "river 71"
+    },
+    {
+      "wordJp": "花",
+      "kana": "はな",
+      "romaji": "hana",
+      "meaning": "flower 71"
+    },
+    {
+      "wordJp": "木",
+      "kana": "き",
+      "romaji": "ki",
+      "meaning": "tree, wood 71"
+    }
+  ],
+  "72": [
+    {
+      "wordJp": "行く",
+      "kana": "いく",
+      "romaji": "iku",
+      "meaning": "to go 72"
+    },
+    {
+      "wordJp": "来る",
+      "kana": "くる",
+      "romaji": "kuru",
+      "meaning": "to come 72"
+    },
+    {
+      "wordJp": "帰る",
+      "kana": "かえる",
+      "romaji": "kaeru",
+      "meaning": "to return home 72"
+    },
+    {
+      "wordJp": "食べる",
+      "kana": "たべる",
+      "romaji": "taberu",
+      "meaning": "to eat 72"
+    },
+    {
+      "wordJp": "飲む",
+      "kana": "のむ",
+      "romaji": "nomu",
+      "meaning": "to drink 72"
+    },
+    {
+      "wordJp": "見る",
+      "kana": "みる",
+      "romaji": "miru",
+      "meaning": "to see, watch 72"
+    },
+    {
+      "wordJp": "聞く",
+      "kana": "きく",
+      "romaji": "kiku",
+      "meaning": "to hear, listen 72"
+    },
+    {
+      "wordJp": "読む",
+      "kana": "よむ",
+      "romaji": "yomu",
+      "meaning": "to read 72"
+    },
+    {
+      "wordJp": "書く",
+      "kana": "かく",
+      "romaji": "kaku",
+      "meaning": "to write 72"
+    },
+    {
+      "wordJp": "話す",
+      "kana": "はなす",
+      "romaji": "hanasu",
+      "meaning": "to speak 72"
+    }
+  ],
+  "73": [
+    {
+      "wordJp": "学校",
+      "kana": "がっこう",
+      "romaji": "gakkou",
+      "meaning": "school 73"
+    },
+    {
+      "wordJp": "先生",
+      "kana": "せんせい",
+      "romaji": "sensei",
+      "meaning": "teacher 73"
+    },
+    {
+      "wordJp": "学生",
+      "kana": "がくせい",
+      "romaji": "gakusei",
+      "meaning": "student 73"
+    },
+    {
+      "wordJp": "友達",
+      "kana": "ともだち",
+      "romaji": "tomodachi",
+      "meaning": "friend 73"
+    },
+    {
+      "wordJp": "本",
+      "kana": "ほん",
+      "romaji": "hon",
+      "meaning": "book 73"
+    },
+    {
+      "wordJp": "車",
+      "kana": "くるま",
+      "romaji": "kuruma",
+      "meaning": "car 73"
+    },
+    {
+      "wordJp": "電車",
+      "kana": "でんしゃ",
+      "romaji": "densha",
+      "meaning": "train 73"
+    },
+    {
+      "wordJp": "水",
+      "kana": "みず",
+      "romaji": "mizu",
+      "meaning": "water 73"
+    },
+    {
+      "wordJp": "猫",
+      "kana": "ねこ",
+      "romaji": "neko",
+      "meaning": "cat 73"
+    },
+    {
+      "wordJp": "犬",
+      "kana": "いぬ",
+      "romaji": "inu",
+      "meaning": "dog 73"
+    }
+  ],
+  "74": [
+    {
+      "wordJp": "家族",
+      "kana": "かぞく",
+      "romaji": "kazoku",
+      "meaning": "family 74"
+    },
+    {
+      "wordJp": "父",
+      "kana": "ちち",
+      "romaji": "chichi",
+      "meaning": "father 74"
+    },
+    {
+      "wordJp": "母",
+      "kana": "はは",
+      "romaji": "haha",
+      "meaning": "mother 74"
+    },
+    {
+      "wordJp": "兄",
+      "kana": "あに",
+      "romaji": "ani",
+      "meaning": "older brother 74"
+    },
+    {
+      "wordJp": "姉",
+      "kana": "あね",
+      "romaji": "ane",
+      "meaning": "older sister 74"
+    },
+    {
+      "wordJp": "家",
+      "kana": "いえ",
+      "romaji": "ie",
+      "meaning": "house 74"
+    },
+    {
+      "wordJp": "部屋",
+      "kana": "へや",
+      "romaji": "heya",
+      "meaning": "room 74"
+    },
+    {
+      "wordJp": "机",
+      "kana": "つくえ",
+      "romaji": "tsukue",
+      "meaning": "desk 74"
+    },
+    {
+      "wordJp": "椅子",
+      "kana": "いす",
+      "romaji": "isu",
+      "meaning": "chair 74"
+    },
+    {
+      "wordJp": "窓",
+      "kana": "まど",
+      "romaji": "mado",
+      "meaning": "window 74"
+    }
+  ],
+  "75": [
+    {
+      "wordJp": "ご飯",
+      "kana": "ごはん",
+      "romaji": "gohan",
+      "meaning": "meal, cooked rice 75"
+    },
+    {
+      "wordJp": "パン",
+      "kana": "ぱん",
+      "romaji": "pan",
+      "meaning": "bread 75"
+    },
+    {
+      "wordJp": "魚",
+      "kana": "さかな",
+      "romaji": "sakana",
+      "meaning": "fish 75"
+    },
+    {
+      "wordJp": "肉",
+      "kana": "にく",
+      "romaji": "niku",
+      "meaning": "meat 75"
+    },
+    {
+      "wordJp": "野菜",
+      "kana": "やさい",
+      "romaji": "yasai",
+      "meaning": "vegetable 75"
+    },
+    {
+      "wordJp": "果物",
+      "kana": "くだもの",
+      "romaji": "kudamono",
+      "meaning": "fruit 75"
+    },
+    {
+      "wordJp": "お茶",
+      "kana": "おちゃ",
+      "romaji": "ocha",
+      "meaning": "green tea 75"
+    },
+    {
+      "wordJp": "牛乳",
+      "kana": "ぎゅうにゅう",
+      "romaji": "gyuunyuu",
+      "meaning": "milk 75"
+    },
+    {
+      "wordJp": "料理",
+      "kana": "りょうり",
+      "romaji": "ryouri",
+      "meaning": "cooking, cuisine 75"
+    },
+    {
+      "wordJp": "朝食",
+      "kana": "ちょうしょく",
+      "romaji": "choushoku",
+      "meaning": "breakfast 75"
+    }
+  ],
+  "76": [
+    {
+      "wordJp": "今日",
+      "kana": "きょう",
+      "romaji": "kyou",
+      "meaning": "today 76"
+    },
+    {
+      "wordJp": "明日",
+      "kana": "あした",
+      "romaji": "ashita",
+      "meaning": "tomorrow 76"
+    },
+    {
+      "wordJp": "昨日",
+      "kana": "きのう",
+      "romaji": "kinou",
+      "meaning": "yesterday 76"
+    },
+    {
+      "wordJp": "今週",
+      "kana": "こんしゅう",
+      "romaji": "konshuu",
+      "meaning": "this week 76"
+    },
+    {
+      "wordJp": "来週",
+      "kana": "らいしゅう",
+      "romaji": "raishuu",
+      "meaning": "next week 76"
+    },
+    {
+      "wordJp": "時間",
+      "kana": "じかん",
+      "romaji": "jikan",
+      "meaning": "time 76"
+    },
+    {
+      "wordJp": "時計",
+      "kana": "とけい",
+      "romaji": "tokei",
+      "meaning": "clock, watch 76"
+    },
+    {
+      "wordJp": "朝",
+      "kana": "あさ",
+      "romaji": "asa",
+      "meaning": "morning 76"
+    },
+    {
+      "wordJp": "昼",
+      "kana": "ひる",
+      "romaji": "hiru",
+      "meaning": "noon, daytime 76"
+    },
+    {
+      "wordJp": "夜",
+      "kana": "よる",
+      "romaji": "yoru",
+      "meaning": "night 76"
+    }
+  ],
+  "77": [
+    {
+      "wordJp": "天気",
+      "kana": "てんき",
+      "romaji": "tenki",
+      "meaning": "weather 77"
+    },
+    {
+      "wordJp": "雨",
+      "kana": "あめ",
+      "romaji": "ame",
+      "meaning": "rain 77"
+    },
+    {
+      "wordJp": "雪",
+      "kana": "ゆき",
+      "romaji": "yuki",
+      "meaning": "snow 77"
+    },
+    {
+      "wordJp": "風",
+      "kana": "かぜ",
+      "romaji": "kaze",
+      "meaning": "wind 77"
+    },
+    {
+      "wordJp": "空",
+      "kana": "そら",
+      "romaji": "sora",
+      "meaning": "sky 77"
+    },
+    {
+      "wordJp": "海",
+      "kana": "うみ",
+      "romaji": "umi",
+      "meaning": "sea, ocean 77"
+    },
+    {
+      "wordJp": "山",
+      "kana": "やま",
+      "romaji": "yama",
+      "meaning": "mountain 77"
+    },
+    {
+      "wordJp": "川",
+      "kana": "かわ",
+      "romaji": "kawa",
+      "meaning": "river 77"
+    },
+    {
+      "wordJp": "花",
+      "kana": "はな",
+      "romaji": "hana",
+      "meaning": "flower 77"
+    },
+    {
+      "wordJp": "木",
+      "kana": "き",
+      "romaji": "ki",
+      "meaning": "tree, wood 77"
+    }
+  ],
+  "78": [
+    {
+      "wordJp": "行く",
+      "kana": "いく",
+      "romaji": "iku",
+      "meaning": "to go 78"
+    },
+    {
+      "wordJp": "来る",
+      "kana": "くる",
+      "romaji": "kuru",
+      "meaning": "to come 78"
+    },
+    {
+      "wordJp": "帰る",
+      "kana": "かえる",
+      "romaji": "kaeru",
+      "meaning": "to return home 78"
+    },
+    {
+      "wordJp": "食べる",
+      "kana": "たべる",
+      "romaji": "taberu",
+      "meaning": "to eat 78"
+    },
+    {
+      "wordJp": "飲む",
+      "kana": "のむ",
+      "romaji": "nomu",
+      "meaning": "to drink 78"
+    },
+    {
+      "wordJp": "見る",
+      "kana": "みる",
+      "romaji": "miru",
+      "meaning": "to see, watch 78"
+    },
+    {
+      "wordJp": "聞く",
+      "kana": "きく",
+      "romaji": "kiku",
+      "meaning": "to hear, listen 78"
+    },
+    {
+      "wordJp": "読む",
+      "kana": "よむ",
+      "romaji": "yomu",
+      "meaning": "to read 78"
+    },
+    {
+      "wordJp": "書く",
+      "kana": "かく",
+      "romaji": "kaku",
+      "meaning": "to write 78"
+    },
+    {
+      "wordJp": "話す",
+      "kana": "はなす",
+      "romaji": "hanasu",
+      "meaning": "to speak 78"
+    }
+  ],
+  "79": [
+    {
+      "wordJp": "学校",
+      "kana": "がっこう",
+      "romaji": "gakkou",
+      "meaning": "school 79"
+    },
+    {
+      "wordJp": "先生",
+      "kana": "せんせい",
+      "romaji": "sensei",
+      "meaning": "teacher 79"
+    },
+    {
+      "wordJp": "学生",
+      "kana": "がくせい",
+      "romaji": "gakusei",
+      "meaning": "student 79"
+    },
+    {
+      "wordJp": "友達",
+      "kana": "ともだち",
+      "romaji": "tomodachi",
+      "meaning": "friend 79"
+    },
+    {
+      "wordJp": "本",
+      "kana": "ほん",
+      "romaji": "hon",
+      "meaning": "book 79"
+    },
+    {
+      "wordJp": "車",
+      "kana": "くるま",
+      "romaji": "kuruma",
+      "meaning": "car 79"
+    },
+    {
+      "wordJp": "電車",
+      "kana": "でんしゃ",
+      "romaji": "densha",
+      "meaning": "train 79"
+    },
+    {
+      "wordJp": "水",
+      "kana": "みず",
+      "romaji": "mizu",
+      "meaning": "water 79"
+    },
+    {
+      "wordJp": "猫",
+      "kana": "ねこ",
+      "romaji": "neko",
+      "meaning": "cat 79"
+    },
+    {
+      "wordJp": "犬",
+      "kana": "いぬ",
+      "romaji": "inu",
+      "meaning": "dog 79"
+    }
+  ],
+  "80": [
+    {
+      "wordJp": "家族",
+      "kana": "かぞく",
+      "romaji": "kazoku",
+      "meaning": "family 80"
+    },
+    {
+      "wordJp": "父",
+      "kana": "ちち",
+      "romaji": "chichi",
+      "meaning": "father 80"
+    },
+    {
+      "wordJp": "母",
+      "kana": "はは",
+      "romaji": "haha",
+      "meaning": "mother 80"
+    },
+    {
+      "wordJp": "兄",
+      "kana": "あに",
+      "romaji": "ani",
+      "meaning": "older brother 80"
+    },
+    {
+      "wordJp": "姉",
+      "kana": "あね",
+      "romaji": "ane",
+      "meaning": "older sister 80"
+    },
+    {
+      "wordJp": "家",
+      "kana": "いえ",
+      "romaji": "ie",
+      "meaning": "house 80"
+    },
+    {
+      "wordJp": "部屋",
+      "kana": "へや",
+      "romaji": "heya",
+      "meaning": "room 80"
+    },
+    {
+      "wordJp": "机",
+      "kana": "つくえ",
+      "romaji": "tsukue",
+      "meaning": "desk 80"
+    },
+    {
+      "wordJp": "椅子",
+      "kana": "いす",
+      "romaji": "isu",
+      "meaning": "chair 80"
+    },
+    {
+      "wordJp": "窓",
+      "kana": "まど",
+      "romaji": "mado",
+      "meaning": "window 80"
+    }
+  ],
+  "81": [
+    {
+      "wordJp": "ご飯",
+      "kana": "ごはん",
+      "romaji": "gohan",
+      "meaning": "meal, cooked rice 81"
+    },
+    {
+      "wordJp": "パン",
+      "kana": "ぱん",
+      "romaji": "pan",
+      "meaning": "bread 81"
+    },
+    {
+      "wordJp": "魚",
+      "kana": "さかな",
+      "romaji": "sakana",
+      "meaning": "fish 81"
+    },
+    {
+      "wordJp": "肉",
+      "kana": "にく",
+      "romaji": "niku",
+      "meaning": "meat 81"
+    },
+    {
+      "wordJp": "野菜",
+      "kana": "やさい",
+      "romaji": "yasai",
+      "meaning": "vegetable 81"
+    },
+    {
+      "wordJp": "果物",
+      "kana": "くだもの",
+      "romaji": "kudamono",
+      "meaning": "fruit 81"
+    },
+    {
+      "wordJp": "お茶",
+      "kana": "おちゃ",
+      "romaji": "ocha",
+      "meaning": "green tea 81"
+    },
+    {
+      "wordJp": "牛乳",
+      "kana": "ぎゅうにゅう",
+      "romaji": "gyuunyuu",
+      "meaning": "milk 81"
+    },
+    {
+      "wordJp": "料理",
+      "kana": "りょうり",
+      "romaji": "ryouri",
+      "meaning": "cooking, cuisine 81"
+    },
+    {
+      "wordJp": "朝食",
+      "kana": "ちょうしょく",
+      "romaji": "choushoku",
+      "meaning": "breakfast 81"
+    }
+  ],
+  "82": [
+    {
+      "wordJp": "今日",
+      "kana": "きょう",
+      "romaji": "kyou",
+      "meaning": "today 82"
+    },
+    {
+      "wordJp": "明日",
+      "kana": "あした",
+      "romaji": "ashita",
+      "meaning": "tomorrow 82"
+    },
+    {
+      "wordJp": "昨日",
+      "kana": "きのう",
+      "romaji": "kinou",
+      "meaning": "yesterday 82"
+    },
+    {
+      "wordJp": "今週",
+      "kana": "こんしゅう",
+      "romaji": "konshuu",
+      "meaning": "this week 82"
+    },
+    {
+      "wordJp": "来週",
+      "kana": "らいしゅう",
+      "romaji": "raishuu",
+      "meaning": "next week 82"
+    },
+    {
+      "wordJp": "時間",
+      "kana": "じかん",
+      "romaji": "jikan",
+      "meaning": "time 82"
+    },
+    {
+      "wordJp": "時計",
+      "kana": "とけい",
+      "romaji": "tokei",
+      "meaning": "clock, watch 82"
+    },
+    {
+      "wordJp": "朝",
+      "kana": "あさ",
+      "romaji": "asa",
+      "meaning": "morning 82"
+    },
+    {
+      "wordJp": "昼",
+      "kana": "ひる",
+      "romaji": "hiru",
+      "meaning": "noon, daytime 82"
+    },
+    {
+      "wordJp": "夜",
+      "kana": "よる",
+      "romaji": "yoru",
+      "meaning": "night 82"
+    }
+  ],
+  "83": [
+    {
+      "wordJp": "天気",
+      "kana": "てんき",
+      "romaji": "tenki",
+      "meaning": "weather 83"
+    },
+    {
+      "wordJp": "雨",
+      "kana": "あめ",
+      "romaji": "ame",
+      "meaning": "rain 83"
+    },
+    {
+      "wordJp": "雪",
+      "kana": "ゆき",
+      "romaji": "yuki",
+      "meaning": "snow 83"
+    },
+    {
+      "wordJp": "風",
+      "kana": "かぜ",
+      "romaji": "kaze",
+      "meaning": "wind 83"
+    },
+    {
+      "wordJp": "空",
+      "kana": "そら",
+      "romaji": "sora",
+      "meaning": "sky 83"
+    },
+    {
+      "wordJp": "海",
+      "kana": "うみ",
+      "romaji": "umi",
+      "meaning": "sea, ocean 83"
+    },
+    {
+      "wordJp": "山",
+      "kana": "やま",
+      "romaji": "yama",
+      "meaning": "mountain 83"
+    },
+    {
+      "wordJp": "川",
+      "kana": "かわ",
+      "romaji": "kawa",
+      "meaning": "river 83"
+    },
+    {
+      "wordJp": "花",
+      "kana": "はな",
+      "romaji": "hana",
+      "meaning": "flower 83"
+    },
+    {
+      "wordJp": "木",
+      "kana": "き",
+      "romaji": "ki",
+      "meaning": "tree, wood 83"
+    }
+  ],
+  "84": [
+    {
+      "wordJp": "行く",
+      "kana": "いく",
+      "romaji": "iku",
+      "meaning": "to go 84"
+    },
+    {
+      "wordJp": "来る",
+      "kana": "くる",
+      "romaji": "kuru",
+      "meaning": "to come 84"
+    },
+    {
+      "wordJp": "帰る",
+      "kana": "かえる",
+      "romaji": "kaeru",
+      "meaning": "to return home 84"
+    },
+    {
+      "wordJp": "食べる",
+      "kana": "たべる",
+      "romaji": "taberu",
+      "meaning": "to eat 84"
+    },
+    {
+      "wordJp": "飲む",
+      "kana": "のむ",
+      "romaji": "nomu",
+      "meaning": "to drink 84"
+    },
+    {
+      "wordJp": "見る",
+      "kana": "みる",
+      "romaji": "miru",
+      "meaning": "to see, watch 84"
+    },
+    {
+      "wordJp": "聞く",
+      "kana": "きく",
+      "romaji": "kiku",
+      "meaning": "to hear, listen 84"
+    },
+    {
+      "wordJp": "読む",
+      "kana": "よむ",
+      "romaji": "yomu",
+      "meaning": "to read 84"
+    },
+    {
+      "wordJp": "書く",
+      "kana": "かく",
+      "romaji": "kaku",
+      "meaning": "to write 84"
+    },
+    {
+      "wordJp": "話す",
+      "kana": "はなす",
+      "romaji": "hanasu",
+      "meaning": "to speak 84"
+    }
+  ],
+  "85": [
+    {
+      "wordJp": "学校",
+      "kana": "がっこう",
+      "romaji": "gakkou",
+      "meaning": "school 85"
+    },
+    {
+      "wordJp": "先生",
+      "kana": "せんせい",
+      "romaji": "sensei",
+      "meaning": "teacher 85"
+    },
+    {
+      "wordJp": "学生",
+      "kana": "がくせい",
+      "romaji": "gakusei",
+      "meaning": "student 85"
+    },
+    {
+      "wordJp": "友達",
+      "kana": "ともだち",
+      "romaji": "tomodachi",
+      "meaning": "friend 85"
+    },
+    {
+      "wordJp": "本",
+      "kana": "ほん",
+      "romaji": "hon",
+      "meaning": "book 85"
+    },
+    {
+      "wordJp": "車",
+      "kana": "くるま",
+      "romaji": "kuruma",
+      "meaning": "car 85"
+    },
+    {
+      "wordJp": "電車",
+      "kana": "でんしゃ",
+      "romaji": "densha",
+      "meaning": "train 85"
+    },
+    {
+      "wordJp": "水",
+      "kana": "みず",
+      "romaji": "mizu",
+      "meaning": "water 85"
+    },
+    {
+      "wordJp": "猫",
+      "kana": "ねこ",
+      "romaji": "neko",
+      "meaning": "cat 85"
+    },
+    {
+      "wordJp": "犬",
+      "kana": "いぬ",
+      "romaji": "inu",
+      "meaning": "dog 85"
+    }
+  ],
+  "86": [
+    {
+      "wordJp": "家族",
+      "kana": "かぞく",
+      "romaji": "kazoku",
+      "meaning": "family 86"
+    },
+    {
+      "wordJp": "父",
+      "kana": "ちち",
+      "romaji": "chichi",
+      "meaning": "father 86"
+    },
+    {
+      "wordJp": "母",
+      "kana": "はは",
+      "romaji": "haha",
+      "meaning": "mother 86"
+    },
+    {
+      "wordJp": "兄",
+      "kana": "あに",
+      "romaji": "ani",
+      "meaning": "older brother 86"
+    },
+    {
+      "wordJp": "姉",
+      "kana": "あね",
+      "romaji": "ane",
+      "meaning": "older sister 86"
+    },
+    {
+      "wordJp": "家",
+      "kana": "いえ",
+      "romaji": "ie",
+      "meaning": "house 86"
+    },
+    {
+      "wordJp": "部屋",
+      "kana": "へや",
+      "romaji": "heya",
+      "meaning": "room 86"
+    },
+    {
+      "wordJp": "机",
+      "kana": "つくえ",
+      "romaji": "tsukue",
+      "meaning": "desk 86"
+    },
+    {
+      "wordJp": "椅子",
+      "kana": "いす",
+      "romaji": "isu",
+      "meaning": "chair 86"
+    },
+    {
+      "wordJp": "窓",
+      "kana": "まど",
+      "romaji": "mado",
+      "meaning": "window 86"
+    }
+  ],
+  "87": [
+    {
+      "wordJp": "ご飯",
+      "kana": "ごはん",
+      "romaji": "gohan",
+      "meaning": "meal, cooked rice 87"
+    },
+    {
+      "wordJp": "パン",
+      "kana": "ぱん",
+      "romaji": "pan",
+      "meaning": "bread 87"
+    },
+    {
+      "wordJp": "魚",
+      "kana": "さかな",
+      "romaji": "sakana",
+      "meaning": "fish 87"
+    },
+    {
+      "wordJp": "肉",
+      "kana": "にく",
+      "romaji": "niku",
+      "meaning": "meat 87"
+    },
+    {
+      "wordJp": "野菜",
+      "kana": "やさい",
+      "romaji": "yasai",
+      "meaning": "vegetable 87"
+    },
+    {
+      "wordJp": "果物",
+      "kana": "くだもの",
+      "romaji": "kudamono",
+      "meaning": "fruit 87"
+    },
+    {
+      "wordJp": "お茶",
+      "kana": "おちゃ",
+      "romaji": "ocha",
+      "meaning": "green tea 87"
+    },
+    {
+      "wordJp": "牛乳",
+      "kana": "ぎゅうにゅう",
+      "romaji": "gyuunyuu",
+      "meaning": "milk 87"
+    },
+    {
+      "wordJp": "料理",
+      "kana": "りょうり",
+      "romaji": "ryouri",
+      "meaning": "cooking, cuisine 87"
+    },
+    {
+      "wordJp": "朝食",
+      "kana": "ちょうしょく",
+      "romaji": "choushoku",
+      "meaning": "breakfast 87"
+    }
+  ],
+  "88": [
+    {
+      "wordJp": "今日",
+      "kana": "きょう",
+      "romaji": "kyou",
+      "meaning": "today 88"
+    },
+    {
+      "wordJp": "明日",
+      "kana": "あした",
+      "romaji": "ashita",
+      "meaning": "tomorrow 88"
+    },
+    {
+      "wordJp": "昨日",
+      "kana": "きのう",
+      "romaji": "kinou",
+      "meaning": "yesterday 88"
+    },
+    {
+      "wordJp": "今週",
+      "kana": "こんしゅう",
+      "romaji": "konshuu",
+      "meaning": "this week 88"
+    },
+    {
+      "wordJp": "来週",
+      "kana": "らいしゅう",
+      "romaji": "raishuu",
+      "meaning": "next week 88"
+    },
+    {
+      "wordJp": "時間",
+      "kana": "じかん",
+      "romaji": "jikan",
+      "meaning": "time 88"
+    },
+    {
+      "wordJp": "時計",
+      "kana": "とけい",
+      "romaji": "tokei",
+      "meaning": "clock, watch 88"
+    },
+    {
+      "wordJp": "朝",
+      "kana": "あさ",
+      "romaji": "asa",
+      "meaning": "morning 88"
+    },
+    {
+      "wordJp": "昼",
+      "kana": "ひる",
+      "romaji": "hiru",
+      "meaning": "noon, daytime 88"
+    },
+    {
+      "wordJp": "夜",
+      "kana": "よる",
+      "romaji": "yoru",
+      "meaning": "night 88"
+    }
+  ],
+  "89": [
+    {
+      "wordJp": "天気",
+      "kana": "てんき",
+      "romaji": "tenki",
+      "meaning": "weather 89"
+    },
+    {
+      "wordJp": "雨",
+      "kana": "あめ",
+      "romaji": "ame",
+      "meaning": "rain 89"
+    },
+    {
+      "wordJp": "雪",
+      "kana": "ゆき",
+      "romaji": "yuki",
+      "meaning": "snow 89"
+    },
+    {
+      "wordJp": "風",
+      "kana": "かぜ",
+      "romaji": "kaze",
+      "meaning": "wind 89"
+    },
+    {
+      "wordJp": "空",
+      "kana": "そら",
+      "romaji": "sora",
+      "meaning": "sky 89"
+    },
+    {
+      "wordJp": "海",
+      "kana": "うみ",
+      "romaji": "umi",
+      "meaning": "sea, ocean 89"
+    },
+    {
+      "wordJp": "山",
+      "kana": "やま",
+      "romaji": "yama",
+      "meaning": "mountain 89"
+    },
+    {
+      "wordJp": "川",
+      "kana": "かわ",
+      "romaji": "kawa",
+      "meaning": "river 89"
+    },
+    {
+      "wordJp": "花",
+      "kana": "はな",
+      "romaji": "hana",
+      "meaning": "flower 89"
+    },
+    {
+      "wordJp": "木",
+      "kana": "き",
+      "romaji": "ki",
+      "meaning": "tree, wood 89"
+    }
+  ],
+  "90": [
+    {
+      "wordJp": "行く",
+      "kana": "いく",
+      "romaji": "iku",
+      "meaning": "to go 90"
+    },
+    {
+      "wordJp": "来る",
+      "kana": "くる",
+      "romaji": "kuru",
+      "meaning": "to come 90"
+    },
+    {
+      "wordJp": "帰る",
+      "kana": "かえる",
+      "romaji": "kaeru",
+      "meaning": "to return home 90"
+    },
+    {
+      "wordJp": "食べる",
+      "kana": "たべる",
+      "romaji": "taberu",
+      "meaning": "to eat 90"
+    },
+    {
+      "wordJp": "飲む",
+      "kana": "のむ",
+      "romaji": "nomu",
+      "meaning": "to drink 90"
+    },
+    {
+      "wordJp": "見る",
+      "kana": "みる",
+      "romaji": "miru",
+      "meaning": "to see, watch 90"
+    },
+    {
+      "wordJp": "聞く",
+      "kana": "きく",
+      "romaji": "kiku",
+      "meaning": "to hear, listen 90"
+    },
+    {
+      "wordJp": "読む",
+      "kana": "よむ",
+      "romaji": "yomu",
+      "meaning": "to read 90"
+    },
+    {
+      "wordJp": "書く",
+      "kana": "かく",
+      "romaji": "kaku",
+      "meaning": "to write 90"
+    },
+    {
+      "wordJp": "話す",
+      "kana": "はなす",
+      "romaji": "hanasu",
+      "meaning": "to speak 90"
+    }
+  ],
+  "91": [
+    {
+      "wordJp": "学校",
+      "kana": "がっこう",
+      "romaji": "gakkou",
+      "meaning": "school 91"
+    },
+    {
+      "wordJp": "先生",
+      "kana": "せんせい",
+      "romaji": "sensei",
+      "meaning": "teacher 91"
+    },
+    {
+      "wordJp": "学生",
+      "kana": "がくせい",
+      "romaji": "gakusei",
+      "meaning": "student 91"
+    },
+    {
+      "wordJp": "友達",
+      "kana": "ともだち",
+      "romaji": "tomodachi",
+      "meaning": "friend 91"
+    },
+    {
+      "wordJp": "本",
+      "kana": "ほん",
+      "romaji": "hon",
+      "meaning": "book 91"
+    },
+    {
+      "wordJp": "車",
+      "kana": "くるま",
+      "romaji": "kuruma",
+      "meaning": "car 91"
+    },
+    {
+      "wordJp": "電車",
+      "kana": "でんしゃ",
+      "romaji": "densha",
+      "meaning": "train 91"
+    },
+    {
+      "wordJp": "水",
+      "kana": "みず",
+      "romaji": "mizu",
+      "meaning": "water 91"
+    },
+    {
+      "wordJp": "猫",
+      "kana": "ねこ",
+      "romaji": "neko",
+      "meaning": "cat 91"
+    },
+    {
+      "wordJp": "犬",
+      "kana": "いぬ",
+      "romaji": "inu",
+      "meaning": "dog 91"
+    }
+  ],
+  "92": [
+    {
+      "wordJp": "家族",
+      "kana": "かぞく",
+      "romaji": "kazoku",
+      "meaning": "family 92"
+    },
+    {
+      "wordJp": "父",
+      "kana": "ちち",
+      "romaji": "chichi",
+      "meaning": "father 92"
+    },
+    {
+      "wordJp": "母",
+      "kana": "はは",
+      "romaji": "haha",
+      "meaning": "mother 92"
+    },
+    {
+      "wordJp": "兄",
+      "kana": "あに",
+      "romaji": "ani",
+      "meaning": "older brother 92"
+    },
+    {
+      "wordJp": "姉",
+      "kana": "あね",
+      "romaji": "ane",
+      "meaning": "older sister 92"
+    },
+    {
+      "wordJp": "家",
+      "kana": "いえ",
+      "romaji": "ie",
+      "meaning": "house 92"
+    },
+    {
+      "wordJp": "部屋",
+      "kana": "へや",
+      "romaji": "heya",
+      "meaning": "room 92"
+    },
+    {
+      "wordJp": "机",
+      "kana": "つくえ",
+      "romaji": "tsukue",
+      "meaning": "desk 92"
+    },
+    {
+      "wordJp": "椅子",
+      "kana": "いす",
+      "romaji": "isu",
+      "meaning": "chair 92"
+    },
+    {
+      "wordJp": "窓",
+      "kana": "まど",
+      "romaji": "mado",
+      "meaning": "window 92"
+    }
+  ],
+  "93": [
+    {
+      "wordJp": "ご飯",
+      "kana": "ごはん",
+      "romaji": "gohan",
+      "meaning": "meal, cooked rice 93"
+    },
+    {
+      "wordJp": "パン",
+      "kana": "ぱん",
+      "romaji": "pan",
+      "meaning": "bread 93"
+    },
+    {
+      "wordJp": "魚",
+      "kana": "さかな",
+      "romaji": "sakana",
+      "meaning": "fish 93"
+    },
+    {
+      "wordJp": "肉",
+      "kana": "にく",
+      "romaji": "niku",
+      "meaning": "meat 93"
+    },
+    {
+      "wordJp": "野菜",
+      "kana": "やさい",
+      "romaji": "yasai",
+      "meaning": "vegetable 93"
+    },
+    {
+      "wordJp": "果物",
+      "kana": "くだもの",
+      "romaji": "kudamono",
+      "meaning": "fruit 93"
+    },
+    {
+      "wordJp": "お茶",
+      "kana": "おちゃ",
+      "romaji": "ocha",
+      "meaning": "green tea 93"
+    },
+    {
+      "wordJp": "牛乳",
+      "kana": "ぎゅうにゅう",
+      "romaji": "gyuunyuu",
+      "meaning": "milk 93"
+    },
+    {
+      "wordJp": "料理",
+      "kana": "りょうり",
+      "romaji": "ryouri",
+      "meaning": "cooking, cuisine 93"
+    },
+    {
+      "wordJp": "朝食",
+      "kana": "ちょうしょく",
+      "romaji": "choushoku",
+      "meaning": "breakfast 93"
+    }
+  ],
+  "94": [
+    {
+      "wordJp": "今日",
+      "kana": "きょう",
+      "romaji": "kyou",
+      "meaning": "today 94"
+    },
+    {
+      "wordJp": "明日",
+      "kana": "あした",
+      "romaji": "ashita",
+      "meaning": "tomorrow 94"
+    },
+    {
+      "wordJp": "昨日",
+      "kana": "きのう",
+      "romaji": "kinou",
+      "meaning": "yesterday 94"
+    },
+    {
+      "wordJp": "今週",
+      "kana": "こんしゅう",
+      "romaji": "konshuu",
+      "meaning": "this week 94"
+    },
+    {
+      "wordJp": "来週",
+      "kana": "らいしゅう",
+      "romaji": "raishuu",
+      "meaning": "next week 94"
+    },
+    {
+      "wordJp": "時間",
+      "kana": "じかん",
+      "romaji": "jikan",
+      "meaning": "time 94"
+    },
+    {
+      "wordJp": "時計",
+      "kana": "とけい",
+      "romaji": "tokei",
+      "meaning": "clock, watch 94"
+    },
+    {
+      "wordJp": "朝",
+      "kana": "あさ",
+      "romaji": "asa",
+      "meaning": "morning 94"
+    },
+    {
+      "wordJp": "昼",
+      "kana": "ひる",
+      "romaji": "hiru",
+      "meaning": "noon, daytime 94"
+    },
+    {
+      "wordJp": "夜",
+      "kana": "よる",
+      "romaji": "yoru",
+      "meaning": "night 94"
+    }
+  ],
+  "95": [
+    {
+      "wordJp": "天気",
+      "kana": "てんき",
+      "romaji": "tenki",
+      "meaning": "weather 95"
+    },
+    {
+      "wordJp": "雨",
+      "kana": "あめ",
+      "romaji": "ame",
+      "meaning": "rain 95"
+    },
+    {
+      "wordJp": "雪",
+      "kana": "ゆき",
+      "romaji": "yuki",
+      "meaning": "snow 95"
+    },
+    {
+      "wordJp": "風",
+      "kana": "かぜ",
+      "romaji": "kaze",
+      "meaning": "wind 95"
+    },
+    {
+      "wordJp": "空",
+      "kana": "そら",
+      "romaji": "sora",
+      "meaning": "sky 95"
+    },
+    {
+      "wordJp": "海",
+      "kana": "うみ",
+      "romaji": "umi",
+      "meaning": "sea, ocean 95"
+    },
+    {
+      "wordJp": "山",
+      "kana": "やま",
+      "romaji": "yama",
+      "meaning": "mountain 95"
+    },
+    {
+      "wordJp": "川",
+      "kana": "かわ",
+      "romaji": "kawa",
+      "meaning": "river 95"
+    },
+    {
+      "wordJp": "花",
+      "kana": "はな",
+      "romaji": "hana",
+      "meaning": "flower 95"
+    },
+    {
+      "wordJp": "木",
+      "kana": "き",
+      "romaji": "ki",
+      "meaning": "tree, wood 95"
+    }
+  ],
+  "96": [
+    {
+      "wordJp": "行く",
+      "kana": "いく",
+      "romaji": "iku",
+      "meaning": "to go 96"
+    },
+    {
+      "wordJp": "来る",
+      "kana": "くる",
+      "romaji": "kuru",
+      "meaning": "to come 96"
+    },
+    {
+      "wordJp": "帰る",
+      "kana": "かえる",
+      "romaji": "kaeru",
+      "meaning": "to return home 96"
+    },
+    {
+      "wordJp": "食べる",
+      "kana": "たべる",
+      "romaji": "taberu",
+      "meaning": "to eat 96"
+    },
+    {
+      "wordJp": "飲む",
+      "kana": "のむ",
+      "romaji": "nomu",
+      "meaning": "to drink 96"
+    },
+    {
+      "wordJp": "見る",
+      "kana": "みる",
+      "romaji": "miru",
+      "meaning": "to see, watch 96"
+    },
+    {
+      "wordJp": "聞く",
+      "kana": "きく",
+      "romaji": "kiku",
+      "meaning": "to hear, listen 96"
+    },
+    {
+      "wordJp": "読む",
+      "kana": "よむ",
+      "romaji": "yomu",
+      "meaning": "to read 96"
+    },
+    {
+      "wordJp": "書く",
+      "kana": "かく",
+      "romaji": "kaku",
+      "meaning": "to write 96"
+    },
+    {
+      "wordJp": "話す",
+      "kana": "はなす",
+      "romaji": "hanasu",
+      "meaning": "to speak 96"
+    }
+  ],
+  "97": [
+    {
+      "wordJp": "学校",
+      "kana": "がっこう",
+      "romaji": "gakkou",
+      "meaning": "school 97"
+    },
+    {
+      "wordJp": "先生",
+      "kana": "せんせい",
+      "romaji": "sensei",
+      "meaning": "teacher 97"
+    },
+    {
+      "wordJp": "学生",
+      "kana": "がくせい",
+      "romaji": "gakusei",
+      "meaning": "student 97"
+    },
+    {
+      "wordJp": "友達",
+      "kana": "ともだち",
+      "romaji": "tomodachi",
+      "meaning": "friend 97"
+    },
+    {
+      "wordJp": "本",
+      "kana": "ほん",
+      "romaji": "hon",
+      "meaning": "book 97"
+    },
+    {
+      "wordJp": "車",
+      "kana": "くるま",
+      "romaji": "kuruma",
+      "meaning": "car 97"
+    },
+    {
+      "wordJp": "電車",
+      "kana": "でんしゃ",
+      "romaji": "densha",
+      "meaning": "train 97"
+    },
+    {
+      "wordJp": "水",
+      "kana": "みず",
+      "romaji": "mizu",
+      "meaning": "water 97"
+    },
+    {
+      "wordJp": "猫",
+      "kana": "ねこ",
+      "romaji": "neko",
+      "meaning": "cat 97"
+    },
+    {
+      "wordJp": "犬",
+      "kana": "いぬ",
+      "romaji": "inu",
+      "meaning": "dog 97"
+    }
+  ],
+  "98": [
+    {
+      "wordJp": "家族",
+      "kana": "かぞく",
+      "romaji": "kazoku",
+      "meaning": "family 98"
+    },
+    {
+      "wordJp": "父",
+      "kana": "ちち",
+      "romaji": "chichi",
+      "meaning": "father 98"
+    },
+    {
+      "wordJp": "母",
+      "kana": "はは",
+      "romaji": "haha",
+      "meaning": "mother 98"
+    },
+    {
+      "wordJp": "兄",
+      "kana": "あに",
+      "romaji": "ani",
+      "meaning": "older brother 98"
+    },
+    {
+      "wordJp": "姉",
+      "kana": "あね",
+      "romaji": "ane",
+      "meaning": "older sister 98"
+    },
+    {
+      "wordJp": "家",
+      "kana": "いえ",
+      "romaji": "ie",
+      "meaning": "house 98"
+    },
+    {
+      "wordJp": "部屋",
+      "kana": "へや",
+      "romaji": "heya",
+      "meaning": "room 98"
+    },
+    {
+      "wordJp": "机",
+      "kana": "つくえ",
+      "romaji": "tsukue",
+      "meaning": "desk 98"
+    },
+    {
+      "wordJp": "椅子",
+      "kana": "いす",
+      "romaji": "isu",
+      "meaning": "chair 98"
+    },
+    {
+      "wordJp": "窓",
+      "kana": "まど",
+      "romaji": "mado",
+      "meaning": "window 98"
+    }
+  ],
+  "99": [
+    {
+      "wordJp": "ご飯",
+      "kana": "ごはん",
+      "romaji": "gohan",
+      "meaning": "meal, cooked rice 99"
+    },
+    {
+      "wordJp": "パン",
+      "kana": "ぱん",
+      "romaji": "pan",
+      "meaning": "bread 99"
+    },
+    {
+      "wordJp": "魚",
+      "kana": "さかな",
+      "romaji": "sakana",
+      "meaning": "fish 99"
+    },
+    {
+      "wordJp": "肉",
+      "kana": "にく",
+      "romaji": "niku",
+      "meaning": "meat 99"
+    },
+    {
+      "wordJp": "野菜",
+      "kana": "やさい",
+      "romaji": "yasai",
+      "meaning": "vegetable 99"
+    },
+    {
+      "wordJp": "果物",
+      "kana": "くだもの",
+      "romaji": "kudamono",
+      "meaning": "fruit 99"
+    },
+    {
+      "wordJp": "お茶",
+      "kana": "おちゃ",
+      "romaji": "ocha",
+      "meaning": "green tea 99"
+    },
+    {
+      "wordJp": "牛乳",
+      "kana": "ぎゅうにゅう",
+      "romaji": "gyuunyuu",
+      "meaning": "milk 99"
+    },
+    {
+      "wordJp": "料理",
+      "kana": "りょうり",
+      "romaji": "ryouri",
+      "meaning": "cooking, cuisine 99"
+    },
+    {
+      "wordJp": "朝食",
+      "kana": "ちょうしょく",
+      "romaji": "choushoku",
+      "meaning": "breakfast 99"
+    }
+  ],
+  "100": [
+    {
+      "wordJp": "今日",
+      "kana": "きょう",
+      "romaji": "kyou",
+      "meaning": "today 100"
+    },
+    {
+      "wordJp": "明日",
+      "kana": "あした",
+      "romaji": "ashita",
+      "meaning": "tomorrow 100"
+    },
+    {
+      "wordJp": "昨日",
+      "kana": "きのう",
+      "romaji": "kinou",
+      "meaning": "yesterday 100"
+    },
+    {
+      "wordJp": "今週",
+      "kana": "こんしゅう",
+      "romaji": "konshuu",
+      "meaning": "this week 100"
+    },
+    {
+      "wordJp": "来週",
+      "kana": "らいしゅう",
+      "romaji": "raishuu",
+      "meaning": "next week 100"
+    },
+    {
+      "wordJp": "時間",
+      "kana": "じかん",
+      "romaji": "jikan",
+      "meaning": "time 100"
+    },
+    {
+      "wordJp": "時計",
+      "kana": "とけい",
+      "romaji": "tokei",
+      "meaning": "clock, watch 100"
+    },
+    {
+      "wordJp": "朝",
+      "kana": "あさ",
+      "romaji": "asa",
+      "meaning": "morning 100"
+    },
+    {
+      "wordJp": "昼",
+      "kana": "ひる",
+      "romaji": "hiru",
+      "meaning": "noon, daytime 100"
+    },
+    {
+      "wordJp": "夜",
+      "kana": "よる",
+      "romaji": "yoru",
+      "meaning": "night 100"
+    }
+  ]
+}

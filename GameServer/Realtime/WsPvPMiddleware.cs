@@ -107,6 +107,7 @@ public class WsPvPMiddleware
                     case "join_queue":
                         if (currentUserId > 0)
                         {
+                            _logSink.Enqueue("PVP-SOCKET", "ACTION", $"[Action: join_queue] User '{currentUsername}' (UID: {currentUserId}) entered matchmaking queue");
                             await _matchEngine.HandleJoinQueueAsync(currentUserId, currentUsername);
                         }
                         break;
@@ -114,6 +115,7 @@ public class WsPvPMiddleware
                     case "leave_queue":
                         if (currentUserId > 0)
                         {
+                            _logSink.Enqueue("PVP-SOCKET", "ACTION", $"[Action: leave_queue] User '{currentUsername}' (UID: {currentUserId}) cancelled matchmaking");
                             _matchEngine.LeaveQueue(currentUserId);
                             await _connectionManager.SendAsync(webSocket, new { @event = "queue_left" });
                         }
@@ -122,6 +124,7 @@ public class WsPvPMiddleware
                     case "create_lobby":
                         if (currentUserId > 0)
                         {
+                            _logSink.Enqueue("PVP-SOCKET", "ACTION", $"[Action: create_lobby] User '{currentUsername}' (UID: {currentUserId}) requested new private room");
                             await _matchEngine.CreateLobbyAsync(currentUserId, currentUsername);
                         }
                         break;
@@ -130,6 +133,7 @@ public class WsPvPMiddleware
                         if (currentUserId > 0 && root.TryGetProperty("code", out var codeProp))
                         {
                             var code = codeProp.GetString() ?? "";
+                            _logSink.Enqueue("PVP-SOCKET", "ACTION", $"[Action: join_lobby] User '{currentUsername}' joining room {code}");
                             await _matchEngine.JoinLobbyAsync(code, currentUserId, currentUsername);
                         }
                         break;
@@ -144,7 +148,9 @@ public class WsPvPMiddleware
                     case "finish":
                         if (currentUserId > 0 && root.TryGetProperty("timeMs", out var tmProp))
                         {
-                            await _matchEngine.HandleFinishMatchAsync(currentUserId, tmProp.GetInt64());
+                            var timeMs = tmProp.GetInt64();
+                            _logSink.Enqueue("PVP-SOCKET", "ACTION", $"[Action: finish] User '{currentUsername}' (UID: {currentUserId}) submitted finish time: {timeMs}ms");
+                            await _matchEngine.HandleFinishMatchAsync(currentUserId, timeMs);
                         }
                         break;
                 }

@@ -248,15 +248,21 @@ public class PvPMatchEngine
         }
 
         long opponentId;
+        string senderName;
+        string opponentName;
         if (userId == match.Player1Id)
         {
             match.Player1Progress = progress;
             opponentId = match.Player2Id;
+            senderName = match.Player1Name;
+            opponentName = match.Player2Name;
         }
         else
         {
             match.Player2Progress = progress;
             opponentId = match.Player1Id;
+            senderName = match.Player2Name;
+            opponentName = match.Player1Name;
         }
 
         // Direct low-latency relay to opponent (<5ms)
@@ -265,6 +271,10 @@ public class PvPMatchEngine
             @event = "opp_progress",
             progress = progress
         });
+
+        int totalLen = match.Paragraph.Length;
+        int pct = totalLen > 0 ? Math.Min(100, (int)((progress / (double)totalLen) * 100)) : 0;
+        _logSink.Enqueue("PVP-ENGINE", "PROGRESS", $"[Duel #{match.MatchId}] '{senderName}' ({progress}/{totalLen} chars - {pct}%) -> RELAY TO -> '{opponentName}' (UID: {opponentId})");
     }
 
     public async Task HandleFinishMatchAsync(long userId, long timeMs)

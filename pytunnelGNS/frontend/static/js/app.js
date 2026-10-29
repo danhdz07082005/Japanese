@@ -953,6 +953,14 @@
                 terminalCountBadge.textContent = `${filtered.length} sự kiện`;
             }
 
+            if (filtered.length === 0) {
+                terminalScreen.innerHTML = `<div style="display:flex; align-items:center; justify-content:center; height:100%; min-height:180px; color:var(--text-muted); font-size:0.8125rem; gap:0.6rem;">
+                    <span style="display:inline-block; width:8px; height:8px; border-radius:50%; background:var(--neon-emerald); box-shadow:0 0 10px var(--neon-emerald);"></span>
+                    Hệ thống sẵn sàng. Đang chờ gói tin hoặc sự kiện từ Game Server...
+                </div>`;
+                return;
+            }
+
             const isScrolledToBottom = terminalScreen.scrollHeight - terminalScreen.clientHeight <= terminalScreen.scrollTop + 60;
 
             terminalScreen.innerHTML = filtered.map(log => {
@@ -969,7 +977,7 @@
             }
         }
 
-        setInterval(pollTerminalLogs, 1200);
+        setInterval(pollTerminalLogs, 750);
         pollTerminalLogs();
     }
 

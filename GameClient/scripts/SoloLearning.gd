@@ -56,30 +56,24 @@ func _populate_vocab_data(items: Array):
 		var m = str(item.get("meaning", "")).strip_edges()
 		if w_jp.is_empty(): w_jp = k
 		if k.is_empty(): k = w_jp
-		
-		if _has_kanji(w_jp):
-			vocab_data.append({"wordJp": w_jp, "kana": k, "romaji": rom, "meaning": m})
-			vocab_data.append({"wordJp": k, "kana": k, "romaji": rom, "meaning": m})
-		else:
-			vocab_data.append({"wordJp": w_jp, "kana": k, "romaji": rom, "meaning": m})
+		vocab_data.append({"wordJp": w_jp, "kana": k, "romaji": rom, "meaning": m})
 
 func _fetch_vocab_from_server(level: int):
-	var level_data = Curriculum.get_level(level)
-	if level_data.size() > 0:
-		_populate_vocab_data(level_data)
-		show_reading_phase()
-		return
-		
 	var req = HTTPRequest.new()
 	add_child(req)
 	req.request_completed.connect(_on_vocab_fetched.bind(req, level))
 	
-	var headers = PackedStringArray(["Authorization: Bearer " + Network.jwt_token])
+	var headers = PackedStringArray()
+	if not Network.jwt_token.is_empty():
+		headers.append("Authorization: Bearer " + Network.jwt_token)
 	var user_id = Database.get_account().get("user_id", -1)
 	var url = Network.BASE_URL + "/player/vocabularies?level=%d" % level
 	if user_id != -1:
 		url += "&userId=%d" % user_id
-	req.request(url, headers, HTTPClient.METHOD_GET)
+	var err = req.request(url, headers, HTTPClient.METHOD_GET)
+	if err != OK:
+		req.queue_free()
+		_fallback_to_curriculum(level)
 
 func _on_vocab_fetched(result, code, headers, body, req: HTTPRequest, level: int):
 	req.queue_free()
@@ -92,6 +86,15 @@ func _on_vocab_fetched(result, code, headers, body, req: HTTPRequest, level: int
 				show_reading_phase()
 				return
 				
+	_fallback_to_curriculum(level)
+
+func _fallback_to_curriculum(level: int):
+	var level_data = Curriculum.get_level(level)
+	if level_data.size() > 0:
+		_populate_vocab_data(level_data)
+		show_reading_phase()
+		return
+		
 	vocab_data = [{"wordJp": "Error", "kana": "Error", "romaji": "Failed to fetch from server", "meaning": ""}]
 	show_reading_phase()
 

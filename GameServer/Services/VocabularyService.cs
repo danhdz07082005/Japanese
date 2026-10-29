@@ -38,8 +38,10 @@ public class VocabularyService
     public async Task<Vocabulary> UpdateVocabularyLevelAsync(long id, int level)
     {
         var vocab = await GetVocabularyByIdAsync(id);
+        int oldLevel = vocab.LevelRequired;
         vocab.LevelRequired = level;
         await _context.SaveChangesAsync();
+        _jmdictService.UpdateVocabularyLevel(id, oldLevel, level, vocab);
         return vocab;
     }
 
@@ -51,56 +53,7 @@ public class VocabularyService
             baseList = _context.Vocabularies.AsNoTracking().Where(v => v.LevelRequired == level).ToList();
         }
 
-        var expandedList = new List<Vocabulary>();
-
-        foreach (var v in baseList)
-        {
-            var wordJp = !string.IsNullOrEmpty(v.WordJp) ? v.WordJp : v.Kana ?? string.Empty;
-            var kana = !string.IsNullOrEmpty(v.Kana) ? v.Kana : v.WordJp ?? string.Empty;
-
-            if (HasKanji(wordJp))
-            {
-                // Add Kanji version
-                expandedList.Add(new Vocabulary
-                {
-                    Id = v.Id,
-                    WordJp = wordJp,
-                    Kana = kana,
-                    Romaji = v.Romaji,
-                    Meaning = v.Meaning,
-                    Type = v.Type,
-                    LevelRequired = v.LevelRequired
-                });
-
-                // Add Kana version
-                expandedList.Add(new Vocabulary
-                {
-                    Id = v.Id,
-                    WordJp = kana,
-                    Kana = kana,
-                    Romaji = v.Romaji,
-                    Meaning = v.Meaning,
-                    Type = v.Type,
-                    LevelRequired = v.LevelRequired
-                });
-            }
-            else
-            {
-                // Just add as is (Hiragana/Katakana)
-                expandedList.Add(new Vocabulary
-                {
-                    Id = v.Id,
-                    WordJp = wordJp,
-                    Kana = kana,
-                    Romaji = v.Romaji,
-                    Meaning = v.Meaning,
-                    Type = v.Type,
-                    LevelRequired = v.LevelRequired
-                });
-            }
-        }
-
-        return expandedList;
+        return baseList;
     }
 
     private static bool HasKanji(string? s)

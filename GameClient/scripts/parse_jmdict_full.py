@@ -18,38 +18,53 @@ data_dir = os.path.join(project_dir, 'data')
 os.makedirs(data_dir, exist_ok=True)
 
 jmdict_path = os.path.join(data_dir, 'JMdict_e')
+if not os.path.exists(jmdict_path):
+    alt_path = os.path.join(project_dir, 'JMdict_e')
+    if os.path.exists(alt_path):
+        jmdict_path = alt_path
 
 if not os.path.exists(jmdict_path):
     print("JMdict_e not found. Downloading...")
     url = "http://ftp.edrdg.org/pub/Nihongo/JMdict_e.gz"
-    gz_path = jmdict_path + ".gz"
+    gz_path = os.path.join(data_dir, "JMdict_e.gz")
     req = urllib.request.Request(url, headers={'User-Agent': 'Mozilla/5.0'})
     with urllib.request.urlopen(req) as response, open(gz_path, 'wb') as out_file:
         shutil.copyfileobj(response, out_file)
     print("Extracting JMdict_e...")
     with gzip.open(gz_path, 'rb') as f_in, open(jmdict_path, 'wb') as f_out:
         shutil.copyfileobj(f_in, f_out)
-    os.remove(gz_path)
+    if os.path.exists(gz_path):
+        os.remove(gz_path)
     print("Download and extraction complete.")
 
-print("Parsing JMdict_e for ALL words...")
+print(f"Parsing {jmdict_path} for vocabulary...")
 tree = ET.parse(jmdict_path)
 root = tree.getroot()
 
-vocab_list = []
+common_vocabs = []
+other_vocabs = []
+
+common_priorities = {'news1', 'ichi1', 'spec1', 'gai1', 'news2', 'ichi2', 'spec2', 'gai2'}
+
 for entry in root.findall('entry'):
+    is_common = False
+    for pri in entry.findall('.//ke_pri') + entry.findall('.//re_pri'):
+        if pri.text in common_priorities:
+            is_common = True
+            break
+
     keb = ""
     k_ele = entry.find('k_ele')
     if k_ele is not None:
         keb_node = k_ele.find('keb')
-        if keb_node is not None:
+        if keb_node is not None and keb_node.text:
             keb = keb_node.text
             
     reb = ""
     r_ele = entry.find('r_ele')
     if r_ele is not None:
         reb_node = r_ele.find('reb')
-        if reb_node is not None:
+        if reb_node is not None and reb_node.text:
             reb = reb_node.text
             
     if not keb:
@@ -73,14 +88,21 @@ for entry in root.findall('entry'):
     actual_kana = reb
     actual_romaji = to_romaji(reb)
 
-    vocab_list.append({
+    item = {
         "wordJp": actual_word_jp,
         "kana": actual_kana,
         "romaji": actual_romaji,
         "meaning": meaning_str
-    })
+    }
+    
+    if is_common:
+        common_vocabs.append(item)
+    else:
+        other_vocabs.append(item)
 
-print(f"Found {len(vocab_list)} total words.")
+# Common words first so initial levels feature highest priority everyday words
+vocab_list = common_vocabs + other_vocabs
+print(f"Found {len(vocab_list)} total words (Common: {len(common_vocabs)}, Other: {len(other_vocabs)}).")
 
 levels_dict = {}
 total_levels = len(vocab_list) // 10
@@ -101,3 +123,11 @@ with open(json_path, 'w', encoding='utf-8') as f:
     json.dump(levels_dict, f, ensure_ascii=False)
 
 print(f"Successfully exported {len(levels_dict)} levels to {json_path}!")
+
+# Also copy to Unity StreamingAssets if folder exists
+repo_root = os.path.dirname(project_dir)
+unity_data_dir = os.path.join(repo_root, 'JapaneseMasteryUnity', 'Assets', 'StreamingAssets', 'data')
+if os.path.exists(unity_data_dir):
+    unity_json_path = os.path.join(unity_data_dir, 'jmdict_levels.json')
+    shutil.copyfile(json_path, unity_json_path)
+    print(f"Synced to Unity StreamingAssets at {unity_json_path}")

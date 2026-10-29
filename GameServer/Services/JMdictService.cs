@@ -1,4 +1,6 @@
+using System.IO.Compression;
 using System.Text.Json;
+using System.Xml;
 using JapaneseMasteryBackendDotNet.Data;
 using JapaneseMasteryBackendDotNet.Models;
 using Microsoft.EntityFrameworkCore;
@@ -25,6 +27,383 @@ public class JMdictService
         ReloadJMdict();
     }
 
+    public async Task EnsureDataReadyAsync()
+    {
+        try
+        {
+            var jmDir = FindJapaneseMasteryDirectory();
+            if (string.IsNullOrEmpty(jmDir))
+            {
+                _logger.LogWarning("Could not automatically locate 'JapaneseMastery' project folder.");
+                return;
+            }
+
+            var dataDir = Path.Combine(jmDir, "data");
+            Directory.CreateDirectory(dataDir);
+
+            var jmdictFile = Path.Combine(dataDir, "JMdict_e");
+            var levelsJsonFile = Path.Combine(dataDir, "jmdict_levels.json");
+
+            var repoRoot = Directory.GetParent(jmDir)?.FullName;
+            string? unityLevelsJson = null;
+            if (!string.IsNullOrEmpty(repoRoot))
+            {
+                var candidateUnity = Path.Combine(repoRoot, "JapaneseMasteryUnity", "Assets", "StreamingAssets", "data");
+                if (Directory.Exists(candidateUnity))
+                {
+                    unityLevelsJson = Path.Combine(candidateUnity, "jmdict_levels.json");
+                }
+            }
+
+            bool needsGeneration = !File.Exists(levelsJsonFile) || new FileInfo(levelsJsonFile).Length < 1000;
+
+            if (needsGeneration)
+            {
+                _logger.LogInformation("jmdict_levels.json missing or incomplete. Checking JMdict_e source in {DataDir}...", dataDir);
+
+                // 1. Ensure JMdict_e exists
+                if (!File.Exists(jmdictFile))
+                {
+                    var altPath = Path.Combine(jmDir, "JMdict_e");
+                    if (File.Exists(altPath))
+                    {
+                        jmdictFile = altPath;
+                    }
+                    else
+                    {
+                        await DownloadAndExtractJMdictAsync(jmdictFile);
+                    }
+                }
+
+                // 2. Generate jmdict_levels.json
+                if (File.Exists(jmdictFile))
+                {
+                    var pythonScript = Path.Combine(jmDir, "scripts", "parse_jmdict_full.py");
+                    bool pythonSuccess = false;
+                    if (File.Exists(pythonScript))
+                    {
+                        pythonSuccess = TryRunPythonScript(pythonScript, jmDir);
+                    }
+
+                    if (!pythonSuccess || !File.Exists(levelsJsonFile) || new FileInfo(levelsJsonFile).Length < 1000)
+                    {
+                        _logger.LogInformation("Generating jmdict_levels.json using built-in .NET XML parser...");
+                        await GenerateLevelsJsonFromXmlAsync(jmdictFile, levelsJsonFile, unityLevelsJson);
+                    }
+                }
+            }
+            else
+            {
+                // Sync to Unity if Unity folder exists and lacks the file
+                if (!string.IsNullOrEmpty(unityLevelsJson) && (!File.Exists(unityLevelsJson) || new FileInfo(unityLevelsJson).Length < 1000))
+                {
+                    try
+                    {
+                        File.Copy(levelsJsonFile, unityLevelsJson, true);
+                        _logger.LogInformation("Synced jmdict_levels.json to Unity StreamingAssets at {Path}.", unityLevelsJson);
+                    }
+                    catch { }
+                }
+            }
+
+            // 3. Ensure default_vocab.json (Levels 1-24) exists
+            var defaultJsonFile = Path.Combine(dataDir, "default_vocab.json");
+            string? unityDefaultJson = null;
+            if (!string.IsNullOrEmpty(repoRoot))
+            {
+                var candidateUnity = Path.Combine(repoRoot, "JapaneseMasteryUnity", "Assets", "StreamingAssets", "data");
+                if (Directory.Exists(candidateUnity))
+                {
+                    unityDefaultJson = Path.Combine(candidateUnity, "default_vocab.json");
+                }
+            }
+
+            if (!File.Exists(defaultJsonFile) || new FileInfo(defaultJsonFile).Length < 100)
+            {
+                var defaultGenScript = Path.Combine(jmDir, "scripts", "generate_default_vocab.py");
+                if (File.Exists(defaultGenScript))
+                {
+                    TryRunPythonScript(defaultGenScript, jmDir);
+                }
+            }
+
+            if (File.Exists(defaultJsonFile) && !string.IsNullOrEmpty(unityDefaultJson) && (!File.Exists(unityDefaultJson) || new FileInfo(unityDefaultJson).Length < 100))
+            {
+                try
+                {
+                    File.Copy(defaultJsonFile, unityDefaultJson, true);
+                    _logger.LogInformation("Synced default_vocab.json to Unity StreamingAssets at {Path}.", unityDefaultJson);
+                }
+                catch { }
+            }
+
+            ReloadJMdict();
+        }
+        catch (Exception ex)
+        {
+            _logger.LogError(ex, "Error during EnsureDataReadyAsync in JMdictService.");
+        }
+    }
+
+    private async Task DownloadAndExtractJMdictAsync(string destinationFile)
+    {
+        _logger.LogInformation("Fresh clone detected: JMdict_e not found. Auto-downloading JMdict_e.gz from ftp.edrdg.org...");
+        var dir = Path.GetDirectoryName(destinationFile);
+        if (!string.IsNullOrEmpty(dir)) Directory.CreateDirectory(dir);
+
+        var tempGz = destinationFile + ".gz.tmp";
+        var tempOut = destinationFile + ".tmp";
+
+        try
+        {
+            var client = _httpClientFactory.CreateClient();
+            client.Timeout = TimeSpan.FromMinutes(5);
+            var url = "http://ftp.edrdg.org/pub/Nihongo/JMdict_e.gz";
+
+            using (var response = await client.GetAsync(url, HttpCompletionOption.ResponseHeadersRead))
+            {
+                response.EnsureSuccessStatusCode();
+                using (var networkStream = await response.Content.ReadAsStreamAsync())
+                using (var gzFileStream = File.Create(tempGz))
+                {
+                    await networkStream.CopyToAsync(gzFileStream);
+                }
+            }
+
+            _logger.LogInformation("Decompressing JMdict_e.gz to {Path}...", destinationFile);
+            using (var gzStream = new GZipStream(File.OpenRead(tempGz), CompressionMode.Decompress))
+            using (var outStream = File.Create(tempOut))
+            {
+                await gzStream.CopyToAsync(outStream);
+            }
+
+            if (File.Exists(destinationFile)) File.Delete(destinationFile);
+            File.Move(tempOut, destinationFile);
+            _logger.LogInformation("JMdict_e successfully downloaded and saved to {Path} ({Size:F1} MB).",
+                destinationFile, new FileInfo(destinationFile).Length / (1024.0 * 1024.0));
+        }
+        finally
+        {
+            if (File.Exists(tempGz)) try { File.Delete(tempGz); } catch { }
+            if (File.Exists(tempOut)) try { File.Delete(tempOut); } catch { }
+        }
+    }
+
+    private bool TryRunPythonScript(string scriptPath, string workingDir)
+    {
+        try
+        {
+            var psi = new System.Diagnostics.ProcessStartInfo
+            {
+                FileName = "python",
+                Arguments = $"\"{scriptPath}\"",
+                WorkingDirectory = workingDir,
+                RedirectStandardOutput = true,
+                RedirectStandardError = true,
+                UseShellExecute = false,
+                CreateNoWindow = true
+            };
+
+            using var process = System.Diagnostics.Process.Start(psi);
+            if (process == null) return false;
+
+            _logger.LogInformation("Running {ScriptPath} to generate jmdict_levels.json...", scriptPath);
+            bool finished = process.WaitForExit(180_000);
+            if (finished && process.ExitCode == 0)
+            {
+                _logger.LogInformation("Python script {ScriptPath} executed successfully.", scriptPath);
+                return true;
+            }
+            else
+            {
+                var stderr = process.StandardError.ReadToEnd();
+                _logger.LogWarning("Python script exited with code {Code}: {Error}", process.ExitCode, stderr);
+                return false;
+            }
+        }
+        catch (Exception ex)
+        {
+            _logger.LogInformation("Python execution skipped (runtime not available): {Message}", ex.Message);
+            return false;
+        }
+    }
+
+    private async Task GenerateLevelsJsonFromXmlAsync(string xmlPath, string jsonPath, string? unityJsonPath)
+    {
+        _logger.LogInformation("Parsing JMdict XML ({XmlPath}) using internal .NET parser...", xmlPath);
+        var stopwatch = System.Diagnostics.Stopwatch.StartNew();
+
+        var commonVocabs = new List<Vocabulary>();
+        var otherVocabs = new List<Vocabulary>();
+        var commonPriorities = new HashSet<string>(StringComparer.OrdinalIgnoreCase)
+        {
+            "news1", "ichi1", "spec1", "gai1", "news2", "ichi2", "spec2", "gai2"
+        };
+
+        var settings = new XmlReaderSettings
+        {
+            DtdProcessing = DtdProcessing.Parse,
+            XmlResolver = null,
+            MaxCharactersFromEntities = 0,
+            IgnoreWhitespace = true,
+            IgnoreComments = true
+        };
+
+        await Task.Run(() =>
+        {
+            using var fileStream = File.OpenRead(xmlPath);
+            using var reader = XmlReader.Create(fileStream, settings);
+
+            while (reader.Read())
+            {
+                if (reader.NodeType == XmlNodeType.Element && reader.Name == "entry")
+                {
+                    using var entryReader = reader.ReadSubtree();
+                    string keb = "";
+                    string reb = "";
+                    bool isCommon = false;
+                    var meanings = new List<string>(2);
+
+                    while (entryReader.Read())
+                    {
+                        if (entryReader.NodeType == XmlNodeType.Element)
+                        {
+                            var elName = entryReader.Name;
+                            if (elName == "keb" && string.IsNullOrEmpty(keb))
+                            {
+                                keb = entryReader.ReadElementContentAsString().Trim();
+                            }
+                            else if (elName == "reb" && string.IsNullOrEmpty(reb))
+                            {
+                                reb = entryReader.ReadElementContentAsString().Trim();
+                            }
+                            else if (elName is "ke_pri" or "re_pri")
+                            {
+                                var pri = entryReader.ReadElementContentAsString().Trim();
+                                if (commonPriorities.Contains(pri))
+                                {
+                                    isCommon = true;
+                                }
+                            }
+                            else if (elName == "gloss" && meanings.Count < 2)
+                            {
+                                var gloss = entryReader.ReadElementContentAsString().Trim();
+                                if (!string.IsNullOrEmpty(gloss))
+                                {
+                                    meanings.Add(gloss);
+                                }
+                            }
+                        }
+                    }
+
+                    if (string.IsNullOrEmpty(keb)) keb = reb;
+                    if (string.IsNullOrEmpty(reb) || meanings.Count == 0) continue;
+
+                    var wordJp = (keb != reb) ? keb : "";
+                    var kana = reb;
+                    var romaji = KanaToRomajiFallback(reb);
+                    var meaning = string.Join(", ", meanings).Replace("\"", "'");
+
+                    var item = new Vocabulary
+                    {
+                        WordJp = wordJp,
+                        Kana = kana,
+                        Romaji = romaji,
+                        Meaning = meaning,
+                        Type = WordType.KANJI
+                    };
+
+                    if (isCommon)
+                        commonVocabs.Add(item);
+                    else
+                        otherVocabs.Add(item);
+                }
+            }
+
+            var allVocabs = new List<Vocabulary>(commonVocabs.Count + otherVocabs.Count);
+            allVocabs.AddRange(commonVocabs);
+            allVocabs.AddRange(otherVocabs);
+
+            var levelsDict = new Dictionary<string, List<object>>();
+            int totalLevels = allVocabs.Count / 10;
+            for (int i = 0; i < totalLevels; i++)
+            {
+                int level = 25 + i;
+                var slice = allVocabs.Skip(i * 10).Take(10).Select(v => new
+                {
+                    wordJp = v.WordJp,
+                    kana = v.Kana,
+                    romaji = v.Romaji,
+                    meaning = v.Meaning
+                }).ToList<object>();
+
+                levelsDict[level.ToString()] = slice;
+            }
+
+            var tmpPath = jsonPath + ".tmp";
+            using (var outStream = File.Create(tmpPath))
+            {
+                JsonSerializer.Serialize(outStream, levelsDict, new JsonSerializerOptions { WriteIndented = false });
+            }
+            if (File.Exists(jsonPath)) File.Delete(jsonPath);
+            File.Move(tmpPath, jsonPath);
+
+            if (!string.IsNullOrEmpty(unityJsonPath))
+            {
+                var unityDir = Path.GetDirectoryName(unityJsonPath);
+                if (!string.IsNullOrEmpty(unityDir) && Directory.Exists(unityDir))
+                {
+                    File.Copy(jsonPath, unityJsonPath, true);
+                }
+            }
+        });
+
+        stopwatch.Stop();
+        _logger.LogInformation("Internal .NET parser finished in {Duration:F1}s. Generated {JsonPath}",
+            stopwatch.Elapsed.TotalSeconds, jsonPath);
+    }
+
+    public static string? FindJapaneseMasteryDirectory()
+    {
+        var candidates = new List<string>
+        {
+            Directory.GetCurrentDirectory(),
+            AppContext.BaseDirectory
+        };
+
+        foreach (var startPath in candidates)
+        {
+            var current = new DirectoryInfo(startPath);
+            while (current != null)
+            {
+                if ((current.Name.Equals("JapaneseMastery", StringComparison.OrdinalIgnoreCase) ||
+                     current.Name.Equals("GameClient", StringComparison.OrdinalIgnoreCase)) &&
+                    (File.Exists(Path.Combine(current.FullName, "project.godot")) || Directory.Exists(Path.Combine(current.FullName, "scripts"))))
+                {
+                    return current.FullName;
+                }
+
+                var sub = Path.Combine(current.FullName, "JapaneseMastery");
+                if (Directory.Exists(sub) &&
+                    (File.Exists(Path.Combine(sub, "project.godot")) || Directory.Exists(Path.Combine(sub, "scripts"))))
+                {
+                    return sub;
+                }
+
+                var subClient = Path.Combine(current.FullName, "GameClient");
+                if (Directory.Exists(subClient) &&
+                    (File.Exists(Path.Combine(subClient, "project.godot")) || Directory.Exists(Path.Combine(subClient, "scripts"))))
+                {
+                    return subClient;
+                }
+
+                current = current.Parent;
+            }
+        }
+
+        return null;
+    }
+
     public void ReloadJMdict()
     {
         lock (_lock)
@@ -33,44 +412,7 @@ public class JMdictService
             {
                 _levelVocabMap.Clear();
 
-                // 1. Primary Source: Load from Database (Levels 1-24 and any previously seeded/stored words)
-                try
-                {
-                    using var scope = _scopeFactory.CreateScope();
-                    var context = scope.ServiceProvider.GetRequiredService<AppDbContext>();
-                    var dbVocabs = context.Vocabularies.ToList();
-                    bool dbUpdated = false;
-                    foreach (var v in dbVocabs)
-                    {
-                        if (v.LevelRequired >= 25 && (string.IsNullOrEmpty(v.Romaji) || v.Romaji == v.Kana))
-                        {
-                            v.Romaji = ConvertKanaToRomaji(v.Kana ?? v.WordJp ?? "");
-                            dbUpdated = true;
-                        }
-
-                        if (!_levelVocabMap.TryGetValue(v.LevelRequired, out var list))
-                        {
-                            list = new List<Vocabulary>();
-                            _levelVocabMap[v.LevelRequired] = list;
-                        }
-                        list.Add(v);
-                    }
-                    if (dbUpdated)
-                    {
-                        try { context.SaveChanges(); } catch { }
-                    }
-
-                    if (dbVocabs.Count > 0)
-                    {
-                        _logger.LogInformation("Loaded {Count} vocabularies from Database across {Levels} levels.", dbVocabs.Count, _levelVocabMap.Count);
-                    }
-                }
-                catch (Exception dbEx)
-                {
-                    _logger.LogWarning("Database not ready during initial JMdictService load: {Message}", dbEx.Message);
-                }
-
-                // 2. Secondary Source: JSON file discovery across known workspace paths
+                // 1. Primary Baseline Source: JSON file discovery across known workspace paths
                 var baseDir = Directory.GetCurrentDirectory();
                 var dirInfo = new DirectoryInfo(baseDir);
                 if (dirInfo.Name.Equals("JapaneseMasteryBackendDotNet", StringComparison.OrdinalIgnoreCase) ||
@@ -84,14 +426,21 @@ public class JMdictService
                     PropertyNameCaseInsensitive = true
                 };
 
-                var searchPaths = new[]
+                var jmDir = FindJapaneseMasteryDirectory();
+                var searchPaths = new List<string>
                 {
                     AppContext.BaseDirectory,
                     Directory.GetCurrentDirectory(),
+                    Path.Combine(baseDir, "GameClient", "data"),
                     Path.Combine(baseDir, "JapaneseMastery", "data"),
                     Path.Combine(baseDir, "data"),
                     Path.Combine(baseDir, "JapaneseMasteryUnity", "Assets", "StreamingAssets", "data")
                 };
+
+                if (!string.IsNullOrEmpty(jmDir))
+                {
+                    searchPaths.Insert(0, Path.Combine(jmDir, "data"));
+                }
 
                 foreach (var folder in searchPaths)
                 {
@@ -102,8 +451,8 @@ public class JMdictService
                     {
                         try
                         {
-                            var json = File.ReadAllText(defaultJsonFile);
-                            var defaultMap = JsonSerializer.Deserialize<Dictionary<string, List<Vocabulary>>>(json, options);
+                            using var stream = File.OpenRead(defaultJsonFile);
+                            var defaultMap = JsonSerializer.Deserialize<Dictionary<string, List<Vocabulary>>>(stream, options);
                             if (defaultMap != null)
                             {
                                 foreach (var (k, v) in defaultMap)
@@ -123,8 +472,8 @@ public class JMdictService
                     {
                         try
                         {
-                            var json = File.ReadAllText(levelsJsonFile);
-                            var levelsMap = JsonSerializer.Deserialize<Dictionary<string, List<Vocabulary>>>(json, options);
+                            using var stream = File.OpenRead(levelsJsonFile);
+                            var levelsMap = JsonSerializer.Deserialize<Dictionary<string, List<Vocabulary>>>(stream, options);
                             if (levelsMap != null)
                             {
                                 foreach (var (k, v) in levelsMap)
@@ -140,12 +489,100 @@ public class JMdictService
                     }
                 }
 
+                // 2. Database Overrides: Apply any stored overrides/customizations from Database on top of baseline
+                try
+                {
+                    using var scope = _scopeFactory.CreateScope();
+                    var context = scope.ServiceProvider.GetRequiredService<AppDbContext>();
+                    var dbVocabs = context.Vocabularies.ToList();
+                    bool dbUpdated = false;
+                    foreach (var v in dbVocabs)
+                    {
+                        if (v.LevelRequired >= 25 && (string.IsNullOrEmpty(v.Romaji) || v.Romaji == v.Kana))
+                        {
+                            v.Romaji = ConvertKanaToRomaji(v.Kana ?? v.WordJp ?? "");
+                            dbUpdated = true;
+                        }
+
+                        // Remove from other levels if word was reassigned
+                        foreach (var (lvl, list) in _levelVocabMap)
+                        {
+                            if (lvl != v.LevelRequired && v.Id > 0)
+                            {
+                                list.RemoveAll(x => x.Id == v.Id);
+                            }
+                        }
+
+                        if (!_levelVocabMap.TryGetValue(v.LevelRequired, out var targetList))
+                        {
+                            targetList = new List<Vocabulary>();
+                            _levelVocabMap[v.LevelRequired] = targetList;
+                        }
+
+                        var existingIdx = v.Id > 0 ? targetList.FindIndex(x => x.Id == v.Id) : -1;
+                        if (existingIdx >= 0)
+                        {
+                            targetList[existingIdx] = v;
+                        }
+                        else
+                        {
+                            targetList.Add(v);
+                        }
+                    }
+                    if (dbUpdated)
+                    {
+                        try { context.SaveChanges(); } catch { }
+                    }
+
+                    if (dbVocabs.Count > 0)
+                    {
+                        _logger.LogInformation("Applied {Count} vocabulary overrides from Database.", dbVocabs.Count);
+                    }
+                }
+                catch (Exception dbEx)
+                {
+                    _logger.LogWarning("Database not ready during initial JMdictService load: {Message}", dbEx.Message);
+                }
+
                 _logger.LogInformation("JMdictService ready with {Count} total levels available.", _levelVocabMap.Count);
             }
             catch (Exception ex)
             {
                 _logger.LogError(ex, "Failed to initialize JMdictService.");
             }
+        }
+    }
+
+    public void UpdateVocabularyLevel(long id, int oldLevel, int newLevel, Vocabulary updatedVocab)
+    {
+        lock (_lock)
+        {
+            if (_levelVocabMap.TryGetValue(oldLevel, out var oldList))
+            {
+                oldList.RemoveAll(v => v.Id == id);
+            }
+
+            if (!_levelVocabMap.TryGetValue(newLevel, out var newList))
+            {
+                newList = new List<Vocabulary>();
+                _levelVocabMap[newLevel] = newList;
+            }
+
+            var existing = newList.FirstOrDefault(v => v.Id == id);
+            if (existing != null)
+            {
+                newList.Remove(existing);
+            }
+            newList.Add(new Vocabulary
+            {
+                Id = updatedVocab.Id,
+                WordJp = updatedVocab.WordJp,
+                Kana = updatedVocab.Kana,
+                Romaji = updatedVocab.Romaji,
+                Meaning = updatedVocab.Meaning,
+                Type = updatedVocab.Type,
+                LevelRequired = newLevel
+            });
         }
     }
 
@@ -214,7 +651,7 @@ public class JMdictService
         return new List<Vocabulary>();
     }
 
-    public List<Vocabulary> GetAllVocabularies()
+    public List<Vocabulary> GetAllVocabularies(int max = 10000)
     {
         lock (_lock)
         {
@@ -225,6 +662,7 @@ public class JMdictService
                 foreach (var level in sortedLevels)
                 {
                     all.AddRange(CloneList(_levelVocabMap[level], level));
+                    if (all.Count >= max) break;
                 }
                 return all;
             }

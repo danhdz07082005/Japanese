@@ -167,6 +167,10 @@ using (var scope = app.Services.CreateScope())
     await DatabaseInitializer.InitializeAsync(context, logger);
 }
 
+// Ensure JMdict dictionary and vocabulary levels are ready (auto-downloads on fresh clone)
+var jmdictService = app.Services.GetRequiredService<JMdictService>();
+await jmdictService.EnsureDataReadyAsync();
+
 // 11. Enable Swagger UI
 app.UseSwagger();
 app.UseSwaggerUI(c =>

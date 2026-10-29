@@ -1,0 +1,2102 @@
+{
+  "1": [
+    {
+      "id": 0,
+      "wordJp": "あ",
+      "kana": "あ",
+      "romaji": "a",
+      "meaning": "a",
+      "type": "HIRAGANA",
+      "levelRequired": 1
+    },
+    {
+      "id": 0,
+      "wordJp": "い",
+      "kana": "い",
+      "romaji": "i",
+      "meaning": "i",
+      "type": "HIRAGANA",
+      "levelRequired": 1
+    },
+    {
+      "id": 0,
+      "wordJp": "う",
+      "kana": "う",
+      "romaji": "u",
+      "meaning": "u",
+      "type": "HIRAGANA",
+      "levelRequired": 1
+    },
+    {
+      "id": 0,
+      "wordJp": "え",
+      "kana": "え",
+      "romaji": "e",
+      "meaning": "e",
+      "type": "HIRAGANA",
+      "levelRequired": 1
+    },
+    {
+      "id": 0,
+      "wordJp": "お",
+      "kana": "お",
+      "romaji": "o",
+      "meaning": "o",
+      "type": "HIRAGANA",
+      "levelRequired": 1
+    },
+    {
+      "id": 0,
+      "wordJp": "か",
+      "kana": "か",
+      "romaji": "ka",
+      "meaning": "ka",
+      "type": "HIRAGANA",
+      "levelRequired": 1
+    },
+    {
+      "id": 0,
+      "wordJp": "き",
+      "kana": "き",
+      "romaji": "ki",
+      "meaning": "ki",
+      "type": "HIRAGANA",
+      "levelRequired": 1
+    },
+    {
+      "id": 0,
+      "wordJp": "く",
+      "kana": "く",
+      "romaji": "ku",
+      "meaning": "ku",
+      "type": "HIRAGANA",
+      "levelRequired": 1
+    },
+    {
+      "id": 0,
+      "wordJp": "け",
+      "kana": "け",
+      "romaji": "ke",
+      "meaning": "ke",
+      "type": "HIRAGANA",
+      "levelRequired": 1
+    },
+    {
+      "id": 0,
+      "wordJp": "こ",
+      "kana": "こ",
+      "romaji": "ko",
+      "meaning": "ko",
+      "type": "HIRAGANA",
+      "levelRequired": 1
+    }
+  ],
+  "2": [
+    {
+      "id": 0,
+      "wordJp": "さ",
+      "kana": "さ",
+      "romaji": "sa",
+      "meaning": "sa",
+      "type": "HIRAGANA",
+      "levelRequired": 2
+    },
+    {
+      "id": 0,
+      "wordJp": "し",
+      "kana": "し",
+      "romaji": "shi",
+      "meaning": "shi",
+      "type": "HIRAGANA",
+      "levelRequired": 2
+    },
+    {
+      "id": 0,
+      "wordJp": "す",
+      "kana": "す",
+      "romaji": "su",
+      "meaning": "su",
+      "type": "HIRAGANA",
+      "levelRequired": 2
+    },
+    {
+      "id": 0,
+      "wordJp": "せ",
+      "kana": "せ",
+      "romaji": "se",
+      "meaning": "se",
+      "type": "HIRAGANA",
+      "levelRequired": 2
+    },
+    {
+      "id": 0,
+      "wordJp": "そ",
+      "kana": "そ",
+      "romaji": "so",
+      "meaning": "so",
+      "type": "HIRAGANA",
+      "levelRequired": 2
+    },
+    {
+      "id": 0,
+      "wordJp": "た",
+      "kana": "た",
+      "romaji": "ta",
+      "meaning": "ta",
+      "type": "HIRAGANA",
+      "levelRequired": 2
+    },
+    {
+      "id": 0,
+      "wordJp": "ち",
+      "kana": "ち",
+      "romaji": "chi",
+      "meaning": "chi",
+      "type": "HIRAGANA",
+      "levelRequired": 2
+    },
+    {
+      "id": 0,
+      "wordJp": "つ",
+      "kana": "つ",
+      "romaji": "tsu",
+      "meaning": "tsu",
+      "type": "HIRAGANA",
+      "levelRequired": 2
+    },
+    {
+      "id": 0,
+      "wordJp": "て",
+      "kana": "て",
+      "romaji": "te",
+      "meaning": "te",
+      "type": "HIRAGANA",
+      "levelRequired": 2
+    },
+    {
+      "id": 0,
+      "wordJp": "と",
+      "kana": "と",
+      "romaji": "to",
+      "meaning": "to",
+      "type": "HIRAGANA",
+      "levelRequired": 2
+    }
+  ],
+  "3": [
+    {
+      "id": 0,
+      "wordJp": "な",
+      "kana": "な",
+      "romaji": "na",
+      "meaning": "na",
+      "type": "HIRAGANA",
+      "levelRequired": 3
+    },
+    {
+      "id": 0,
+      "wordJp": "に",
+      "kana": "に",
+      "romaji": "ni",
+      "meaning": "ni",
+      "type": "HIRAGANA",
+      "levelRequired": 3
+    },
+    {
+      "id": 0,
+      "wordJp": "ぬ",
+      "kana": "ぬ",
+      "romaji": "nu",
+      "meaning": "nu",
+      "type": "HIRAGANA",
+      "levelRequired": 3
+    },
+    {
+      "id": 0,
+      "wordJp": "ね",
+      "kana": "ね",
+      "romaji": "ne",
+      "meaning": "ne",
+      "type": "HIRAGANA",
+      "levelRequired": 3
+    },
+    {
+      "id": 0,
+      "wordJp": "の",
+      "kana": "の",
+      "romaji": "no",
+      "meaning": "no",
+      "type": "HIRAGANA",
+      "levelRequired": 3
+    },
+    {
+      "id": 0,
+      "wordJp": "は",
+      "kana": "は",
+      "romaji": "ha",
+      "meaning": "ha",
+      "type": "HIRAGANA",
+      "levelRequired": 3
+    },
+    {
+      "id": 0,
+      "wordJp": "ひ",
+      "kana": "ひ",
+      "romaji": "hi",
+      "meaning": "hi",
+      "type": "HIRAGANA",
+      "levelRequired": 3
+    },
+    {
+      "id": 0,
+      "wordJp": "ふ",
+      "kana": "ふ",
+      "romaji": "fu",
+      "meaning": "fu",
+      "type": "HIRAGANA",
+      "levelRequired": 3
+    },
+    {
+      "id": 0,
+      "wordJp": "へ",
+      "kana": "へ",
+      "romaji": "he",
+      "meaning": "he",
+      "type": "HIRAGANA",
+      "levelRequired": 3
+    },
+    {
+      "id": 0,
+      "wordJp": "ほ",
+      "kana": "ほ",
+      "romaji": "ho",
+      "meaning": "ho",
+      "type": "HIRAGANA",
+      "levelRequired": 3
+    }
+  ],
+  "4": [
+    {
+      "id": 0,
+      "wordJp": "ま",
+      "kana": "ま",
+      "romaji": "ma",
+      "meaning": "ma",
+      "type": "HIRAGANA",
+      "levelRequired": 4
+    },
+    {
+      "id": 0,
+      "wordJp": "み",
+      "kana": "み",
+      "romaji": "mi",
+      "meaning": "mi",
+      "type": "HIRAGANA",
+      "levelRequired": 4
+    },
+    {
+      "id": 0,
+      "wordJp": "む",
+      "kana": "む",
+      "romaji": "mu",
+      "meaning": "mu",
+      "type": "HIRAGANA",
+      "levelRequired": 4
+    },
+    {
+      "id": 0,
+      "wordJp": "め",
+      "kana": "め",
+      "romaji": "me",
+      "meaning": "me",
+      "type": "HIRAGANA",
+      "levelRequired": 4
+    },
+    {
+      "id": 0,
+      "wordJp": "も",
+      "kana": "も",
+      "romaji": "mo",
+      "meaning": "mo",
+      "type": "HIRAGANA",
+      "levelRequired": 4
+    },
+    {
+      "id": 0,
+      "wordJp": "や",
+      "kana": "や",
+      "romaji": "ya",
+      "meaning": "ya",
+      "type": "HIRAGANA",
+      "levelRequired": 4
+    },
+    {
+      "id": 0,
+      "wordJp": "ゆ",
+      "kana": "ゆ",
+      "romaji": "yu",
+      "meaning": "yu",
+      "type": "HIRAGANA",
+      "levelRequired": 4
+    },
+    {
+      "id": 0,
+      "wordJp": "よ",
+      "kana": "よ",
+      "romaji": "yo",
+      "meaning": "yo",
+      "type": "HIRAGANA",
+      "levelRequired": 4
+    },
+    {
+      "id": 0,
+      "wordJp": "わ",
+      "kana": "わ",
+      "romaji": "wa",
+      "meaning": "wa",
+      "type": "HIRAGANA",
+      "levelRequired": 4
+    },
+    {
+      "id": 0,
+      "wordJp": "を",
+      "kana": "を",
+      "romaji": "o",
+      "meaning": "o",
+      "type": "HIRAGANA",
+      "levelRequired": 4
+    }
+  ],
+  "5": [
+    {
+      "id": 0,
+      "wordJp": "ら",
+      "kana": "ら",
+      "romaji": "ra",
+      "meaning": "ra",
+      "type": "HIRAGANA",
+      "levelRequired": 5
+    },
+    {
+      "id": 0,
+      "wordJp": "り",
+      "kana": "り",
+      "romaji": "ri",
+      "meaning": "ri",
+      "type": "HIRAGANA",
+      "levelRequired": 5
+    },
+    {
+      "id": 0,
+      "wordJp": "る",
+      "kana": "る",
+      "romaji": "ru",
+      "meaning": "ru",
+      "type": "HIRAGANA",
+      "levelRequired": 5
+    },
+    {
+      "id": 0,
+      "wordJp": "れ",
+      "kana": "れ",
+      "romaji": "re",
+      "meaning": "re",
+      "type": "HIRAGANA",
+      "levelRequired": 5
+    },
+    {
+      "id": 0,
+      "wordJp": "ろ",
+      "kana": "ろ",
+      "romaji": "ro",
+      "meaning": "ro",
+      "type": "HIRAGANA",
+      "levelRequired": 5
+    },
+    {
+      "id": 0,
+      "wordJp": "ん",
+      "kana": "ん",
+      "romaji": "n",
+      "meaning": "n",
+      "type": "HIRAGANA",
+      "levelRequired": 5
+    },
+    {
+      "id": 0,
+      "wordJp": "っk",
+      "kana": "っk",
+      "romaji": "kk",
+      "meaning": "kk",
+      "type": "HIRAGANA",
+      "levelRequired": 5
+    },
+    {
+      "id": 0,
+      "wordJp": "っs",
+      "kana": "っs",
+      "romaji": "ss",
+      "meaning": "ss",
+      "type": "HIRAGANA",
+      "levelRequired": 5
+    },
+    {
+      "id": 0,
+      "wordJp": "っt",
+      "kana": "っt",
+      "romaji": "tt",
+      "meaning": "tt",
+      "type": "HIRAGANA",
+      "levelRequired": 5
+    },
+    {
+      "id": 0,
+      "wordJp": "っp",
+      "kana": "っp",
+      "romaji": "pp",
+      "meaning": "pp",
+      "type": "HIRAGANA",
+      "levelRequired": 5
+    }
+  ],
+  "6": [
+    {
+      "id": 0,
+      "wordJp": "が",
+      "kana": "が",
+      "romaji": "ga",
+      "meaning": "ga",
+      "type": "HIRAGANA",
+      "levelRequired": 6
+    },
+    {
+      "id": 0,
+      "wordJp": "ぎ",
+      "kana": "ぎ",
+      "romaji": "gi",
+      "meaning": "gi",
+      "type": "HIRAGANA",
+      "levelRequired": 6
+    },
+    {
+      "id": 0,
+      "wordJp": "ぐ",
+      "kana": "ぐ",
+      "romaji": "gu",
+      "meaning": "gu",
+      "type": "HIRAGANA",
+      "levelRequired": 6
+    },
+    {
+      "id": 0,
+      "wordJp": "げ",
+      "kana": "げ",
+      "romaji": "ge",
+      "meaning": "ge",
+      "type": "HIRAGANA",
+      "levelRequired": 6
+    },
+    {
+      "id": 0,
+      "wordJp": "ご",
+      "kana": "ご",
+      "romaji": "go",
+      "meaning": "go",
+      "type": "HIRAGANA",
+      "levelRequired": 6
+    },
+    {
+      "id": 0,
+      "wordJp": "ざ",
+      "kana": "ざ",
+      "romaji": "za",
+      "meaning": "za",
+      "type": "HIRAGANA",
+      "levelRequired": 6
+    },
+    {
+      "id": 0,
+      "wordJp": "じ",
+      "kana": "じ",
+      "romaji": "ji",
+      "meaning": "ji",
+      "type": "HIRAGANA",
+      "levelRequired": 6
+    },
+    {
+      "id": 0,
+      "wordJp": "ず",
+      "kana": "ず",
+      "romaji": "zu",
+      "meaning": "zu",
+      "type": "HIRAGANA",
+      "levelRequired": 6
+    },
+    {
+      "id": 0,
+      "wordJp": "ぜ",
+      "kana": "ぜ",
+      "romaji": "ze",
+      "meaning": "ze",
+      "type": "HIRAGANA",
+      "levelRequired": 6
+    },
+    {
+      "id": 0,
+      "wordJp": "ぞ",
+      "kana": "ぞ",
+      "romaji": "zo",
+      "meaning": "zo",
+      "type": "HIRAGANA",
+      "levelRequired": 6
+    }
+  ],
+  "7": [
+    {
+      "id": 0,
+      "wordJp": "だ",
+      "kana": "だ",
+      "romaji": "da",
+      "meaning": "da",
+      "type": "HIRAGANA",
+      "levelRequired": 7
+    },
+    {
+      "id": 0,
+      "wordJp": "ぢ",
+      "kana": "ぢ",
+      "romaji": "ji",
+      "meaning": "ji",
+      "type": "HIRAGANA",
+      "levelRequired": 7
+    },
+    {
+      "id": 0,
+      "wordJp": "づ",
+      "kana": "づ",
+      "romaji": "zu",
+      "meaning": "zu",
+      "type": "HIRAGANA",
+      "levelRequired": 7
+    },
+    {
+      "id": 0,
+      "wordJp": "で",
+      "kana": "で",
+      "romaji": "de",
+      "meaning": "de",
+      "type": "HIRAGANA",
+      "levelRequired": 7
+    },
+    {
+      "id": 0,
+      "wordJp": "ど",
+      "kana": "ど",
+      "romaji": "do",
+      "meaning": "do",
+      "type": "HIRAGANA",
+      "levelRequired": 7
+    },
+    {
+      "id": 0,
+      "wordJp": "ば",
+      "kana": "ば",
+      "romaji": "ba",
+      "meaning": "ba",
+      "type": "HIRAGANA",
+      "levelRequired": 7
+    },
+    {
+      "id": 0,
+      "wordJp": "び",
+      "kana": "び",
+      "romaji": "bi",
+      "meaning": "bi",
+      "type": "HIRAGANA",
+      "levelRequired": 7
+    },
+    {
+      "id": 0,
+      "wordJp": "ぶ",
+      "kana": "ぶ",
+      "romaji": "bu",
+      "meaning": "bu",
+      "type": "HIRAGANA",
+      "levelRequired": 7
+    },
+    {
+      "id": 0,
+      "wordJp": "べ",
+      "kana": "べ",
+      "romaji": "be",
+      "meaning": "be",
+      "type": "HIRAGANA",
+      "levelRequired": 7
+    },
+    {
+      "id": 0,
+      "wordJp": "ぼ",
+      "kana": "ぼ",
+      "romaji": "bo",
+      "meaning": "bo",
+      "type": "HIRAGANA",
+      "levelRequired": 7
+    }
+  ],
+  "8": [
+    {
+      "id": 0,
+      "wordJp": "ぱ",
+      "kana": "ぱ",
+      "romaji": "pa",
+      "meaning": "pa",
+      "type": "HIRAGANA",
+      "levelRequired": 8
+    },
+    {
+      "id": 0,
+      "wordJp": "ぴ",
+      "kana": "ぴ",
+      "romaji": "pi",
+      "meaning": "pi",
+      "type": "HIRAGANA",
+      "levelRequired": 8
+    },
+    {
+      "id": 0,
+      "wordJp": "ぷ",
+      "kana": "ぷ",
+      "romaji": "pu",
+      "meaning": "pu",
+      "type": "HIRAGANA",
+      "levelRequired": 8
+    },
+    {
+      "id": 0,
+      "wordJp": "ぺ",
+      "kana": "ぺ",
+      "romaji": "pe",
+      "meaning": "pe",
+      "type": "HIRAGANA",
+      "levelRequired": 8
+    },
+    {
+      "id": 0,
+      "wordJp": "ぽ",
+      "kana": "ぽ",
+      "romaji": "po",
+      "meaning": "po",
+      "type": "HIRAGANA",
+      "levelRequired": 8
+    },
+    {
+      "id": 0,
+      "wordJp": "ああ",
+      "kana": "ああ",
+      "romaji": "aa",
+      "meaning": "aa",
+      "type": "HIRAGANA",
+      "levelRequired": 8
+    },
+    {
+      "id": 0,
+      "wordJp": "いい",
+      "kana": "いい",
+      "romaji": "ii",
+      "meaning": "ii",
+      "type": "HIRAGANA",
+      "levelRequired": 8
+    },
+    {
+      "id": 0,
+      "wordJp": "うう",
+      "kana": "うう",
+      "romaji": "uu",
+      "meaning": "uu",
+      "type": "HIRAGANA",
+      "levelRequired": 8
+    },
+    {
+      "id": 0,
+      "wordJp": "ええ",
+      "kana": "ええ",
+      "romaji": "ee",
+      "meaning": "ee",
+      "type": "HIRAGANA",
+      "levelRequired": 8
+    },
+    {
+      "id": 0,
+      "wordJp": "おお",
+      "kana": "おお",
+      "romaji": "oo",
+      "meaning": "oo",
+      "type": "HIRAGANA",
+      "levelRequired": 8
+    }
+  ],
+  "9": [
+    {
+      "id": 0,
+      "wordJp": "えい",
+      "kana": "えい",
+      "romaji": "ei",
+      "meaning": "ei",
+      "type": "HIRAGANA",
+      "levelRequired": 9
+    },
+    {
+      "id": 0,
+      "wordJp": "おう",
+      "kana": "おう",
+      "romaji": "ou",
+      "meaning": "ou",
+      "type": "HIRAGANA",
+      "levelRequired": 9
+    },
+    {
+      "id": 0,
+      "wordJp": "きゃ",
+      "kana": "きゃ",
+      "romaji": "kya",
+      "meaning": "kya",
+      "type": "HIRAGANA",
+      "levelRequired": 9
+    },
+    {
+      "id": 0,
+      "wordJp": "きゅ",
+      "kana": "きゅ",
+      "romaji": "kyu",
+      "meaning": "kyu",
+      "type": "HIRAGANA",
+      "levelRequired": 9
+    },
+    {
+      "id": 0,
+      "wordJp": "きょ",
+      "kana": "きょ",
+      "romaji": "kyo",
+      "meaning": "kyo",
+      "type": "HIRAGANA",
+      "levelRequired": 9
+    },
+    {
+      "id": 0,
+      "wordJp": "ぎゃ",
+      "kana": "ぎゃ",
+      "romaji": "gya",
+      "meaning": "gya",
+      "type": "HIRAGANA",
+      "levelRequired": 9
+    },
+    {
+      "id": 0,
+      "wordJp": "ぎゅ",
+      "kana": "ぎゅ",
+      "romaji": "gyu",
+      "meaning": "gyu",
+      "type": "HIRAGANA",
+      "levelRequired": 9
+    },
+    {
+      "id": 0,
+      "wordJp": "ぎょ",
+      "kana": "ぎょ",
+      "romaji": "gyo",
+      "meaning": "gyo",
+      "type": "HIRAGANA",
+      "levelRequired": 9
+    }
+  ],
+  "10": [
+    {
+      "id": 0,
+      "wordJp": "しゃ",
+      "kana": "しゃ",
+      "romaji": "sha",
+      "meaning": "sha",
+      "type": "HIRAGANA",
+      "levelRequired": 10
+    },
+    {
+      "id": 0,
+      "wordJp": "しゅ",
+      "kana": "しゅ",
+      "romaji": "shu",
+      "meaning": "shu",
+      "type": "HIRAGANA",
+      "levelRequired": 10
+    },
+    {
+      "id": 0,
+      "wordJp": "しょ",
+      "kana": "しょ",
+      "romaji": "sho",
+      "meaning": "sho",
+      "type": "HIRAGANA",
+      "levelRequired": 10
+    },
+    {
+      "id": 0,
+      "wordJp": "じゃ",
+      "kana": "じゃ",
+      "romaji": "ja",
+      "meaning": "ja",
+      "type": "HIRAGANA",
+      "levelRequired": 10
+    },
+    {
+      "id": 0,
+      "wordJp": "じゅ",
+      "kana": "じゅ",
+      "romaji": "ju",
+      "meaning": "ju",
+      "type": "HIRAGANA",
+      "levelRequired": 10
+    },
+    {
+      "id": 0,
+      "wordJp": "じょ",
+      "kana": "じょ",
+      "romaji": "jo",
+      "meaning": "jo",
+      "type": "HIRAGANA",
+      "levelRequired": 10
+    },
+    {
+      "id": 0,
+      "wordJp": "ちゃ",
+      "kana": "ちゃ",
+      "romaji": "cha",
+      "meaning": "cha",
+      "type": "HIRAGANA",
+      "levelRequired": 10
+    },
+    {
+      "id": 0,
+      "wordJp": "ちゅ",
+      "kana": "ちゅ",
+      "romaji": "chu",
+      "meaning": "chu",
+      "type": "HIRAGANA",
+      "levelRequired": 10
+    },
+    {
+      "id": 0,
+      "wordJp": "ちょ",
+      "kana": "ちょ",
+      "romaji": "cho",
+      "meaning": "cho",
+      "type": "HIRAGANA",
+      "levelRequired": 10
+    }
+  ],
+  "11": [
+    {
+      "id": 0,
+      "wordJp": "にゃ",
+      "kana": "にゃ",
+      "romaji": "nya",
+      "meaning": "nya",
+      "type": "HIRAGANA",
+      "levelRequired": 11
+    },
+    {
+      "id": 0,
+      "wordJp": "にゅ",
+      "kana": "にゅ",
+      "romaji": "nyu",
+      "meaning": "nyu",
+      "type": "HIRAGANA",
+      "levelRequired": 11
+    },
+    {
+      "id": 0,
+      "wordJp": "にょ",
+      "kana": "にょ",
+      "romaji": "nyo",
+      "meaning": "nyo",
+      "type": "HIRAGANA",
+      "levelRequired": 11
+    },
+    {
+      "id": 0,
+      "wordJp": "ひゃ",
+      "kana": "ひゃ",
+      "romaji": "hya",
+      "meaning": "hya",
+      "type": "HIRAGANA",
+      "levelRequired": 11
+    },
+    {
+      "id": 0,
+      "wordJp": "ひゅ",
+      "kana": "ひゅ",
+      "romaji": "hyu",
+      "meaning": "hyu",
+      "type": "HIRAGANA",
+      "levelRequired": 11
+    },
+    {
+      "id": 0,
+      "wordJp": "ひょ",
+      "kana": "ひょ",
+      "romaji": "hyo",
+      "meaning": "hyo",
+      "type": "HIRAGANA",
+      "levelRequired": 11
+    },
+    {
+      "id": 0,
+      "wordJp": "びゃ",
+      "kana": "びゃ",
+      "romaji": "bya",
+      "meaning": "bya",
+      "type": "HIRAGANA",
+      "levelRequired": 11
+    },
+    {
+      "id": 0,
+      "wordJp": "びゅ",
+      "kana": "びゅ",
+      "romaji": "byu",
+      "meaning": "byu",
+      "type": "HIRAGANA",
+      "levelRequired": 11
+    },
+    {
+      "id": 0,
+      "wordJp": "びょ",
+      "kana": "びょ",
+      "romaji": "byo",
+      "meaning": "byo",
+      "type": "HIRAGANA",
+      "levelRequired": 11
+    }
+  ],
+  "12": [
+    {
+      "id": 0,
+      "wordJp": "ぴゃ",
+      "kana": "ぴゃ",
+      "romaji": "pya",
+      "meaning": "pya",
+      "type": "HIRAGANA",
+      "levelRequired": 12
+    },
+    {
+      "id": 0,
+      "wordJp": "ぴゅ",
+      "kana": "ぴゅ",
+      "romaji": "pyu",
+      "meaning": "pyu",
+      "type": "HIRAGANA",
+      "levelRequired": 12
+    },
+    {
+      "id": 0,
+      "wordJp": "ぴょ",
+      "kana": "ぴょ",
+      "romaji": "pyo",
+      "meaning": "pyo",
+      "type": "HIRAGANA",
+      "levelRequired": 12
+    },
+    {
+      "id": 0,
+      "wordJp": "みゃ",
+      "kana": "みゃ",
+      "romaji": "mya",
+      "meaning": "mya",
+      "type": "HIRAGANA",
+      "levelRequired": 12
+    },
+    {
+      "id": 0,
+      "wordJp": "みゅ",
+      "kana": "みゅ",
+      "romaji": "myu",
+      "meaning": "myu",
+      "type": "HIRAGANA",
+      "levelRequired": 12
+    },
+    {
+      "id": 0,
+      "wordJp": "みょ",
+      "kana": "みょ",
+      "romaji": "myo",
+      "meaning": "myo",
+      "type": "HIRAGANA",
+      "levelRequired": 12
+    },
+    {
+      "id": 0,
+      "wordJp": "りゃ",
+      "kana": "りゃ",
+      "romaji": "rya",
+      "meaning": "rya",
+      "type": "HIRAGANA",
+      "levelRequired": 12
+    },
+    {
+      "id": 0,
+      "wordJp": "りゅ",
+      "kana": "りゅ",
+      "romaji": "ryu",
+      "meaning": "ryu",
+      "type": "HIRAGANA",
+      "levelRequired": 12
+    },
+    {
+      "id": 0,
+      "wordJp": "りょ",
+      "kana": "りょ",
+      "romaji": "ryo",
+      "meaning": "ryo",
+      "type": "HIRAGANA",
+      "levelRequired": 12
+    }
+  ],
+  "13": [
+    {
+      "id": 0,
+      "wordJp": "ア",
+      "kana": "ア",
+      "romaji": "a",
+      "meaning": "a",
+      "type": "KATAKANA",
+      "levelRequired": 13
+    },
+    {
+      "id": 0,
+      "wordJp": "イ",
+      "kana": "イ",
+      "romaji": "i",
+      "meaning": "i",
+      "type": "KATAKANA",
+      "levelRequired": 13
+    },
+    {
+      "id": 0,
+      "wordJp": "ウ",
+      "kana": "ウ",
+      "romaji": "u",
+      "meaning": "u",
+      "type": "KATAKANA",
+      "levelRequired": 13
+    },
+    {
+      "id": 0,
+      "wordJp": "エ",
+      "kana": "エ",
+      "romaji": "e",
+      "meaning": "e",
+      "type": "KATAKANA",
+      "levelRequired": 13
+    },
+    {
+      "id": 0,
+      "wordJp": "オ",
+      "kana": "オ",
+      "romaji": "o",
+      "meaning": "o",
+      "type": "KATAKANA",
+      "levelRequired": 13
+    },
+    {
+      "id": 0,
+      "wordJp": "カ",
+      "kana": "カ",
+      "romaji": "ka",
+      "meaning": "ka",
+      "type": "KATAKANA",
+      "levelRequired": 13
+    },
+    {
+      "id": 0,
+      "wordJp": "キ",
+      "kana": "キ",
+      "romaji": "ki",
+      "meaning": "ki",
+      "type": "KATAKANA",
+      "levelRequired": 13
+    },
+    {
+      "id": 0,
+      "wordJp": "ク",
+      "kana": "ク",
+      "romaji": "ku",
+      "meaning": "ku",
+      "type": "KATAKANA",
+      "levelRequired": 13
+    },
+    {
+      "id": 0,
+      "wordJp": "ケ",
+      "kana": "ケ",
+      "romaji": "ke",
+      "meaning": "ke",
+      "type": "KATAKANA",
+      "levelRequired": 13
+    },
+    {
+      "id": 0,
+      "wordJp": "コ",
+      "kana": "コ",
+      "romaji": "ko",
+      "meaning": "ko",
+      "type": "KATAKANA",
+      "levelRequired": 13
+    }
+  ],
+  "14": [
+    {
+      "id": 0,
+      "wordJp": "サ",
+      "kana": "サ",
+      "romaji": "sa",
+      "meaning": "sa",
+      "type": "KATAKANA",
+      "levelRequired": 14
+    },
+    {
+      "id": 0,
+      "wordJp": "シ",
+      "kana": "シ",
+      "romaji": "shi",
+      "meaning": "shi",
+      "type": "KATAKANA",
+      "levelRequired": 14
+    },
+    {
+      "id": 0,
+      "wordJp": "ス",
+      "kana": "ス",
+      "romaji": "su",
+      "meaning": "su",
+      "type": "KATAKANA",
+      "levelRequired": 14
+    },
+    {
+      "id": 0,
+      "wordJp": "セ",
+      "kana": "セ",
+      "romaji": "se",
+      "meaning": "se",
+      "type": "KATAKANA",
+      "levelRequired": 14
+    },
+    {
+      "id": 0,
+      "wordJp": "ソ",
+      "kana": "ソ",
+      "romaji": "so",
+      "meaning": "so",
+      "type": "KATAKANA",
+      "levelRequired": 14
+    },
+    {
+      "id": 0,
+      "wordJp": "タ",
+      "kana": "タ",
+      "romaji": "ta",
+      "meaning": "ta",
+      "type": "KATAKANA",
+      "levelRequired": 14
+    },
+    {
+      "id": 0,
+      "wordJp": "チ",
+      "kana": "チ",
+      "romaji": "chi",
+      "meaning": "chi",
+      "type": "KATAKANA",
+      "levelRequired": 14
+    },
+    {
+      "id": 0,
+      "wordJp": "ツ",
+      "kana": "ツ",
+      "romaji": "tsu",
+      "meaning": "tsu",
+      "type": "KATAKANA",
+      "levelRequired": 14
+    },
+    {
+      "id": 0,
+      "wordJp": "テ",
+      "kana": "テ",
+      "romaji": "te",
+      "meaning": "te",
+      "type": "KATAKANA",
+      "levelRequired": 14
+    },
+    {
+      "id": 0,
+      "wordJp": "ト",
+      "kana": "ト",
+      "romaji": "to",
+      "meaning": "to",
+      "type": "KATAKANA",
+      "levelRequired": 14
+    }
+  ],
+  "15": [
+    {
+      "id": 0,
+      "wordJp": "ナ",
+      "kana": "ナ",
+      "romaji": "na",
+      "meaning": "na",
+      "type": "KATAKANA",
+      "levelRequired": 15
+    },
+    {
+      "id": 0,
+      "wordJp": "ニ",
+      "kana": "ニ",
+      "romaji": "ni",
+      "meaning": "ni",
+      "type": "KATAKANA",
+      "levelRequired": 15
+    },
+    {
+      "id": 0,
+      "wordJp": "ヌ",
+      "kana": "ヌ",
+      "romaji": "nu",
+      "meaning": "nu",
+      "type": "KATAKANA",
+      "levelRequired": 15
+    },
+    {
+      "id": 0,
+      "wordJp": "ネ",
+      "kana": "ネ",
+      "romaji": "ne",
+      "meaning": "ne",
+      "type": "KATAKANA",
+      "levelRequired": 15
+    },
+    {
+      "id": 0,
+      "wordJp": "ノ",
+      "kana": "ノ",
+      "romaji": "no",
+      "meaning": "no",
+      "type": "KATAKANA",
+      "levelRequired": 15
+    },
+    {
+      "id": 0,
+      "wordJp": "ハ",
+      "kana": "ハ",
+      "romaji": "ha",
+      "meaning": "ha",
+      "type": "KATAKANA",
+      "levelRequired": 15
+    },
+    {
+      "id": 0,
+      "wordJp": "ヒ",
+      "kana": "ヒ",
+      "romaji": "hi",
+      "meaning": "hi",
+      "type": "KATAKANA",
+      "levelRequired": 15
+    },
+    {
+      "id": 0,
+      "wordJp": "フ",
+      "kana": "フ",
+      "romaji": "fu",
+      "meaning": "fu",
+      "type": "KATAKANA",
+      "levelRequired": 15
+    },
+    {
+      "id": 0,
+      "wordJp": "ヘ",
+      "kana": "ヘ",
+      "romaji": "he",
+      "meaning": "he",
+      "type": "KATAKANA",
+      "levelRequired": 15
+    },
+    {
+      "id": 0,
+      "wordJp": "ホ",
+      "kana": "ホ",
+      "romaji": "ho",
+      "meaning": "ho",
+      "type": "KATAKANA",
+      "levelRequired": 15
+    }
+  ],
+  "16": [
+    {
+      "id": 0,
+      "wordJp": "マ",
+      "kana": "マ",
+      "romaji": "ma",
+      "meaning": "ma",
+      "type": "KATAKANA",
+      "levelRequired": 16
+    },
+    {
+      "id": 0,
+      "wordJp": "ミ",
+      "kana": "ミ",
+      "romaji": "mi",
+      "meaning": "mi",
+      "type": "KATAKANA",
+      "levelRequired": 16
+    },
+    {
+      "id": 0,
+      "wordJp": "ム",
+      "kana": "ム",
+      "romaji": "mu",
+      "meaning": "mu",
+      "type": "KATAKANA",
+      "levelRequired": 16
+    },
+    {
+      "id": 0,
+      "wordJp": "メ",
+      "kana": "メ",
+      "romaji": "me",
+      "meaning": "me",
+      "type": "KATAKANA",
+      "levelRequired": 16
+    },
+    {
+      "id": 0,
+      "wordJp": "モ",
+      "kana": "モ",
+      "romaji": "mo",
+      "meaning": "mo",
+      "type": "KATAKANA",
+      "levelRequired": 16
+    },
+    {
+      "id": 0,
+      "wordJp": "ヤ",
+      "kana": "ヤ",
+      "romaji": "ya",
+      "meaning": "ya",
+      "type": "KATAKANA",
+      "levelRequired": 16
+    },
+    {
+      "id": 0,
+      "wordJp": "ユ",
+      "kana": "ユ",
+      "romaji": "yu",
+      "meaning": "yu",
+      "type": "KATAKANA",
+      "levelRequired": 16
+    },
+    {
+      "id": 0,
+      "wordJp": "ヨ",
+      "kana": "ヨ",
+      "romaji": "yo",
+      "meaning": "yo",
+      "type": "KATAKANA",
+      "levelRequired": 16
+    },
+    {
+      "id": 0,
+      "wordJp": "ワ",
+      "kana": "ワ",
+      "romaji": "wa",
+      "meaning": "wa",
+      "type": "KATAKANA",
+      "levelRequired": 16
+    },
+    {
+      "id": 0,
+      "wordJp": "ヲ",
+      "kana": "ヲ",
+      "romaji": "wo",
+      "meaning": "wo",
+      "type": "KATAKANA",
+      "levelRequired": 16
+    }
+  ],
+  "17": [
+    {
+      "id": 0,
+      "wordJp": "ラ",
+      "kana": "ラ",
+      "romaji": "ra",
+      "meaning": "ra",
+      "type": "KATAKANA",
+      "levelRequired": 17
+    },
+    {
+      "id": 0,
+      "wordJp": "リ",
+      "kana": "リ",
+      "romaji": "ri",
+      "meaning": "ri",
+      "type": "KATAKANA",
+      "levelRequired": 17
+    },
+    {
+      "id": 0,
+      "wordJp": "ル",
+      "kana": "ル",
+      "romaji": "ru",
+      "meaning": "ru",
+      "type": "KATAKANA",
+      "levelRequired": 17
+    },
+    {
+      "id": 0,
+      "wordJp": "レ",
+      "kana": "レ",
+      "romaji": "re",
+      "meaning": "re",
+      "type": "KATAKANA",
+      "levelRequired": 17
+    },
+    {
+      "id": 0,
+      "wordJp": "ロ",
+      "kana": "ロ",
+      "romaji": "ro",
+      "meaning": "ro",
+      "type": "KATAKANA",
+      "levelRequired": 17
+    },
+    {
+      "id": 0,
+      "wordJp": "ン",
+      "kana": "ン",
+      "romaji": "n",
+      "meaning": "n",
+      "type": "KATAKANA",
+      "levelRequired": 17
+    },
+    {
+      "id": 0,
+      "wordJp": "っk",
+      "kana": "っk",
+      "romaji": "kk",
+      "meaning": "kk",
+      "type": "KATAKANA",
+      "levelRequired": 17
+    },
+    {
+      "id": 0,
+      "wordJp": "っs",
+      "kana": "っs",
+      "romaji": "ss",
+      "meaning": "ss",
+      "type": "KATAKANA",
+      "levelRequired": 17
+    },
+    {
+      "id": 0,
+      "wordJp": "っt",
+      "kana": "っt",
+      "romaji": "tt",
+      "meaning": "tt",
+      "type": "KATAKANA",
+      "levelRequired": 17
+    },
+    {
+      "id": 0,
+      "wordJp": "っp",
+      "kana": "っp",
+      "romaji": "pp",
+      "meaning": "pp",
+      "type": "KATAKANA",
+      "levelRequired": 17
+    }
+  ],
+  "18": [
+    {
+      "id": 0,
+      "wordJp": "ガ",
+      "kana": "ガ",
+      "romaji": "ga",
+      "meaning": "ga",
+      "type": "KATAKANA",
+      "levelRequired": 18
+    },
+    {
+      "id": 0,
+      "wordJp": "ギ",
+      "kana": "ギ",
+      "romaji": "gi",
+      "meaning": "gi",
+      "type": "KATAKANA",
+      "levelRequired": 18
+    },
+    {
+      "id": 0,
+      "wordJp": "グ",
+      "kana": "グ",
+      "romaji": "gu",
+      "meaning": "gu",
+      "type": "KATAKANA",
+      "levelRequired": 18
+    },
+    {
+      "id": 0,
+      "wordJp": "ゲ",
+      "kana": "ゲ",
+      "romaji": "ge",
+      "meaning": "ge",
+      "type": "KATAKANA",
+      "levelRequired": 18
+    },
+    {
+      "id": 0,
+      "wordJp": "ゴ",
+      "kana": "ゴ",
+      "romaji": "go",
+      "meaning": "go",
+      "type": "KATAKANA",
+      "levelRequired": 18
+    },
+    {
+      "id": 0,
+      "wordJp": "ザ",
+      "kana": "ザ",
+      "romaji": "za",
+      "meaning": "za",
+      "type": "KATAKANA",
+      "levelRequired": 18
+    },
+    {
+      "id": 0,
+      "wordJp": "ジ",
+      "kana": "ジ",
+      "romaji": "ji",
+      "meaning": "ji",
+      "type": "KATAKANA",
+      "levelRequired": 18
+    },
+    {
+      "id": 0,
+      "wordJp": "ズ",
+      "kana": "ズ",
+      "romaji": "zu",
+      "meaning": "zu",
+      "type": "KATAKANA",
+      "levelRequired": 18
+    },
+    {
+      "id": 0,
+      "wordJp": "ゼ",
+      "kana": "ゼ",
+      "romaji": "ze",
+      "meaning": "ze",
+      "type": "KATAKANA",
+      "levelRequired": 18
+    },
+    {
+      "id": 0,
+      "wordJp": "ゾ",
+      "kana": "ゾ",
+      "romaji": "zo",
+      "meaning": "zo",
+      "type": "KATAKANA",
+      "levelRequired": 18
+    }
+  ],
+  "19": [
+    {
+      "id": 0,
+      "wordJp": "ダ",
+      "kana": "ダ",
+      "romaji": "da",
+      "meaning": "da",
+      "type": "KATAKANA",
+      "levelRequired": 19
+    },
+    {
+      "id": 0,
+      "wordJp": "ヂ",
+      "kana": "ヂ",
+      "romaji": "ji",
+      "meaning": "ji",
+      "type": "KATAKANA",
+      "levelRequired": 19
+    },
+    {
+      "id": 0,
+      "wordJp": "ヅ",
+      "kana": "ヅ",
+      "romaji": "zu",
+      "meaning": "zu",
+      "type": "KATAKANA",
+      "levelRequired": 19
+    },
+    {
+      "id": 0,
+      "wordJp": "デ",
+      "kana": "デ",
+      "romaji": "de",
+      "meaning": "de",
+      "type": "KATAKANA",
+      "levelRequired": 19
+    },
+    {
+      "id": 0,
+      "wordJp": "ド",
+      "kana": "ド",
+      "romaji": "do",
+      "meaning": "do",
+      "type": "KATAKANA",
+      "levelRequired": 19
+    },
+    {
+      "id": 0,
+      "wordJp": "バ",
+      "kana": "バ",
+      "romaji": "ba",
+      "meaning": "ba",
+      "type": "KATAKANA",
+      "levelRequired": 19
+    },
+    {
+      "id": 0,
+      "wordJp": "ビ",
+      "kana": "ビ",
+      "romaji": "bi",
+      "meaning": "bi",
+      "type": "KATAKANA",
+      "levelRequired": 19
+    },
+    {
+      "id": 0,
+      "wordJp": "ブ",
+      "kana": "ブ",
+      "romaji": "bu",
+      "meaning": "bu",
+      "type": "KATAKANA",
+      "levelRequired": 19
+    },
+    {
+      "id": 0,
+      "wordJp": "ベ",
+      "kana": "ベ",
+      "romaji": "be",
+      "meaning": "be",
+      "type": "KATAKANA",
+      "levelRequired": 19
+    },
+    {
+      "id": 0,
+      "wordJp": "ボ",
+      "kana": "ボ",
+      "romaji": "bo",
+      "meaning": "bo",
+      "type": "KATAKANA",
+      "levelRequired": 19
+    }
+  ],
+  "20": [
+    {
+      "id": 0,
+      "wordJp": "パ",
+      "kana": "パ",
+      "romaji": "pa",
+      "meaning": "pa",
+      "type": "KATAKANA",
+      "levelRequired": 20
+    },
+    {
+      "id": 0,
+      "wordJp": "ピ",
+      "kana": "ピ",
+      "romaji": "pi",
+      "meaning": "pi",
+      "type": "KATAKANA",
+      "levelRequired": 20
+    },
+    {
+      "id": 0,
+      "wordJp": "プ",
+      "kana": "プ",
+      "romaji": "pu",
+      "meaning": "pu",
+      "type": "KATAKANA",
+      "levelRequired": 20
+    },
+    {
+      "id": 0,
+      "wordJp": "ペ",
+      "kana": "ペ",
+      "romaji": "pe",
+      "meaning": "pe",
+      "type": "KATAKANA",
+      "levelRequired": 20
+    },
+    {
+      "id": 0,
+      "wordJp": "ポ",
+      "kana": "ポ",
+      "romaji": "po",
+      "meaning": "po",
+      "type": "KATAKANA",
+      "levelRequired": 20
+    },
+    {
+      "id": 0,
+      "wordJp": "アー",
+      "kana": "アー",
+      "romaji": "aa",
+      "meaning": "aa",
+      "type": "KATAKANA",
+      "levelRequired": 20
+    },
+    {
+      "id": 0,
+      "wordJp": "イー",
+      "kana": "イー",
+      "romaji": "ii",
+      "meaning": "ii",
+      "type": "KATAKANA",
+      "levelRequired": 20
+    },
+    {
+      "id": 0,
+      "wordJp": "ウー",
+      "kana": "ウー",
+      "romaji": "uu",
+      "meaning": "uu",
+      "type": "KATAKANA",
+      "levelRequired": 20
+    },
+    {
+      "id": 0,
+      "wordJp": "エー",
+      "kana": "エー",
+      "romaji": "ee",
+      "meaning": "ee",
+      "type": "KATAKANA",
+      "levelRequired": 20
+    },
+    {
+      "id": 0,
+      "wordJp": "オー",
+      "kana": "オー",
+      "romaji": "oo",
+      "meaning": "oo",
+      "type": "KATAKANA",
+      "levelRequired": 20
+    }
+  ],
+  "21": [
+    {
+      "id": 0,
+      "wordJp": "キャ",
+      "kana": "キャ",
+      "romaji": "kya",
+      "meaning": "kya",
+      "type": "KATAKANA",
+      "levelRequired": 21
+    },
+    {
+      "id": 0,
+      "wordJp": "キュ",
+      "kana": "キュ",
+      "romaji": "kyu",
+      "meaning": "kyu",
+      "type": "KATAKANA",
+      "levelRequired": 21
+    },
+    {
+      "id": 0,
+      "wordJp": "キョ",
+      "kana": "キョ",
+      "romaji": "kyo",
+      "meaning": "kyo",
+      "type": "KATAKANA",
+      "levelRequired": 21
+    },
+    {
+      "id": 0,
+      "wordJp": "ギャ",
+      "kana": "ギャ",
+      "romaji": "gya",
+      "meaning": "gya",
+      "type": "KATAKANA",
+      "levelRequired": 21
+    },
+    {
+      "id": 0,
+      "wordJp": "ギュ",
+      "kana": "ギュ",
+      "romaji": "gyu",
+      "meaning": "gyu",
+      "type": "KATAKANA",
+      "levelRequired": 21
+    },
+    {
+      "id": 0,
+      "wordJp": "ギョ",
+      "kana": "ギョ",
+      "romaji": "gyo",
+      "meaning": "gyo",
+      "type": "KATAKANA",
+      "levelRequired": 21
+    },
+    {
+      "id": 0,
+      "wordJp": "シャ",
+      "kana": "シャ",
+      "romaji": "sha",
+      "meaning": "sha",
+      "type": "KATAKANA",
+      "levelRequired": 21
+    },
+    {
+      "id": 0,
+      "wordJp": "シュ",
+      "kana": "シュ",
+      "romaji": "shu",
+      "meaning": "shu",
+      "type": "KATAKANA",
+      "levelRequired": 21
+    },
+    {
+      "id": 0,
+      "wordJp": "ショ",
+      "kana": "ショ",
+      "romaji": "sho",
+      "meaning": "sho",
+      "type": "KATAKANA",
+      "levelRequired": 21
+    }
+  ],
+  "22": [
+    {
+      "id": 0,
+      "wordJp": "ジャ",
+      "kana": "ジャ",
+      "romaji": "ja",
+      "meaning": "ja",
+      "type": "KATAKANA",
+      "levelRequired": 22
+    },
+    {
+      "id": 0,
+      "wordJp": "ジュ",
+      "kana": "ジュ",
+      "romaji": "ju",
+      "meaning": "ju",
+      "type": "KATAKANA",
+      "levelRequired": 22
+    },
+    {
+      "id": 0,
+      "wordJp": "ジョ",
+      "kana": "ジョ",
+      "romaji": "jo",
+      "meaning": "jo",
+      "type": "KATAKANA",
+      "levelRequired": 22
+    },
+    {
+      "id": 0,
+      "wordJp": "チャ",
+      "kana": "チャ",
+      "romaji": "cha",
+      "meaning": "cha",
+      "type": "KATAKANA",
+      "levelRequired": 22
+    },
+    {
+      "id": 0,
+      "wordJp": "チュ",
+      "kana": "チュ",
+      "romaji": "chu",
+      "meaning": "chu",
+      "type": "KATAKANA",
+      "levelRequired": 22
+    },
+    {
+      "id": 0,
+      "wordJp": "チョ",
+      "kana": "チョ",
+      "romaji": "cho",
+      "meaning": "cho",
+      "type": "KATAKANA",
+      "levelRequired": 22
+    },
+    {
+      "id": 0,
+      "wordJp": "ニャ",
+      "kana": "ニャ",
+      "romaji": "nya",
+      "meaning": "nya",
+      "type": "KATAKANA",
+      "levelRequired": 22
+    },
+    {
+      "id": 0,
+      "wordJp": "ニュ",
+      "kana": "ニュ",
+      "romaji": "nyu",
+      "meaning": "nyu",
+      "type": "KATAKANA",
+      "levelRequired": 22
+    },
+    {
+      "id": 0,
+      "wordJp": "ニョ",
+      "kana": "ニョ",
+      "romaji": "nyo",
+      "meaning": "nyo",
+      "type": "KATAKANA",
+      "levelRequired": 22
+    }
+  ],
+  "23": [
+    {
+      "id": 0,
+      "wordJp": "ヒャ",
+      "kana": "ヒャ",
+      "romaji": "hya",
+      "meaning": "hya",
+      "type": "KATAKANA",
+      "levelRequired": 23
+    },
+    {
+      "id": 0,
+      "wordJp": "ヒュ",
+      "kana": "ヒュ",
+      "romaji": "hyu",
+      "meaning": "hyu",
+      "type": "KATAKANA",
+      "levelRequired": 23
+    },
+    {
+      "id": 0,
+      "wordJp": "ヒョ",
+      "kana": "ヒョ",
+      "romaji": "hyo",
+      "meaning": "hyo",
+      "type": "KATAKANA",
+      "levelRequired": 23
+    },
+    {
+      "id": 0,
+      "wordJp": "ビャ",
+      "kana": "ビャ",
+      "romaji": "bya",
+      "meaning": "bya",
+      "type": "KATAKANA",
+      "levelRequired": 23
+    },
+    {
+      "id": 0,
+      "wordJp": "ビュ",
+      "kana": "ビュ",
+      "romaji": "byu",
+      "meaning": "byu",
+      "type": "KATAKANA",
+      "levelRequired": 23
+    },
+    {
+      "id": 0,
+      "wordJp": "びょ",
+      "kana": "びょ",
+      "romaji": "byo",
+      "meaning": "byo",
+      "type": "KATAKANA",
+      "levelRequired": 23
+    },
+    {
+      "id": 0,
+      "wordJp": "ぴゃ",
+      "kana": "ぴゃ",
+      "romaji": "pya",
+      "meaning": "pya",
+      "type": "KATAKANA",
+      "levelRequired": 23
+    },
+    {
+      "id": 0,
+      "wordJp": "ぴゅ",
+      "kana": "ぴゅ",
+      "romaji": "pyu",
+      "meaning": "pyu",
+      "type": "KATAKANA",
+      "levelRequired": 23
+    },
+    {
+      "id": 0,
+      "wordJp": "ぴょ",
+      "kana": "ぴょ",
+      "romaji": "pyo",
+      "meaning": "pyo",
+      "type": "KATAKANA",
+      "levelRequired": 23
+    }
+  ],
+  "24": [
+    {
+      "id": 0,
+      "wordJp": "ミャ",
+      "kana": "ミャ",
+      "romaji": "mya",
+      "meaning": "mya",
+      "type": "KATAKANA",
+      "levelRequired": 24
+    },
+    {
+      "id": 0,
+      "wordJp": "ミュ",
+      "kana": "ミュ",
+      "romaji": "myu",
+      "meaning": "myu",
+      "type": "KATAKANA",
+      "levelRequired": 24
+    },
+    {
+      "id": 0,
+      "wordJp": "ミョ",
+      "kana": "ミョ",
+      "romaji": "myo",
+      "meaning": "myo",
+      "type": "KATAKANA",
+      "levelRequired": 24
+    },
+    {
+      "id": 0,
+      "wordJp": "りゃ",
+      "kana": "りゃ",
+      "romaji": "rya",
+      "meaning": "rya",
+      "type": "KATAKANA",
+      "levelRequired": 24
+    },
+    {
+      "id": 0,
+      "wordJp": "りゅ",
+      "kana": "りゅ",
+      "romaji": "ryu",
+      "meaning": "ryu",
+      "type": "KATAKANA",
+      "levelRequired": 24
+    },
+    {
+      "id": 0,
+      "wordJp": "りょ",
+      "kana": "りょ",
+      "romaji": "ryo",
+      "meaning": "ryo",
+      "type": "KATAKANA",
+      "levelRequired": 24
+    }
+  ]
+}

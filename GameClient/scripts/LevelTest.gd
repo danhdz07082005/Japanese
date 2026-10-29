@@ -36,44 +36,58 @@ func _ready():
 	_fetch_vocab_from_server(level)
 
 func _fetch_vocab_from_server(level: int):
-	var level_data = Curriculum.get_level(level)
-	if level_data.size() > 0:
-		vocab_data = level_data
-		_setup_question_pool()
-		return
-		
 	var req = HTTPRequest.new()
 	add_child(req)
 	req.request_completed.connect(_on_vocab_fetched.bind(req, level))
 	
-	var headers = PackedStringArray(["Authorization: Bearer " + Network.jwt_token])
+	var headers = PackedStringArray()
+	if not Network.jwt_token.is_empty():
+		headers.append("Authorization: Bearer " + Network.jwt_token)
 	var user_id = Database.get_account().get("user_id", -1)
 	var url = Network.BASE_URL + "/player/vocabularies?level=%d" % level
 	if user_id != -1:
 		url += "&userId=%d" % user_id
-	req.request(url, headers, HTTPClient.METHOD_GET)
+	var err = req.request(url, headers, HTTPClient.METHOD_GET)
+	if err != OK:
+		req.queue_free()
+		_fallback_to_curriculum(level)
 
 func _on_vocab_fetched(result, code, headers, body, req: HTTPRequest, level: int):
 	req.queue_free()
-	var loaded_successfully = false
 	if code == 200:
 		var json = JSON.new()
 		if json.parse(body.get_string_from_utf8()) == OK:
 			var data = json.data
 			if typeof(data) == TYPE_ARRAY and data.size() > 0:
-				vocab_data = []
-				for item in data:
-					vocab_data.append({
-						"kana": item.get("wordJp", ""),
-						"romaji": item.get("romaji", ""),
-						"meaning": item.get("meaning", "")
-					})
-				loaded_successfully = true
+				_populate_vocab_data(data)
+				_setup_question_pool()
+				return
 				
-	if not loaded_successfully:
-		vocab_data = [{"kana": "Error", "romaji": "Error"}]
+	_fallback_to_curriculum(level)
 
+func _fallback_to_curriculum(level: int):
+	var level_data = Curriculum.get_level(level)
+	if level_data.size() > 0:
+		_populate_vocab_data(level_data)
+	else:
+		vocab_data = [{"wordJp": "Error", "kana": "Error", "romaji": "Error", "meaning": ""}]
 	_setup_question_pool()
+
+func _populate_vocab_data(items: Array):
+	vocab_data = []
+	for item in items:
+		var w_jp = str(item.get("wordJp", "")).strip_edges()
+		var k = str(item.get("kana", "")).strip_edges()
+		var rom = str(item.get("romaji", "")).strip_edges()
+		var m = str(item.get("meaning", "")).strip_edges()
+		if w_jp.is_empty(): w_jp = k
+		if k.is_empty(): k = w_jp
+		vocab_data.append({
+			"wordJp": w_jp,
+			"kana": k,
+			"romaji": rom,
+			"meaning": m
+		})
 
 func _setup_question_pool():
 
@@ -174,6 +188,9 @@ func next_question():
 	var correct_ans = ""
 	var pool = []
 	
+	var display_char = str(vocab.get("wordJp", "")).strip_edges()
+	if display_char.is_empty(): display_char = str(vocab.get("kana", "")).strip_edges()
+	
 	if type_req == "meaning":
 		var m = vocab.get("meaning", "")
 		if m == "": m = vocab.get("romaji", "N/A")
@@ -182,7 +199,7 @@ func next_question():
 			var vm = v.get("meaning", "")
 			if vm == "": vm = v.get("romaji", "N/A")
 			if vm != correct_ans and not pool.has(vm): pool.append(vm)
-		word_label.text = vocab.get("kana", "")
+		word_label.text = display_char
 		prompt_label.text = "Choose the meaning:"
 	else:
 		var q_type = ["kana_to_romaji", "romaji_to_kana"][randi() % 2]
@@ -190,12 +207,14 @@ func next_question():
 			correct_ans = vocab["romaji"]
 			for v in vocab_data:
 				if v["romaji"] != correct_ans and not pool.has(v["romaji"]): pool.append(v["romaji"])
-			word_label.text = vocab["kana"]
+			word_label.text = display_char
 			prompt_label.text = "Choose the reading:"
 		else:
-			correct_ans = vocab["kana"]
+			correct_ans = display_char
 			for v in vocab_data:
-				if v["kana"] != correct_ans and not pool.has(v["kana"]): pool.append(v["kana"])
+				var target_opt = str(v.get("wordJp", "")).strip_edges()
+				if target_opt.is_empty(): target_opt = str(v.get("kana", "")).strip_edges()
+				if target_opt != correct_ans and not pool.has(target_opt): pool.append(target_opt)
 			word_label.text = vocab["romaji"]
 			prompt_label.text = "Choose the character:"
 		

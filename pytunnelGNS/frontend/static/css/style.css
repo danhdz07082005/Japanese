@@ -1451,6 +1451,38 @@ html.light .blob-3 {
 .tag-pvp-engine { background: rgba(245, 158, 11, 0.15); color: var(--neon-amber); }
 .tag-kuroshiro { background: rgba(139, 92, 246, 0.15); color: var(--neon-violet); }
 .tag-error { background: rgba(244, 63, 94, 0.15); color: var(--neon-rose); }
+.tag-fps { background: rgba(56, 189, 248, 0.15); color: #38bdf8; border: 1px solid rgba(56, 189, 248, 0.3); }
 .terminal-msg {
     flex: 1;
+}
+
+/* Maximized Observatory Mode */
+.cyber-terminal-card.maximized {
+    position: fixed !important;
+    top: 1rem !important;
+    left: 1rem !important;
+    right: 1rem !important;
+    bottom: 1rem !important;
+    height: calc(100vh - 2rem) !important;
+    max-height: none !important;
+    z-index: 10000 !important;
+    box-shadow: 0 0 60px rgba(0, 0, 0, 0.95), 0 0 0 2px var(--neon-cyan) !important;
+    border-radius: var(--radius-lg) !important;
+    animation: terminalExpand 0.2s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+@keyframes terminalExpand {
+    from {
+        opacity: 0.8;
+        transform: scale(0.98);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.cyber-terminal-card.maximized .terminal-screen {
+    height: calc(100vh - 2rem - 54px) !important;
+    max-height: none !important;
 }

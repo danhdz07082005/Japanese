@@ -119,11 +119,12 @@ func _poll_websocket(delta: float):
 			}
 			_ws_send(auth_pkt)
 
-		# Regular Ping-Pong for RTT measurement
+		# Regular Ping-Pong for RTT measurement & FPS telemetry
 		_ping_timer += delta
 		if _ping_timer >= 2.0:
 			_ping_timer = 0.0
-			_ws_send({ "action": "ping", "t": Time.get_ticks_msec() })
+			var fps = int(Engine.get_frames_per_second())
+			_ws_send({ "action": "ping", "t": Time.get_ticks_msec(), "fps": fps })
 
 		# Process incoming realtime packets
 		while _ws.get_available_packet_count() > 0:
@@ -150,7 +151,8 @@ func _handle_server_event(data: Dictionary):
 			if sent_t > 0:
 				_current_ping_ms = Time.get_ticks_msec() - sent_t
 				if is_instance_valid(lbl_ping):
-					lbl_ping.text = "⚡ %d ms" % _current_ping_ms
+					var current_fps = int(Engine.get_frames_per_second())
+					lbl_ping.text = "⚡ %d ms | 🎮 %d FPS" % [_current_ping_ms, current_fps]
 
 		"queue_joined":
 			_show_panel(queue_panel)

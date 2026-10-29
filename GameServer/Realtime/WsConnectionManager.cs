@@ -15,10 +15,29 @@ public class WsConnectionManager
     };
 
     private readonly MetricsTracker _metrics;
+    private readonly ConcurrentDictionary<long, (int Fps, long PingMs, int PingCount)> _userTelemetry = new();
 
     public WsConnectionManager(MetricsTracker metrics)
     {
         _metrics = metrics;
+    }
+
+    public void RecordTelemetry(long userId, string username, int fps, long pingMs)
+    {
+        _userTelemetry.AddOrUpdate(
+            userId,
+            _ => (fps, pingMs, 1),
+            (_, old) => (fps, pingMs, old.PingCount + 1));
+    }
+
+    public bool ShouldLogTelemetry(long userId, int currentFps)
+    {
+        if (_userTelemetry.TryGetValue(userId, out var t))
+        {
+            // Log periodically (~8s) or when FPS dips below 30
+            return (t.PingCount % 4 == 0) || (currentFps < 30 && t.PingCount % 2 == 0);
+        }
+        return false;
     }
 
     public void Register(long userId, WebSocket socket)

@@ -95,12 +95,25 @@ public class WsPvPMiddleware
 
                     case "ping":
                         var t = root.TryGetProperty("t", out var tProp) ? tProp.GetInt64() : 0;
+                        var fps = root.TryGetProperty("fps", out var fpsProp) ? fpsProp.GetInt32() : 0;
                         var now = DateTimeOffset.UtcNow.ToUnixTimeMilliseconds();
+                        long rtt = 0;
                         if (t > 0)
                         {
-                            var rtt = now - t;
+                            rtt = now - t;
                             if (rtt >= 0 && rtt < 2000) _metrics.RecordRtt(rtt);
                         }
+
+                        if (currentUserId > 0)
+                        {
+                            _connectionManager.RecordTelemetry(currentUserId, currentUsername, fps, rtt);
+                            if (_connectionManager.ShouldLogTelemetry(currentUserId, fps))
+                            {
+                                var badge = fps >= 55 ? "🟢 60fps" : (fps >= 30 ? "🟡 30fps" : "🔴 Lag Alert");
+                                _logSink.Enqueue("PVP-SOCKET", "FPS", $"[Telemetry] Player '{currentUsername}' | FPS: {fps} ({badge}) | Ping: {rtt}ms");
+                            }
+                        }
+
                         await _connectionManager.SendAsync(webSocket, new { @event = "pong", t = t, serverTime = now });
                         break;
 

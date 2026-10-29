@@ -895,10 +895,50 @@
         let terminalSourceFilter = "ALL";
         let cachedLogs = [];
 
+        const terminalCard = document.getElementById("cyber-terminal-card");
         const terminalScreen = document.getElementById("terminal-screen");
         const terminalCountBadge = document.getElementById("terminal-count-badge");
+        const terminalFpsHud = document.getElementById("terminal-fps-hud");
         const btnClearTerminal = document.getElementById("btn-clear-terminal");
+        const btnMaximizeTerminal = document.getElementById("btn-maximize-terminal");
+        const iconTerminalSize = document.getElementById("icon-terminal-size");
+        const dotTerminalExpand = document.getElementById("dot-terminal-expand");
+        const dotTerminalClose = document.getElementById("dot-terminal-close");
         const consoleFilterBtns = document.querySelectorAll(".console-filter-btn");
+
+        function toggleMaximize() {
+            if (!terminalCard) return;
+            const isMax = terminalCard.classList.toggle("maximized");
+            if (btnMaximizeTerminal) {
+                btnMaximizeTerminal.title = isMax ? "Thu nhỏ đài quan sát (Esc)" : "Phóng to toàn màn hình";
+            }
+            if (iconTerminalSize) {
+                if (isMax) {
+                    iconTerminalSize.innerHTML = `<path d="M4 14h6v6M20 10h-6V4M14 10l7-7M3 21l7-7"/>`;
+                } else {
+                    iconTerminalSize.innerHTML = `<path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/>`;
+                }
+            }
+            if (terminalScreen) {
+                terminalScreen.scrollTop = terminalScreen.scrollHeight;
+            }
+        }
+
+        if (btnMaximizeTerminal) btnMaximizeTerminal.addEventListener("click", toggleMaximize);
+        if (dotTerminalExpand) dotTerminalExpand.addEventListener("click", toggleMaximize);
+        if (dotTerminalClose) {
+            dotTerminalClose.addEventListener("click", () => {
+                if (terminalCard && terminalCard.classList.contains("maximized")) {
+                    toggleMaximize();
+                }
+            });
+        }
+
+        document.addEventListener("keydown", (e) => {
+            if (e.key === "Escape" && terminalCard && terminalCard.classList.contains("maximized")) {
+                toggleMaximize();
+            }
+        });
 
         consoleFilterBtns.forEach(btn => {
             btn.addEventListener("click", () => {
@@ -926,6 +966,17 @@
                     const data = await res.json();
                     if (data.status === "ok" && Array.isArray(data.logs)) {
                         cachedLogs = data.logs;
+
+                        // Telemetry HUD update for active player FPS
+                        if (terminalFpsHud) {
+                            const latestFps = [...cachedLogs].reverse().find(l => l.level === "FPS" || (l.message && l.message.includes("FPS:")));
+                            if (latestFps) {
+                                terminalFpsHud.style.display = "inline-flex";
+                                const cleanMsg = latestFps.message.replace(/\[Telemetry\]\s*/i, "").trim();
+                                terminalFpsHud.textContent = `🎮 ${cleanMsg}`;
+                            }
+                        }
+
                         renderTerminalLogs();
                     }
                 }
@@ -934,6 +985,7 @@
 
         function getTagClass(source, level) {
             if (level === "ERROR" || level === "FAIL") return "tag-error";
+            if (level === "FPS") return "tag-fps";
             const s = (source || "").toUpperCase();
             if (s.includes("NET-SERVER")) return "tag-net-server";
             if (s.includes("PVP-SOCKET")) return "tag-pvp-socket";
@@ -946,6 +998,7 @@
             if (!terminalScreen) return;
             const filtered = cachedLogs.filter(log => {
                 if (terminalSourceFilter === "ALL") return true;
+                if (terminalSourceFilter === "FPS") return log.level === "FPS" || (log.message && log.message.includes("FPS:"));
                 return (log.source || "").toUpperCase().includes(terminalSourceFilter);
             });
 

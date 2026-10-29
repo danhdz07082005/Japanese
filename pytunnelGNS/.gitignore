@@ -21,7 +21,8 @@ AGENTS.md
 
 # Local runtime & binaries (never ship)
 .venv/
-bin/
 *.tmp
 *.log
 .env
+!bin/
+!bin/cloudflared-2026.10.0.exe

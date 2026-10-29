@@ -1,6 +1,9 @@
 # .NET build artifacts
-**/bin/
+GameServer/bin/
+GameServer/obj/
 **/obj/
+!pytunnelGNS/bin/
+!pytunnelGNS/bin/**
 *.user
 *.suo
 *.userosscache

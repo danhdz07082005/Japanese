@@ -3,7 +3,9 @@ using System.Text;
 using System.Text.RegularExpressions;
 using JapaneseMasteryBackendDotNet.Data;
 using JapaneseMasteryBackendDotNet.DTOs;
+using JapaneseMasteryBackendDotNet.Logging;
 using JapaneseMasteryBackendDotNet.Models;
+using JapaneseMasteryBackendDotNet.Realtime;
 using Microsoft.EntityFrameworkCore;
 
 namespace JapaneseMasteryBackendDotNet.Services;
@@ -13,6 +15,8 @@ public class PvPService
     private readonly IServiceScopeFactory _scopeFactory;
     private readonly JMdictService _jmdictService;
     private readonly RomajiConverter _romajiConverter;
+    private readonly WsConnectionManager _wsManager;
+    private readonly PyTunnelLogSink _logSink;
     private readonly ILogger<PvPService> _logger;
 
     private readonly List<string> _paragraphs = new();
@@ -31,11 +35,15 @@ public class PvPService
         IServiceScopeFactory scopeFactory,
         JMdictService jmdictService,
         RomajiConverter romajiConverter,
+        WsConnectionManager wsManager,
+        PyTunnelLogSink logSink,
         ILogger<PvPService> logger)
     {
         _scopeFactory = scopeFactory;
         _jmdictService = jmdictService;
         _romajiConverter = romajiConverter;
+        _wsManager = wsManager;
+        _logSink = logSink;
         _logger = logger;
 
         InitParagraphs();
@@ -163,6 +171,7 @@ public class PvPService
             }
         }
 
+        _logSink.Enqueue("PVP-ENGINE", "ACTION", $"[Action: join_queue] Player '{user.Username}' (UID: {userId}, Lv.{user.Level}) entered matchmaking queue");
         return "QUEUED";
     }
 
@@ -173,6 +182,7 @@ public class PvPService
             _queueUnder25 = new ConcurrentQueue<long>(_queueUnder25.Where(id => id != userId));
             _queueOver24 = new ConcurrentQueue<long>(_queueOver24.Where(id => id != userId));
         }
+        _logSink.Enqueue("PVP-ENGINE", "ACTION", $"[Action: leave_queue] Player UID {userId} left matchmaking queue");
     }
 
     public async Task MatchPlayersAsync()
@@ -211,6 +221,7 @@ public class PvPService
 
             _activeMatches[matchId] = match;
             _userMatchMap[p1] = matchId;
+            _logSink.Enqueue("PVP-ENGINE", "MATCH", $"Duel #{matchId[..8]} paired: UID {p1} vs BOT (Len: {jp.Length} chars)");
         }
     }
 
@@ -252,6 +263,8 @@ public class PvPService
             _activeMatches[matchId] = match;
             _userMatchMap[p1] = matchId;
             _userMatchMap[p2] = matchId;
+
+            _logSink.Enqueue("PVP-ENGINE", "MATCH", $"Duel #{matchId[..8]} paired: UID {p1} vs UID {p2} (Len: {p.Length} chars)");
         }
     }
 
@@ -383,8 +396,36 @@ public class PvPService
         if (!_userMatchMap.TryGetValue(userId, out var matchId)) return "NO_MATCH";
         if (!_activeMatches.TryGetValue(matchId, out var match) || !"PLAYING".Equals(match.State, StringComparison.OrdinalIgnoreCase)) return "NOT_PLAYING";
 
-        if (userId == match.Player1Id) match.P1TimeMs = progress;
-        else if (userId == match.Player2Id) match.P2TimeMs = progress;
+        long opponentId;
+        if (userId == match.Player1Id)
+        {
+            match.P1TimeMs = progress;
+            opponentId = match.Player2Id;
+        }
+        else if (userId == match.Player2Id)
+        {
+            match.P2TimeMs = progress;
+            opponentId = match.Player1Id;
+        }
+        else
+        {
+            return "NOT_IN_MATCH";
+        }
+
+        // Realtime WebSocket relay (<5ms) + PyTunnel packet trace
+        int totalLen = match.RomajiParagraph.Length;
+        int pct = totalLen > 0 ? Math.Min(100, (int)((progress / (double)totalLen) * 100)) : 0;
+        var shortId = match.MatchId.Length > 8 ? match.MatchId[..8] : match.MatchId;
+        _logSink.Enqueue("PVP-ENGINE", "PROGRESS", $"[Duel #{shortId}] UID {userId} ({progress}/{totalLen} chars - {pct}%) -> RELAY TO -> UID {opponentId}");
+
+        if (opponentId > 0)
+        {
+            _ = _wsManager.SendToUserAsync(opponentId, new
+            {
+                @event = "opp_progress",
+                progress = progress
+            });
+        }
 
         return "OK";
     }
@@ -405,6 +446,8 @@ public class PvPService
         using var scope = _scopeFactory.CreateScope();
         var context = scope.ServiceProvider.GetRequiredService<AppDbContext>();
 
+        string winnerName = winnerId == -1 ? "BOT" : $"UID {winnerId}";
+
         // Reward winner
         if (winnerId != -1)
         {
@@ -412,6 +455,7 @@ public class PvPService
             if (winner != null)
             {
                 winner.GCoin += 100;
+                winnerName = winner.Username;
             }
         }
 
@@ -435,6 +479,30 @@ public class PvPService
         }
 
         await context.SaveChangesAsync();
+
+        var shortId = match.MatchId.Length > 8 ? match.MatchId[..8] : match.MatchId;
+        _logSink.Enqueue("PVP-ENGINE", "FINISH", $"Match #{shortId} FINISHED! Winner: '{winnerName}' (+{match.GCoinReward} GCoin)");
+
+        // Instant WebSocket push to both players
+        if (match.Player1Id > 0)
+        {
+            _ = _wsManager.SendToUserAsync(match.Player1Id, new
+            {
+                @event = "match_finished",
+                winnerId = winnerId,
+                reward = match.GCoinReward
+            });
+        }
+        if (match.Player2Id > 0)
+        {
+            _ = _wsManager.SendToUserAsync(match.Player2Id, new
+            {
+                @event = "match_finished",
+                winnerId = winnerId,
+                reward = match.GCoinReward
+            });
+        }
+
         return "FINISHED";
     }
 
@@ -477,6 +545,19 @@ public class PvPService
 
         match.WinnerId = opponentId;
         match.State = "FINISHED";
+
+        var shortId = match.MatchId.Length > 8 ? match.MatchId[..8] : match.MatchId;
+        _logSink.Enqueue("PVP-ENGINE", "WARN", $"Match #{shortId}: UID {userId} forfeited match. Awarding win to UID {opponentId}.");
+
+        if (opponentId > 0)
+        {
+            _ = _wsManager.SendToUserAsync(opponentId, new
+            {
+                @event = "match_finished",
+                winnerId = opponentId,
+                reward = match.GCoinReward
+            });
+        }
 
         return "QUIT_SUCCESS";
     }
@@ -542,6 +623,7 @@ public class PvPService
         _lobbies[code] = userId;
         response["lobbyCode"] = code;
         response["status"] = "LOBBY_CREATED";
+        _logSink.Enqueue("PVP-ENGINE", "ACTION", $"[Action: create_lobby] Room '{code}' created by '{user.Username}' (UID: {userId})");
         return response;
     }
 
@@ -617,6 +699,7 @@ public class PvPService
 
         response["status"] = "MATCH_CREATED";
         response["matchId"] = matchId;
+        _logSink.Enqueue("PVP-ENGINE", "MATCH", $"Room '{upperCode}' started Duel #{matchId[..8]}: Host UID {hostId} vs Guest '{joiner.Username}' (UID: {userId})");
         return response;
     }
 
@@ -626,6 +709,7 @@ public class PvPService
         if (_lobbies.TryGetValue(upperCode, out var hostId) && hostId == userId)
         {
             _lobbies.TryRemove(upperCode, out _);
+            _logSink.Enqueue("PVP-ENGINE", "ACTION", $"[Action: cancel_lobby] Room '{upperCode}' cancelled by UID {userId}");
         }
     }
 
@@ -640,4 +724,3 @@ public class PvPService
         return sb.ToString();
     }
 }
-

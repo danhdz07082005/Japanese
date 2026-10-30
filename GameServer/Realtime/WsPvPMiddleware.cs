@@ -2,6 +2,7 @@ using System.Net.WebSockets;
 using System.Text;
 using System.Text.Json;
 using JapaneseMasteryBackendDotNet.Logging;
+using JapaneseMasteryBackendDotNet.Services;
 
 namespace JapaneseMasteryBackendDotNet.Realtime;
 
@@ -10,6 +11,7 @@ public class WsPvPMiddleware
     private readonly RequestDelegate _next;
     private readonly WsConnectionManager _connectionManager;
     private readonly PvPMatchEngine _matchEngine;
+    private readonly PvPService _pvpService;
     private readonly MetricsTracker _metrics;
     private readonly PyTunnelLogSink _logSink;
     private readonly ILogger<WsPvPMiddleware> _logger;
@@ -18,6 +20,7 @@ public class WsPvPMiddleware
         RequestDelegate next,
         WsConnectionManager connectionManager,
         PvPMatchEngine matchEngine,
+        PvPService pvpService,
         MetricsTracker metrics,
         PyTunnelLogSink logSink,
         ILogger<WsPvPMiddleware> logger)
@@ -25,6 +28,7 @@ public class WsPvPMiddleware
         _next = next;
         _connectionManager = connectionManager;
         _matchEngine = matchEngine;
+        _pvpService = pvpService;
         _metrics = metrics;
         _logSink = logSink;
         _logger = logger;
@@ -154,7 +158,9 @@ public class WsPvPMiddleware
                     case "progress":
                         if (currentUserId > 0 && root.TryGetProperty("progress", out var progProp))
                         {
-                            await _matchEngine.HandleProgressSyncAsync(currentUserId, progProp.GetInt32());
+                            var prog = progProp.GetInt32();
+                            _pvpService.UpdateProgress(currentUserId, prog);
+                            await _matchEngine.HandleProgressSyncAsync(currentUserId, prog);
                         }
                         break;
 
@@ -163,6 +169,7 @@ public class WsPvPMiddleware
                         {
                             var timeMs = tmProp.GetInt64();
                             _logSink.Enqueue("PVP-SOCKET", "ACTION", $"[Action: finish] User '{currentUsername}' (UID: {currentUserId}) submitted finish time: {timeMs}ms");
+                            await _pvpService.FinishMatchAsync(currentUserId, timeMs);
                             await _matchEngine.HandleFinishMatchAsync(currentUserId, timeMs);
                         }
                         break;

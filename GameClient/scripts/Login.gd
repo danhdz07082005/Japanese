@@ -9,6 +9,7 @@ var lbl_server_status: Label
 var btn_toggle_config: Button
 
 # Server Config Modal Panel
+var modal_overlay: CenterContainer
 var config_panel: PanelContainer
 var url_input: LineEdit
 var btn_save_url: Button
@@ -20,7 +21,7 @@ func _ready():
 	Network.login_failed.connect(_on_error)
 	Network.register_success.connect(_on_register_success)
 	Network.register_failed.connect(_on_error)
-	Network.server_url_changed.connect(func(u): _check_server_ping())
+	Network.server_url_changed.connect(func(_u): _check_server_ping())
 
 	# Initial server health check
 	_check_server_ping()
@@ -28,39 +29,62 @@ func _ready():
 func _setup_ui():
 	# Background
 	var bg = ColorRect.new()
-	bg.color = Color(0.08, 0.09, 0.14)
+	bg.color = Color(0.1, 0.1, 0.15)
 	bg.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
 	add_child(bg)
 	
 	# Title
 	var title = Label.new()
-	title.text = "JAPANESE MASTERY"
-	title.add_theme_font_size_override("font_size", 42)
-	title.add_theme_color_override("font_color", Color(0.9, 0.4, 0.4))
+	title.text = "JAPANESE MASTERY LOGIN"
+	title.add_theme_font_size_override("font_size", 48)
 	title.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
-	title.set_anchors_preset(Control.PRESET_TOP_WIDE)
-	title.position.y = 60
+	title.set_anchors_and_offsets_preset(Control.PRESET_TOP_WIDE)
+	title.offset_top = 80
 	add_child(title)
-
-	var subtitle = Label.new()
-	subtitle.text = "Realtime Multiplayer Typing & Learning"
-	subtitle.add_theme_font_size_override("font_size", 16)
-	subtitle.add_theme_color_override("font_color", Color(0.6, 0.7, 0.85))
-	subtitle.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
-	subtitle.set_anchors_preset(Control.PRESET_TOP_WIDE)
-	subtitle.position.y = 115
-	add_child(subtitle)
 	
-	# Main Login Box
+	# Centered Container for Login VBox (scales responsively on all screen sizes)
+	var center = CenterContainer.new()
+	center.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
+	center.offset_top = 40
+	add_child(center)
+	
 	var vbox = VBoxContainer.new()
-	vbox.set_anchors_preset(Control.PRESET_CENTER)
 	vbox.custom_minimum_size = Vector2(400, 0)
-	vbox.add_theme_constant_override("separation", 15)
-	add_child(vbox)
-
+	vbox.add_theme_constant_override("separation", 20)
+	center.add_child(vbox)
+	
+	username_input = LineEdit.new()
+	username_input.placeholder_text = "Username"
+	username_input.custom_minimum_size = Vector2(400, 50)
+	vbox.add_child(username_input)
+	
+	password_input = LineEdit.new()
+	password_input.placeholder_text = "Password"
+	password_input.secret = true
+	password_input.custom_minimum_size = Vector2(400, 50)
+	vbox.add_child(password_input)
+	
+	var hbox = HBoxContainer.new()
+	hbox.alignment = BoxContainer.ALIGNMENT_CENTER
+	hbox.add_theme_constant_override("separation", 20)
+	vbox.add_child(hbox)
+	
+	btn_login = Button.new()
+	btn_login.text = "Login"
+	btn_login.custom_minimum_size = Vector2(190, 50)
+	btn_login.pressed.connect(_on_login_pressed)
+	hbox.add_child(btn_login)
+	
+	btn_register = Button.new()
+	btn_register.text = "Register"
+	btn_register.custom_minimum_size = Vector2(190, 50)
+	btn_register.pressed.connect(_on_register_pressed)
+	hbox.add_child(btn_register)
+	
 	# Server status bar with quick config gear button
 	var server_bar = HBoxContainer.new()
 	server_bar.alignment = BoxContainer.ALIGNMENT_CENTER
+	server_bar.add_theme_constant_override("separation", 12)
 	vbox.add_child(server_bar)
 
 	lbl_server_status = Label.new()
@@ -77,34 +101,6 @@ func _setup_ui():
 	btn_toggle_config.pressed.connect(_toggle_config_panel)
 	server_bar.add_child(btn_toggle_config)
 	
-	username_input = LineEdit.new()
-	username_input.placeholder_text = "Tên đăng nhập / Username"
-	username_input.custom_minimum_size = Vector2(400, 48)
-	vbox.add_child(username_input)
-	
-	password_input = LineEdit.new()
-	password_input.placeholder_text = "Mật khẩu / Password"
-	password_input.secret = true
-	password_input.custom_minimum_size = Vector2(400, 48)
-	vbox.add_child(password_input)
-	
-	var hbox = HBoxContainer.new()
-	hbox.alignment = BoxContainer.ALIGNMENT_CENTER
-	hbox.add_theme_constant_override("separation", 15)
-	vbox.add_child(hbox)
-	
-	btn_login = Button.new()
-	btn_login.text = "Đăng Nhập (Login)"
-	btn_login.custom_minimum_size = Vector2(190, 48)
-	btn_login.pressed.connect(_on_login_pressed)
-	hbox.add_child(btn_login)
-	
-	btn_register = Button.new()
-	btn_register.text = "Đăng Ký (Register)"
-	btn_register.custom_minimum_size = Vector2(190, 48)
-	btn_register.pressed.connect(_on_register_pressed)
-	hbox.add_child(btn_register)
-	
 	status_label = Label.new()
 	status_label.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
 	status_label.modulate = Color(1.0, 0.4, 0.4)
@@ -113,18 +109,30 @@ func _setup_ui():
 	_create_server_config_modal()
 
 func _create_server_config_modal():
+	modal_overlay = CenterContainer.new()
+	modal_overlay.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
+	modal_overlay.visible = false
+	add_child(modal_overlay)
+
 	config_panel = PanelContainer.new()
-	config_panel.custom_minimum_size = Vector2(460, 200)
-	config_panel.set_anchors_preset(Control.PRESET_CENTER)
-	config_panel.visible = false
-	add_child(config_panel)
+	config_panel.custom_minimum_size = Vector2(460, 0)
+	var style_modal = StyleBoxFlat.new()
+	style_modal.bg_color = Color(0.12, 0.14, 0.22, 0.98)
+	style_modal.set_corner_radius_all(10)
+	style_modal.border_width_left = 2
+	style_modal.border_width_right = 2
+	style_modal.border_width_top = 2
+	style_modal.border_width_bottom = 2
+	style_modal.border_color = Color(0.25, 0.5, 0.85, 0.8)
+	style_modal.content_margin_left = 20
+	style_modal.content_margin_right = 20
+	style_modal.content_margin_top = 20
+	style_modal.content_margin_bottom = 20
+	config_panel.add_theme_stylebox_override("panel", style_modal)
+	modal_overlay.add_child(config_panel)
 
 	var p_box = VBoxContainer.new()
 	p_box.add_theme_constant_override("separation", 12)
-	p_box.offset_left = 20
-	p_box.offset_top = 20
-	p_box.offset_right = 440
-	p_box.offset_bottom = 180
 	config_panel.add_child(p_box)
 
 	var title = Label.new()
@@ -145,6 +153,7 @@ func _create_server_config_modal():
 	p_box.add_child(url_input)
 
 	var b_row = HBoxContainer.new()
+	b_row.alignment = BoxContainer.ALIGNMENT_CENTER
 	b_row.add_theme_constant_override("separation", 10)
 	p_box.add_child(b_row)
 
@@ -166,26 +175,26 @@ func _create_server_config_modal():
 	var btn_close = Button.new()
 	btn_close.text = "Đóng"
 	btn_close.custom_minimum_size = Vector2(80, 36)
-	btn_close.pressed.connect(func(): config_panel.visible = false)
+	btn_close.pressed.connect(func(): modal_overlay.visible = false)
 	b_row.add_child(btn_close)
 
 func _toggle_config_panel():
-	config_panel.visible = not config_panel.visible
-	if config_panel.visible:
+	modal_overlay.visible = not modal_overlay.visible
+	if modal_overlay.visible:
 		url_input.text = Network.BASE_URL
 
 func _on_save_url_pressed():
 	var new_url = Network.set_base_url(url_input.text)
-	config_panel.visible = false
+	modal_overlay.visible = false
 	status_label.modulate = Color(0.3, 0.9, 1.0)
-	status_label.text = "Đã lưu Server URL: " + new_url
+	status_label.text = "Server URL updated: " + new_url
 	_check_server_ping()
 
 func _check_server_ping():
-	lbl_server_status.text = "Server: Đang kiểm tra..."
+	lbl_server_status.text = "Server: Checking..."
 	lbl_server_status.add_theme_color_override("font_color", Color(0.8, 0.8, 0.2))
 
-	Network.check_server_health(func(is_online, latency_ms, info):
+	Network.check_server_health(func(is_online, latency_ms, _info):
 		if is_online:
 			lbl_server_status.text = "Server: 🟢 Online (%d ms)" % latency_ms
 			lbl_server_status.add_theme_color_override("font_color", Color(0.2, 1.0, 0.4))
@@ -197,30 +206,30 @@ func _check_server_ping():
 func _on_login_pressed():
 	if username_input.text.is_empty() or password_input.text.is_empty():
 		status_label.modulate = Color(1.0, 0.4, 0.4)
-		status_label.text = "Vui lòng nhập đầy đủ tên đăng nhập và mật khẩu"
+		status_label.text = "Please fill in all fields"
 		return
 	status_label.modulate = Color(0.8, 0.8, 0.8)
-	status_label.text = "Đang kết nối..."
+	status_label.text = "Connecting..."
 	Network.login(username_input.text, password_input.text)
 
 func _on_register_pressed():
 	if username_input.text.is_empty() or password_input.text.is_empty():
 		status_label.modulate = Color(1.0, 0.4, 0.4)
-		status_label.text = "Vui lòng nhập đầy đủ tên đăng nhập và mật khẩu"
+		status_label.text = "Please fill in all fields"
 		return
 	status_label.modulate = Color(0.8, 0.8, 0.8)
-	status_label.text = "Đang kết nối..."
+	status_label.text = "Connecting..."
 	Network.register(username_input.text, password_input.text)
 
-func _on_login_success(data):
+func _on_login_success(_data):
 	status_label.modulate = Color(0.4, 1.0, 0.4)
-	status_label.text = "Đăng nhập thành công!"
+	status_label.text = "Login successful!"
 	await get_tree().create_timer(0.5).timeout
 	Global.goto_scene("res://scenes/Main.tscn")
 
-func _on_register_success(data):
+func _on_register_success(_data):
 	status_label.modulate = Color(0.4, 1.0, 0.4)
-	status_label.text = "Đăng ký thành công!"
+	status_label.text = "Registration successful!"
 	await get_tree().create_timer(0.5).timeout
 	Global.goto_scene("res://scenes/Main.tscn")
 

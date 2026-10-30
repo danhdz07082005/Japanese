@@ -1,5 +1,6 @@
 @echo off
 title GNS301 Realtime Game Server Hub
+chcp 65001 >nul
 cd /d "%~dp0"
 
 echo ======================================================================
@@ -9,14 +10,14 @@ echo.
 
 REM 1. Khoi dong GameServer (.NET 8 Kestrel listening on port 8080)
 echo [1/2] Dang khoi dong GameServer (.NET 8 listening on port 8080)...
-start "GameServer (.NET 8 - Port 8080)" cmd /k "cd /d "%~dp0GameServer" && dotnet run"
+start "GameServer (.NET 8 - Port 8080)" /d "%~dp0GameServer" cmd /k "dotnet run"
 
 REM 2. Cho 2 giay cho Server khoi tao SQLite va san sang
 ping 127.0.0.1 -n 3 >nul
 
 REM 3. Khoi dong PyTunnel Dashboard va Cloudflare Tunnel
 echo [2/2] Dang khoi dong PyTunnel Mission Control Dashboard (:8787)...
-start "PyTunnel Mission Control" cmd /k "cd /d "%~dp0pytunnelGNS" && call start.bat"
+start "PyTunnel Mission Control" /d "%~dp0pytunnelGNS" cmd /k "start.bat"
 
 echo.
 echo ======================================================================

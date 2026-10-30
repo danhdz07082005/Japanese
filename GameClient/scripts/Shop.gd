@@ -592,6 +592,11 @@ func _get_image_fetch_url(url: String) -> String:
 	for ext in [".mp4", ".webm", ".mov", ".mkv", ".avi"]:
 		if lower.ends_with(ext):
 			return clean_url.substr(0, clean_url.length() - ext.length()) + ".jpg"
+	
+	# Auto-optimize raw Unsplash URLs for Godot HTTPClient memory limits (< 4MB)
+	if "images.unsplash.com" in lower and not "?" in clean_url:
+		return clean_url + "?auto=format&fit=crop&w=600&q=80"
+		
 	return clean_url
 
 func _get_video_fetch_url(url: String) -> String:
@@ -673,6 +678,8 @@ func _load_thumbnail(url: String, target_rect: TextureRect):
 		return
 		
 	var req = HTTPRequest.new()
+	req.timeout = 15.0
+	req.max_redirects = 8
 	add_child(req)
 	req.request_completed.connect(func(res, code, headers, body):
 		req.queue_free()
@@ -684,4 +691,6 @@ func _load_thumbnail(url: String, target_rect: TextureRect):
 				if is_instance_valid(target_rect):
 					target_rect.texture = tex
 	)
-	req.request(fetch_url)
+	var err = req.request(fetch_url)
+	if err != OK:
+		req.queue_free()

@@ -32,6 +32,10 @@ window/size/viewport_height=720
 window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"
 
+[network]
+
+limits/http_client/max_response_buffer_size=16777216
+
 [rendering]
 
 renderer/rendering_method="gl_compatibility"

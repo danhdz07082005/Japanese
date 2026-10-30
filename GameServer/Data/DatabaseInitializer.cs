@@ -89,13 +89,29 @@ IF NOT EXISTS (SELECT 1 FROM sys.columns WHERE object_id = OBJECT_ID('shop_items
             {
                 var defaultItems = new List<ShopItem>
                 {
-                    new() { Name = "Sakura Pink Theme", Type = ShopItemType.THEME, Price = 500, IsApproved = true, DesignerId = adminUser.Id, SecureUrl = "https://images.unsplash.com/photo-1522383225653-ed111181a951" },
-                    new() { Name = "Cyberpunk Neo-Tokyo", Type = ShopItemType.THEME, Price = 800, IsApproved = true, DesignerId = adminUser.Id, SecureUrl = "https://images.unsplash.com/photo-1509198397868-475647b2a1e5" },
-                    new() { Name = "Mount Fuji Twilight", Type = ShopItemType.THEME, Price = 1000, IsApproved = true, DesignerId = adminUser.Id, SecureUrl = "https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e" }
+                    new() { Name = "Sakura Pink Theme", Type = ShopItemType.THEME, Price = 500, IsApproved = true, DesignerId = adminUser.Id, SecureUrl = "https://images.unsplash.com/photo-1522383225653-ed111181a951?auto=format&fit=crop&w=600&q=80" },
+                    new() { Name = "Cyberpunk Neo-Tokyo", Type = ShopItemType.THEME, Price = 800, IsApproved = true, DesignerId = adminUser.Id, SecureUrl = "https://images.unsplash.com/photo-1509198397868-475647b2a1e5?auto=format&fit=crop&w=600&q=80" },
+                    new() { Name = "Mount Fuji Twilight", Type = ShopItemType.THEME, Price = 1000, IsApproved = true, DesignerId = adminUser.Id, SecureUrl = "https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?auto=format&fit=crop&w=600&q=80" }
                 };
                 context.ShopItems.AddRange(defaultItems);
                 await context.SaveChangesAsync();
                 logger.LogInformation("[DB] Default Shop Items seeded.");
+            }
+            else
+            {
+                // Auto-migrate raw unoptimized Unsplash URLs in existing database
+                var legacyItems = await context.ShopItems
+                    .Where(s => s.SecureUrl != null && s.SecureUrl.Contains("images.unsplash.com") && !s.SecureUrl.Contains("?"))
+                    .ToListAsync();
+                if (legacyItems.Count > 0)
+                {
+                    foreach (var item in legacyItems)
+                    {
+                        item.SecureUrl += "?auto=format&fit=crop&w=600&q=80";
+                    }
+                    await context.SaveChangesAsync();
+                    logger.LogInformation("[DB] Optimized {Count} legacy shop items for fast thumbnail loading.", legacyItems.Count);
+                }
             }
 
             // 6. Ensure default vocabularies exist for Solo Learning

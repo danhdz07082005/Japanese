@@ -1,0 +1,14 @@
+{
+  "name": "kuroshiro-service",
+  "version": "1.0.0",
+  "description": "Japanese Kanji/Kana to Romaji microservice",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.18.2",
+    "kuroshiro": "^1.2.0",
+    "kuroshiro-analyzer-kuromoji": "^1.1.0"
+  }
+}

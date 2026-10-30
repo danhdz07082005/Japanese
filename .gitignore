@@ -18,6 +18,7 @@ GameServer/obj/
 
 # Godot engine cache
 **/.godot/
+*.import
 .import/
 export_presets.cfg
 

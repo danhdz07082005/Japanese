@@ -9,8 +9,18 @@ public static class DatabaseInitializer
     {
         try
         {
+            var providerName = context.Database.ProviderName?.Contains("Sqlite") == true ? "SQLite (japanesemastery.db)" : "Microsoft SQL Server";
+
             // 1. Ensure database schema is created (works transparently for SQLite and SQL Server)
-            await context.Database.EnsureCreatedAsync();
+            var created = await context.Database.EnsureCreatedAsync();
+            if (created)
+            {
+                logger.LogInformation("[DB] Initial setup complete: Created persistent database on disk ({Provider}).", providerName);
+            }
+            else
+            {
+                logger.LogInformation("[DB] Persistent database verified ({Provider}). Existing tables and data preserved.", providerName);
+            }
 
             // 2. Specific migrations for SQL Server if running against legacy MSSQL instances
             if (context.Database.IsSqlServer())

@@ -1,0 +1,21 @@
+# Auto detect text files and perform LF normalization by default for code
+* text=auto
+
+# Batch scripts on Windows MUST strictly have CRLF line endings or cmd.exe fails with offset drift
+*.bat text eol=crlf
+*.cmd text eol=crlf
+
+# Shell scripts on Linux
+*.sh text eol=lf
+
+# Binary files
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.ico binary
+*.exe binary
+*.dll binary
+*.db binary
+*.zip binary
+*.gz binary
+*.tar binary

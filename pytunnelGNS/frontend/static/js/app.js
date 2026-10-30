@@ -984,12 +984,22 @@
         }
 
         function getTagClass(source, level) {
-            if (level === "ERROR" || level === "FAIL") return "tag-error";
-            if (level === "FPS") return "tag-fps";
+            const l = (level || "").toUpperCase();
+            if (l === "WIN") return "tag-pvp-win";
+            if (l === "DUEL") return "tag-pvp-duel";
+            if (l === "PROGRESS") return "tag-pvp-progress";
+            if (l === "WRONG" || l === "ERROR" || l === "FAIL") return "tag-error";
+            if (l === "REWARD") return "tag-pvp-reward";
+            if (l === "QUIT") return "tag-pvp-quit";
+            if (l === "SHOP") return "tag-store";
+            if (l === "AUTH") return "tag-auth";
+            if (l === "FPS") return "tag-fps";
+
             const s = (source || "").toUpperCase();
+            if (s.includes("STORE") || s.includes("SHOP")) return "tag-store";
             if (s.includes("NET-SERVER")) return "tag-net-server";
             if (s.includes("PVP-SOCKET")) return "tag-pvp-socket";
-            if (s.includes("PVP-ENGINE") || s.includes("MATCH")) return "tag-pvp-engine";
+            if (s.includes("PVP") || s.includes("MATCH")) return "tag-pvp-engine";
             if (s.includes("KUROSHIRO")) return "tag-kuroshiro";
             return "tag-system";
         }
@@ -999,6 +1009,16 @@
             const filtered = cachedLogs.filter(log => {
                 if (terminalSourceFilter === "ALL") return true;
                 if (terminalSourceFilter === "FPS") return log.level === "FPS" || (log.message && log.message.includes("FPS:"));
+                if (terminalSourceFilter === "PVP") {
+                    const s = (log.source || "").toUpperCase();
+                    const l = (log.level || "").toUpperCase();
+                    return s.includes("PVP") || s.includes("MATCH") || ["WIN", "DUEL", "PROGRESS", "WRONG", "REWARD", "QUIT", "LOBBY", "START"].includes(l);
+                }
+                if (terminalSourceFilter === "STORE") {
+                    const s = (log.source || "").toUpperCase();
+                    const l = (log.level || "").toUpperCase();
+                    return s.includes("STORE") || s.includes("SHOP") || ["SHOP", "AUTH", "STUDY"].includes(l);
+                }
                 return (log.source || "").toUpperCase().includes(terminalSourceFilter);
             });
 

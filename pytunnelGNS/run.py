@@ -2,8 +2,26 @@
 PyTunnel Studio - Resilient Launcher
 Bypasses Windows WinError 10013 on loopback socketpair creation (caused by Hyper-V / winnat dynamic port reservation bug).
 """
+import os
 import sys
 import socket
+import subprocess
+
+def _free_port(port=8787):
+    try:
+        s = socket.socket()
+        err = s.connect_ex(("127.0.0.1", port))
+        s.close()
+        if err == 0:
+            out = subprocess.run(["netstat", "-ano"], capture_output=True, text=True).stdout
+            pids = [l.strip().split()[-1] for l in out.splitlines() if f":{port}" in l and "LISTENING" in l]
+            for p in pids:
+                if p != str(os.getpid()):
+                    subprocess.run(["taskkill", "/F", "/PID", p], capture_output=True)
+    except Exception:
+        pass
+
+_free_port(8787)
 
 if sys.platform == "win32":
     _orig_socketpair = socket.socketpair

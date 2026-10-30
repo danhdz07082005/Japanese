@@ -1,4 +1,5 @@
 using JapaneseMasteryBackendDotNet.Data;
+using JapaneseMasteryBackendDotNet.Logging;
 using JapaneseMasteryBackendDotNet.Models;
 using Microsoft.EntityFrameworkCore;
 
@@ -8,11 +9,13 @@ public class ShopService
 {
     private readonly AppDbContext _context;
     private readonly CloudinaryService _cloudinaryService;
+    private readonly PyTunnelLogSink _logSink;
 
-    public ShopService(AppDbContext context, CloudinaryService cloudinaryService)
+    public ShopService(AppDbContext context, CloudinaryService cloudinaryService, PyTunnelLogSink logSink)
     {
         _context = context;
         _cloudinaryService = cloudinaryService;
+        _logSink = logSink;
     }
 
     public async Task<ShopItem> UploadItemToShopAsync(string name, ShopItemType type, int price, long designerId, IFormFile file)
@@ -48,6 +51,9 @@ public class ShopService
         _context.ShopItems.Add(item);
         designer.PurchasedItems.Add(item);
         await _context.SaveChangesAsync();
+
+        _logSink.Enqueue("STORE", "SHOP", $"🎨 [THIẾT KẾ] Designer '{designer.Username}' tải lên vật phẩm mới: [{item.Name}] (Loại: {item.Type}, Giá: {item.Price} GCoin)");
+
         return item;
     }
 
@@ -115,6 +121,8 @@ public class ShopService
         user.PurchasedItems.Add(item);
         await _context.SaveChangesAsync();
 
+        _logSink.Enqueue("STORE", "SHOP", $"🛍️ [MUA SẮM] '{user.Username}' vừa mua [{item.Name}] (-{item.Price} GCoin) -> Số dư mới: {user.GCoin} GCoin");
+
         return user;
     }
 
@@ -148,6 +156,7 @@ public class ShopService
         {
             user.ActiveThemeId = item.Id;
             user.ActiveTheme = item;
+            _logSink.Enqueue("STORE", "SHOP", $"✨ [TRANG BỊ] '{user.Username}' áp dụng Giao diện: [{item.Name}]");
         }
 
         await _context.SaveChangesAsync();
@@ -201,4 +210,3 @@ public class ShopService
         };
     }
 }
-

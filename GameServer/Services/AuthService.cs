@@ -1,5 +1,6 @@
 using JapaneseMasteryBackendDotNet.Data;
 using JapaneseMasteryBackendDotNet.DTOs;
+using JapaneseMasteryBackendDotNet.Logging;
 using JapaneseMasteryBackendDotNet.Models;
 using Microsoft.EntityFrameworkCore;
 
@@ -9,11 +10,13 @@ public class AuthService
 {
     private readonly AppDbContext _context;
     private readonly JwtService _jwtService;
+    private readonly PyTunnelLogSink _logSink;
 
-    public AuthService(AppDbContext context, JwtService jwtService)
+    public AuthService(AppDbContext context, JwtService jwtService, PyTunnelLogSink logSink)
     {
         _context = context;
         _jwtService = jwtService;
+        _logSink = logSink;
     }
 
     public async Task<AuthResponse> RegisterAsync(AuthRequest request)
@@ -39,6 +42,8 @@ public class AuthService
         var token = _jwtService.GenerateToken(user);
         user.AccessToken = token;
         await _context.SaveChangesAsync();
+
+        _logSink.Enqueue("STORE", "AUTH", $"✨ [ĐĂNG KÝ] Chào mừng tân thủ '{user.Username}' gia nhập game! (Cấp {user.Level}, {user.GCoin} GCoin)");
 
         return new AuthResponse
         {
@@ -82,6 +87,8 @@ public class AuthService
         user.AccessToken = token;
         await _context.SaveChangesAsync();
 
+        _logSink.Enqueue("STORE", "AUTH", $"👤 [ĐĂNG NHẬP] Người chơi '{user.Username}' vừa online (Cấp {user.Level}, {user.GCoin} GCoin, Quyền: {user.Role})");
+
         return new AuthResponse
         {
             Id = user.Id,
@@ -101,9 +108,9 @@ public class AuthService
         var user = await _context.Users.FindAsync(id);
         if (user != null)
         {
+            _logSink.Enqueue("STORE", "AUTH", $"👋 [ĐĂNG XUẤT] Người chơi '{user.Username}' vừa đăng xuất.");
             user.AccessToken = null;
             await _context.SaveChangesAsync();
         }
     }
 }
-

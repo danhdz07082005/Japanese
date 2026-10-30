@@ -481,7 +481,8 @@ public class PvPService
         await context.SaveChangesAsync();
 
         var shortId = match.MatchId.Length > 8 ? match.MatchId[..8] : match.MatchId;
-        _logSink.Enqueue("PVP-ENGINE", "FINISH", $"Match #{shortId} FINISHED! Winner: '{winnerName}' (+{match.GCoinReward} GCoin)");
+        _logSink.Enqueue("PVP-MATCH", "WIN", $"🏆 [CHIẾN THẮNG] Trận #{shortId} KẾT THÚC! Quán quân: '{winnerName}' (+{match.GCoinReward} GCoin)");
+        _logSink.Enqueue("PVP-MATCH", "REWARD", $"💰 [PHẦN THƯỞNG] '{winnerName}' +{match.GCoinReward} GCoin | Người thua bị trừ -100 GCoin");
 
         // Instant WebSocket push to both players
         if (match.Player1Id > 0)
@@ -532,9 +533,10 @@ public class PvPService
 
         // Award opponent
         var opponentId = userId == match.Player1Id ? match.Player2Id : match.Player1Id;
+        User? opponent = null;
         if (opponentId != -1)
         {
-            var opponent = await context.Users.FindAsync(opponentId);
+            opponent = await context.Users.FindAsync(opponentId);
             if (opponent != null)
             {
                 opponent.GCoin += 100;
@@ -547,7 +549,10 @@ public class PvPService
         match.State = "FINISHED";
 
         var shortId = match.MatchId.Length > 8 ? match.MatchId[..8] : match.MatchId;
-        _logSink.Enqueue("PVP-ENGINE", "WARN", $"Match #{shortId}: UID {userId} forfeited match. Awarding win to UID {opponentId}.");
+        var quitterName = quitter?.Username ?? $"UID {userId}";
+        var oppName = opponent?.Username ?? $"UID {opponentId}";
+        _logSink.Enqueue("PVP-MATCH", "QUIT", $"🏳️ [ĐẦU HÀNG] '{quitterName}' đã đầu hàng / thoát trận #{shortId}! Xử phạt -100 GCoin (Khóa PvP 1h).");
+        _logSink.Enqueue("PVP-MATCH", "REWARD", $"🏆 [THẮNG MẶC ĐỊNH] '{oppName}' nhận chiến thắng mặc định do đối thủ đầu hàng (+{match.GCoinReward} GCoin)!");
 
         if (opponentId > 0)
         {

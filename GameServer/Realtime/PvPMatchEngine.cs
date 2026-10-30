@@ -19,6 +19,8 @@ public class PvPMatchState
     public string Romaji { get; init; } = "";
     public int Player1Progress { get; set; } = 0;
     public int Player2Progress { get; set; } = 0;
+    public int Player1PrevProgress { get; set; } = 0;
+    public int Player2PrevProgress { get; set; } = 0;
     public long? WinnerId { get; set; }
     public bool IsFinished { get; set; }
     public DateTime CreatedAt { get; init; } = DateTime.UtcNow;
@@ -101,7 +103,7 @@ public class PvPMatchEngine
         // Cancel any existing match mapping
         LeaveQueue(userId);
 
-        _logSink.Enqueue("PVP-ENGINE", "INFO", $"Player '{username}' (ID: {userId}) joined matchmaking queue");
+        _logSink.Enqueue("PVP-MATCH", "INFO", $"🔍 [TÌM TRẬN] '{username}' (UID: {userId}) bắt đầu tìm đối thủ PvP ngẫu nhiên...");
 
         // Try to match with someone in queue
         while (_matchmakingQueue.TryDequeue(out var opponentId))
@@ -139,7 +141,7 @@ public class PvPMatchEngine
         var code = "ROOM-" + _random.Next(1000, 9999);
         _lobbies[code] = (hostId, hostName);
 
-        _logSink.Enqueue("PVP-ENGINE", "INFO", $"Lobby created: {code} by '{hostName}' (ID: {hostId})");
+        _logSink.Enqueue("PVP-MATCH", "LOBBY", $"🏠 [TẠO PHÒNG] '{hostName}' mở phòng riêng [{code}]. Đang chờ người chơi tham gia...");
 
         await _connectionManager.SendToUserAsync(hostId, new
         {
@@ -159,7 +161,7 @@ public class PvPMatchEngine
                 return;
             }
 
-            _logSink.Enqueue("PVP-ENGINE", "INFO", $"Player '{guestName}' joined room {code}. Starting 1v1 duel...");
+            _logSink.Enqueue("PVP-MATCH", "LOBBY", $"🤝 [VÀO PHÒNG] '{guestName}' nhập mã [{code}] tham chiến cùng '{lobby.HostName}'! Trận đấu bắt đầu.");
             await CreateMatchAsync(lobby.HostId, lobby.HostName, guestId, guestName);
         }
         else
@@ -174,13 +176,29 @@ public class PvPMatchEngine
 
     private async Task CreateMatchAsync(long p1Id, string p1Name, long p2Id, string? p2Name = null)
     {
-        if (string.IsNullOrEmpty(p2Name))
+        int p1Lvl = 1, p2Lvl = 1;
+        int p1Coin = 0, p2Coin = 0;
+
+        try
         {
             using var scope = _scopeFactory.CreateScope();
             var db = scope.ServiceProvider.GetRequiredService<AppDbContext>();
+            var p1User = await db.Users.FindAsync(p1Id);
             var p2User = await db.Users.FindAsync(p2Id);
-            p2Name = p2User?.DisplayName ?? p2User?.Username ?? $"Player {p2Id}";
+            if (p1User != null) { p1Lvl = p1User.Level; p1Coin = p1User.GCoin; }
+            if (p2User != null)
+            {
+                p2Lvl = p2User.Level;
+                p2Coin = p2User.GCoin;
+                if (string.IsNullOrEmpty(p2Name))
+                {
+                    p2Name = p2User.DisplayName ?? p2User.Username;
+                }
+            }
         }
+        catch { }
+
+        if (string.IsNullOrEmpty(p2Name)) p2Name = $"Player {p2Id}";
 
         var paragraph = _paragraphs[_random.Next(_paragraphs.Count)];
         var romaji = await _romajiConverter.ToRomajiAsync(paragraph);
@@ -200,7 +218,7 @@ public class PvPMatchEngine
         _userMatchMap[p1Id] = match.MatchId;
         _userMatchMap[p2Id] = match.MatchId;
 
-        _logSink.Enqueue("PVP-ENGINE", "MATCH", $"Duel #{match.MatchId} paired: '{p1Name}' vs '{p2Name}' (Len: {paragraph.Length} chars)");
+        _logSink.Enqueue("PVP-MATCH", "DUEL", $"⚔️ [ĐỐI ĐẦU] Khởi tranh Trận #{match.MatchId}! '{p1Name}' (Lv.{p1Lvl}, {p1Coin} GCoin) VS '{p2Name}' (Lv.{p2Lvl}, {p2Coin} GCoin) | Đề bài: \"{paragraph}\" ({match.Romaji.Length} ký tự Romaji)");
 
         // Send match notifications to both players
         await _connectionManager.SendToUserAsync(p1Id, new
@@ -234,7 +252,7 @@ public class PvPMatchEngine
                 @event = "start",
                 matchId = match.MatchId
             });
-            _logSink.Enqueue("PVP-ENGINE", "START", $"Match #{match.MatchId} timer commenced! Realtime typing active.");
+            _logSink.Enqueue("PVP-MATCH", "START", $"⏱️ [BẮT ĐẦU] Trận #{match.MatchId} đã đếm ngược xong! Đồng hồ tính giờ kích hoạt.");
         });
     }
 
@@ -250,16 +268,25 @@ public class PvPMatchEngine
         long opponentId;
         string senderName;
         string opponentName;
+        int prevProgress;
+        int oppProgress;
+
         if (userId == match.Player1Id)
         {
+            prevProgress = match.Player1PrevProgress;
+            match.Player1PrevProgress = match.Player1Progress;
             match.Player1Progress = progress;
+            oppProgress = match.Player2Progress;
             opponentId = match.Player2Id;
             senderName = match.Player1Name;
             opponentName = match.Player2Name;
         }
         else
         {
+            prevProgress = match.Player2PrevProgress;
+            match.Player2PrevProgress = match.Player2Progress;
             match.Player2Progress = progress;
+            oppProgress = match.Player1Progress;
             opponentId = match.Player1Id;
             senderName = match.Player2Name;
             opponentName = match.Player1Name;
@@ -272,9 +299,19 @@ public class PvPMatchEngine
             progress = progress
         });
 
-        int totalLen = match.Paragraph.Length;
+        int totalLen = match.Romaji.Length > 0 ? match.Romaji.Length : match.Paragraph.Length;
         int pct = totalLen > 0 ? Math.Min(100, (int)((progress / (double)totalLen) * 100)) : 0;
-        _logSink.Enqueue("PVP-ENGINE", "PROGRESS", $"[Duel #{match.MatchId}] '{senderName}' ({progress}/{totalLen} chars - {pct}%) -> RELAY TO -> '{opponentName}' (UID: {opponentId})");
+
+        if (progress > prevProgress)
+        {
+            int diff = progress - oppProgress;
+            string leadMsg = diff > 0 ? $"Dẫn trước đối thủ +{diff} ký tự" : (diff < 0 ? $"Đang bám đuổi ({diff} ký tự)" : "Bằng điểm nhau!");
+            _logSink.Enqueue("PVP-MATCH", "PROGRESS", $"⚡ [TIẾN ĐỘ] '{senderName}' gõ đúng -> {progress}/{totalLen} ký tự ({pct}%) | {leadMsg}");
+        }
+        else if (progress < prevProgress)
+        {
+            _logSink.Enqueue("PVP-MATCH", "WRONG", $"❌ [GÕ SAI] '{senderName}' xóa lùi hoặc gõ sai (Lùi về {progress}/{totalLen} ký tự, {pct}%)");
+        }
     }
 
     public async Task HandleFinishMatchAsync(long userId, long timeMs)
@@ -295,6 +332,10 @@ public class PvPMatchEngine
         var isP1Winner = userId == match.Player1Id;
         var winnerName = isP1Winner ? match.Player1Name : match.Player2Name;
         var loserId = isP1Winner ? match.Player2Id : match.Player1Id;
+        var loserName = isP1Winner ? match.Player2Name : match.Player1Name;
+
+        int winnerNewCoin = 0;
+        int loserNewCoin = 0;
 
         // Persist GCoin rewards
         try
@@ -304,8 +345,16 @@ public class PvPMatchEngine
             var winner = await db.Users.FindAsync(userId);
             var loser = await db.Users.FindAsync(loserId);
 
-            if (winner != null) winner.GCoin += 50;
-            if (loser != null) loser.GCoin += 15;
+            if (winner != null)
+            {
+                winner.GCoin += 50;
+                winnerNewCoin = winner.GCoin;
+            }
+            if (loser != null)
+            {
+                loser.GCoin += 15;
+                loserNewCoin = loser.GCoin;
+            }
             await db.SaveChangesAsync();
         }
         catch (Exception ex)
@@ -313,7 +362,9 @@ public class PvPMatchEngine
             _logger.LogError(ex, "Failed to award GCoin for match #{MatchId}", match.MatchId);
         }
 
-        _logSink.Enqueue("PVP-ENGINE", "FINISH", $"Match #{match.MatchId} FINISHED! Winner: '{winnerName}' in {timeMs / 1000.0:F2}s (+50 GCoin)");
+        double wpm = (match.Romaji.Length / 5.0) / Math.Max(0.5, timeMs / 60000.0);
+        _logSink.Enqueue("PVP-MATCH", "WIN", $"🏆 [CHIẾN THẮNG] '{winnerName}' CÁN ĐÍCH VỀ NHẤT trong {timeMs / 1000.0:F2}s! Tốc độ: {wpm:F1} WPM (Hạng 1)");
+        _logSink.Enqueue("PVP-MATCH", "REWARD", $"💰 [PHẦN THƯỞNG] '{winnerName}' (Quán quân) +50 GCoin (Tổng: {winnerNewCoin} GCoin) | '{loserName}' (Á quân) +15 GCoin (Tổng: {loserNewCoin} GCoin)");
 
         // Broadcast finish state to both players
         await _connectionManager.SendToUserAsync(userId, new
@@ -350,8 +401,25 @@ public class PvPMatchEngine
             match.IsFinished = true;
             var remainingId = (userId == match.Player1Id) ? match.Player2Id : match.Player1Id;
             var leaverName = (userId == match.Player1Id) ? match.Player1Name : match.Player2Name;
+            var remainingName = (userId == match.Player1Id) ? match.Player2Name : match.Player1Name;
 
-            _logSink.Enqueue("PVP-ENGINE", "WARN", $"Match #{match.MatchId}: Player '{leaverName}' disconnected. Awarding win to remaining opponent.");
+            int remainingCoin = 0;
+            try
+            {
+                using var scope = _scopeFactory.CreateScope();
+                var db = scope.ServiceProvider.GetRequiredService<AppDbContext>();
+                var winner = await db.Users.FindAsync(remainingId);
+                if (winner != null)
+                {
+                    winner.GCoin += 35;
+                    remainingCoin = winner.GCoin;
+                    await db.SaveChangesAsync();
+                }
+            }
+            catch { }
+
+            _logSink.Enqueue("PVP-MATCH", "QUIT", $"🏳️ [ĐẦU HÀNG / RỜI PHÒNG] '{leaverName}' mất kết nối hoặc thoát khỏi trận #{match.MatchId}! Xử thua do bỏ cuộc.");
+            _logSink.Enqueue("PVP-MATCH", "REWARD", $"🏆 [THẮNG MẶC ĐỊNH] '{remainingName}' nhận chiến thắng mặc định do đối thủ bỏ cuộc (+35 GCoin, Tổng: {remainingCoin} GCoin)!");
 
             await _connectionManager.SendToUserAsync(remainingId, new
             {

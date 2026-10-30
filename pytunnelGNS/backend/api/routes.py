@@ -1,3 +1,4 @@
+import json
 import asyncio
 import os
 from fastapi import APIRouter, Request
@@ -237,7 +238,7 @@ async def heartbeat():
 import collections
 import time
 
-terminal_logs: collections.deque[dict[str, str]] = collections.deque(maxlen=300)
+terminal_logs: collections.deque[dict[str, str]] = collections.deque(maxlen=1000)
 terminal_logs.append({
     "time": time.strftime("%H:%M:%S"),
     "source": "SYSTEM",
@@ -258,7 +259,9 @@ async def get_terminal_logs():
 @router.post("/terminal-logs")
 async def broadcast_terminal_log(request: Request):
     try:
-        data = await request.json()
+        raw_bytes = await request.body()
+        text = raw_bytes.decode("utf-8", errors="replace")
+        data = json.loads(text) if text else {}
         entry = {
             "time": str(data.get("time") or time.strftime("%H:%M:%S")),
             "source": str(data.get("source", "SERVER")).upper(),

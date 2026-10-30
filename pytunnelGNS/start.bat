@@ -79,7 +79,7 @@ echo.
 echo [DANG CHAY NEN] He thong san sang tiep nhan yeu cau tu trinh duyet...
 echo.
 
-%PY_CMD% -m uvicorn backend.main:app --host 127.0.0.1 --port 8787 --log-level warning --no-access-log
+%PY_CMD% run.py
 
 if %errorlevel% neq 0 (
     echo.
